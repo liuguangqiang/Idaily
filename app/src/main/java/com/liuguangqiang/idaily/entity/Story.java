@@ -21,6 +21,26 @@ public class Story implements Parcelable {
 
     private String image;
 
+    private String body;
+
+    private List<String> css;
+
+    public List<String> getCss() {
+        return css;
+    }
+
+    public void setCss(List<String> css) {
+        this.css = css;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
     public String getImage() {
         return image;
     }
@@ -76,6 +96,8 @@ public class Story implements Parcelable {
         dest.writeInt(this.type);
         dest.writeStringList(this.images);
         dest.writeString(this.image);
+        dest.writeString(this.body);
+        dest.writeStringList(this.css);
     }
 
     protected Story(Parcel in) {
@@ -84,6 +106,8 @@ public class Story implements Parcelable {
         this.type = in.readInt();
         this.images = in.createStringArrayList();
         this.image = in.readString();
+        this.body = in.readString();
+        this.css = in.createStringArrayList();
     }
 
     public static final Creator<Story> CREATOR = new Creator<Story>() {

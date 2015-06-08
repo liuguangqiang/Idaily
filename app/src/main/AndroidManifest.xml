@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".NewsDetailActivity"
+            android:name=".StoryActivity"
             android:theme="@style/AppTheme.Detail" />
 
     </application>

@@ -2,10 +2,16 @@ package com.liuguangqiang.idaily;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.liuguangqiang.framework.utils.Logs;
@@ -26,11 +32,14 @@ public class StoryActivity extends AppCompatActivity {
     private Story mStory;
 
     private ImageView ivPic;
+    private WebView webViewContent;
+    private NestedScrollView mScrollView;
+    private TextView tvEmpty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scroll_view);
+        setContentView(R.layout.activity_story);
         initToolbar();
         initViews();
         getExtraData();
@@ -51,7 +60,6 @@ public class StoryActivity extends AppCompatActivity {
         if (bundle != null && bundle.containsKey(EXTRA_STORY)) {
             mStory = bundle.getParcelable(EXTRA_STORY);
             collapsingToolbar.setTitle(mStory.getTitle());
-            Picasso.with(getApplicationContext()).load(mStory.getImages().get(0)).into(ivPic);
             getStory(mStory.getId());
         }
     }
@@ -66,11 +74,42 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        tvEmpty=(TextView)findViewById(R.id.tv_empty);
+        mScrollView = (NestedScrollView) findViewById(R.id.scrollView);
         ivPic = (ImageView) findViewById(R.id.iv_pic);
+        webViewContent = (WebView) findViewById(R.id.web_content);
+
+        WebSettings settings = webViewContent.getSettings();
+        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+
+        webViewContent.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                if (newProgress == 100) {
+                    tvEmpty.setVisibility(View.GONE);
+                }
+                super.onProgressChanged(view, newProgress);
+            }
+
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+            }
+        });
     }
 
     private void bindData(Story story) {
         Picasso.with(getApplicationContext()).load(story.getImage()).into(ivPic);
+        webViewContent.loadData(loadDataWithCSS(story.getBody(), story.getCss().get(0)), "text/html; charset=UTF-8", null);
+    }
+
+    private String loadDataWithCSS(String loadData, String cssPath) {
+        String header = "<html><head><link href=\"%s\" type=\"text/css\" rel=\"stylesheet\"/></head><body>";
+        String footer = "</body></html>";
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format(header, cssPath));
+        sb.append(loadData);
+        sb.append(footer);
+        return sb.toString();
     }
 
     private void getStory(int id) {

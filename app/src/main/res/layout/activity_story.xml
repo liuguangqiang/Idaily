@@ -5,6 +5,7 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/window_color"
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
@@ -25,11 +26,12 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
+                android:id="@+id/iv_pic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/gray_light"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher"
                 app:layout_collapseMode="parallax"
                 app:layout_scrollFlags="scroll|enterAlways" />
 
@@ -46,6 +48,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -53,38 +56,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="48dp">
+            android:orientation="vertical">
 
-            <ImageView
+            <WebView
+                android:id="@+id/web_content"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-210dp" />
 
-            <ImageView
+            <TextView
+                android:id="@+id/tv_empty"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginBottom="16dp"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop" />
+                android:layout_height="500dp" />
 
         </LinearLayout>
 
