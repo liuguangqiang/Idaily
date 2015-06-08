@@ -3,7 +3,10 @@
 
     <color name="window_color">#FFFFFF</color>
     <color name="main_color">#4886f3</color>
-    <color name="gray_dark">#333333</color>
     <color name="item_selected_bg_color">#20000000</color>
+
+    <color name="gray_light">#aaaaaa</color>
+    <color name="gray_middle">#666666</color>
+    <color name="gray_dark">#333333</color>
 
 </resources>

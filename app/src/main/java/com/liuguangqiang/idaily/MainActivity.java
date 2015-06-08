@@ -10,11 +10,10 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.google.gson.Gson;
-import com.liuguangqiang.framework.utils.Logs;
 import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
-import com.liuguangqiang.idaily.adapter.NewsAdapter;
+import com.liuguangqiang.idaily.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.entity.Daily;
-import com.liuguangqiang.idaily.entity.News;
+import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.uitls.ApiUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
@@ -30,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
 
     private RecyclerView recylerView;
-    private NewsAdapter adapter;
-    private List<News> data = new ArrayList<>();
+    private StoryAdapter adapter;
+    private List<Story> data = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +51,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void initViews() {
         recylerView = (RecyclerView) findViewById(R.id.rv_news);
-        adapter = new NewsAdapter(getApplicationContext(), data);
+        adapter = new StoryAdapter(getApplicationContext(), data);
         recylerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recylerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(getApplicationContext(), NewsDetailActivity.class);
+                Intent intent = new Intent(getApplicationContext(), StoryActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable(NewsDetailActivity.EXTRA_NEWS, data.get(position));
+                bundle.putParcelable(StoryActivity.EXTRA_STORY, data.get(position));
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -80,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 Daily daily = new Gson().fromJson(responseString, Daily.class);
                 if (daily != null) {
-                    data.addAll(daily.getNews());
+                    data.addAll(daily.getStories());
                     adapter.notifyDataSetChanged();
                 }
             }
