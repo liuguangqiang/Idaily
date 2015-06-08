@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="window_color">#FFFFFF</color>
+    <color name="main_color">#4886f3</color>
+    <color name="gray_dark">#333333</color>
+    <color name="item_selected_bg_color">#20000000</color>
+
+</resources>
