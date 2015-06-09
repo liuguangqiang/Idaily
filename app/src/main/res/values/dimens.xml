@@ -5,4 +5,12 @@
 
     <dimen name="default_padding">16dp</dimen>
 
+    <!-- Font Size-->
+    <dimen name="font_size_least">12sp</dimen>
+    <dimen name="font_size_small">14sp</dimen>
+    <dimen name="font_size_middle">16sp</dimen>
+    <dimen name="font_size_big">18sp</dimen>
+    <dimen name="font_size_huge">20sp</dimen>
+    <dimen name="font_size_biggest">24sp</dimen>
+
 </resources>

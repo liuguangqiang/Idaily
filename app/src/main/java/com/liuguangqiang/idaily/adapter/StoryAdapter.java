@@ -87,7 +87,6 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
         public void bindSection(StorySection section) {
             tvDatetime.setText(DailyUtils.getDiplayDate(itemView.getContext(), section.datetime));
         }
-
     }
 
 }
