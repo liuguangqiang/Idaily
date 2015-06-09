@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 22
@@ -27,4 +28,5 @@ dependencies {
     compile 'com.android.support:cardview-v7:22.2.0'
     compile 'com.github.liuguangqiang.aframework:library:1.0.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.liuguangqiang.mvp:library:1.0.4'
 }

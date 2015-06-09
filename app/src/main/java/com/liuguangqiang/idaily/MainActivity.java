@@ -1,6 +1,7 @@
 package com.liuguangqiang.idaily;
 
 import android.content.Intent;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.liuguangqiang.framework.utils.TimeUtils;
 import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
+import com.liuguangqiang.idaily.adapter.Bookends;
 import com.liuguangqiang.idaily.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.entity.Daily;
 import com.liuguangqiang.idaily.entity.Story;
@@ -20,7 +26,11 @@ import com.loopj.android.http.TextHttpResponseHandler;
 
 import org.apache.http.Header;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recylerView;
     private StoryAdapter adapter;
+    private Bookends<StoryAdapter> bookends;
     private List<Story> data = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initToolbar();
         initViews();
-        getDailay();
+        getDaily();
     }
 
     private void initToolbar() {
@@ -46,14 +58,20 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_menu);
-        setTitle("IDaily");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle("IDaily");
     }
 
     private void initViews() {
         recylerView = (RecyclerView) findViewById(R.id.rv_news);
         adapter = new StoryAdapter(getApplicationContext(), data);
+        bookends = new Bookends<>(adapter);
         recylerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recylerView.setAdapter(adapter);
+        recylerView.setAdapter(bookends);
+
         adapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -66,7 +84,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void getDailay() {
+    private void addHeader(int datetime) {
+        int year = datetime / 10000;
+        int month = (datetime % 10000) / 100 - 1;
+        int day = datetime % 100;
+        Date date = new GregorianCalendar(year, month, day).getTime();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int week = calendar.get(calendar.DAY_OF_WEEK);
+
+        View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_story_header, null);
+        TextView tvDatetime = (TextView) view.findViewById(R.id.tv_datetime);
+        tvDatetime.setText(TimeUtils.convertByFormatter(date, "MM月dd日") + " 星期" + week);
+        bookends.addHeader(view);
+    }
+
+    private void getDaily() {
         String url = ApiUtils.getLatest();
         AsyncHttpClient httpClient = new AsyncHttpClient();
         httpClient.get(getApplicationContext(), url, new TextHttpResponseHandler() {
@@ -79,8 +113,9 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 Daily daily = new Gson().fromJson(responseString, Daily.class);
                 if (daily != null) {
+                    addHeader(daily.getDate());
                     data.addAll(daily.getStories());
-                    adapter.notifyDataSetChanged();
+                    bookends.notifyDataSetChanged();
                 }
             }
         });

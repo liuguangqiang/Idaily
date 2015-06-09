@@ -18,9 +18,8 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/item_iv_pic"
         android:padding="6dp"
-        android:text="Test"
         android:textColor="@color/gray_dark"
-        android:textSize="18sp" />
+        android:textSize="16sp" />
 
 
 </RelativeLayout>
