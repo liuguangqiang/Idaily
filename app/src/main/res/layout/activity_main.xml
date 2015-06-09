@@ -51,7 +51,7 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <com.liuguangqiang.idaily.widget.LinearRecyclerView
+        <com.liuguangqiang.idaily.widget.PageableRecyclerView
             android:id="@+id/rv_news"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
