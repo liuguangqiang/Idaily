@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Eric on 15/6/8.
  */
-public class Story implements Parcelable {
+public class Story extends BaseEntity implements Parcelable {
 
     private int id;
 
