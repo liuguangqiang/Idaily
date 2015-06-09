@@ -21,12 +21,12 @@ import com.liuguangqiang.idaily.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.entity.Daily;
 import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.uitls.ApiUtils;
+import com.liuguangqiang.idaily.uitls.DailyUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
 
 import org.apache.http.Header;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -85,18 +85,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addHeader(int datetime) {
-        int year = datetime / 10000;
-        int month = (datetime % 10000) / 100 - 1;
-        int day = datetime % 100;
-        Date date = new GregorianCalendar(year, month, day).getTime();
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        int week = calendar.get(calendar.DAY_OF_WEEK);
-
         View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.item_story_header, null);
         TextView tvDatetime = (TextView) view.findViewById(R.id.tv_datetime);
-        tvDatetime.setText(TimeUtils.convertByFormatter(date, "MM月dd日") + " 星期" + week);
+        tvDatetime.setText(DailyUtils.getDiplayDate(getApplicationContext(), datetime));
         bookends.addHeader(view);
     }
 
