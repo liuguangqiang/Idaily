@@ -10,17 +10,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c47ccf8-fbc9-49f2-8318-e8c1a7eb106d" name="Default" comment=" renamed.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/test.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_story.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_story.xml" />
+    <list default="true" id="9c47ccf8-fbc9-49f2-8318-e8c1a7eb106d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="445305f4-4eab-4940-a877-9d8d1fe0bf4d" name="Failed commit: Default" comment="Removed unused files." />
@@ -37,6 +27,26 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="Bookends.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/Bookends.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.22451994">
+                    <caret line="157" column="84" selection-start-line="157" selection-start-column="84" selection-end-line="157" selection-end-column="84" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -50,48 +60,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StoryActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/StoryActivity.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <caret line="73" column="86" selection-start-line="73" selection-start-column="86" selection-end-line="73" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3290#3291#0" expanded="true" />
+                <element signature="e#3540#3541#0" expanded="true" />
+                <element signature="e#3582#3583#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_story.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StoryAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StoryAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/StoryAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.36241612">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#836#837#0" expanded="true" />
+                <element signature="e#872#873#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item_story.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_story.xml">
+      <file leaf-file-name="BaseEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/BaseEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item_story_header.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.586207">
+              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -100,23 +111,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="color.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
+      <file leaf-file-name="Story.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Story.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23206751">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
+      <file leaf-file-name="layout_loading_footer.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_loading_footer.xml">
+          <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
               <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Daily.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Daily.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#379#380#0" expanded="true" />
+                <element signature="e#406#407#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorySection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/StorySection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+              <folding>
+                <element signature="e#192#193#0" expanded="true" />
+                <element signature="e#232#233#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApiUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/ApiUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+              <folding>
+                <element signature="e#281#282#0" expanded="true" />
+                <element signature="e#340#341#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.0">
+              <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+              <folding>
+                <element signature="e#2589#2629#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -1682,20 +1750,26 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/IDaily.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/NewsDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/NewsDetail.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/SampleAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/ApiUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/base/BaseEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/NewsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Daily.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/color.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_scroll_view.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Story.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/StoryActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_news.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/StoryAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_story.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/DailyUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/widget/LinearRecyclerView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/ApiUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/layout_loading_footer.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Story.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/StorySection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/StoryAdapter.java" />
       </list>
     </option>
   </component>
@@ -1703,10 +1777,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1472" />
-    <option name="y" value="-231" />
-    <option name="width" value="1467" />
-    <option name="height" value="855" />
+    <option name="x" value="1294" />
+    <option name="y" value="-253" />
+    <option name="width" value="1893" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1715,7 +1789,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -1853,10 +1927,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1881,6 +1951,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1957,6 +2031,16 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="06aa2a0f00d4314b" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="1280x720_API_22" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.liuguangqiang.idaily.widget" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -2182,38 +2266,56 @@
       <option name="project" value="LOCAL" />
       <updated>1433773427127</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed.">
+      <created>1433819519393</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1433819519393</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Create DailyUtils for showing datetime at header view.">
+      <created>1433820722358</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1433820722358</updated>
+    </task>
+    <task id="LOCAL-00006" summary="get before stories when scroll at bottom.">
+      <created>1433833970094</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1433833970094</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1472" y="-231" width="1467" height="855" extended-state="0" />
+    <frame x="1294" y="-253" width="1893" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29228687" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.70776254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29152915" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7071583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28210527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21717991" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45010847" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4520548" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32870865" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2230,7 +2332,10 @@
     <MESSAGE value="update style of item_story." />
     <MESSAGE value="Added StoryActivity for showing the details of a story." />
     <MESSAGE value=" renamed." />
-    <option name="LAST_COMMIT_MESSAGE" value=" renamed." />
+    <MESSAGE value="fixed." />
+    <MESSAGE value="Create DailyUtils for showing datetime at header view." />
+    <MESSAGE value="get before stories when scroll at bottom." />
+    <option name="LAST_COMMIT_MESSAGE" value="get before stories when scroll at bottom." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2253,7 +2358,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="e#2949#2989#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2265,7 +2372,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2301,6 +2409,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2308,6 +2420,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#170#171#0" expanded="false" />
+            <element signature="e#195#196#0" expanded="false" />
+            <element signature="e#228#229#0" expanded="false" />
+            <element signature="e#256#257#0" expanded="false" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="false" />
+            <element signature="e#475#476#0" expanded="false" />
+            <element signature="e#514#515#0" expanded="false" />
+            <element signature="e#544#545#0" expanded="false" />
+            <element signature="e#595#596#0" expanded="false" />
+            <element signature="e#633#634#0" expanded="false" />
+            <element signature="e#676#677#0" expanded="false" />
+            <element signature="e#710#711#0" expanded="false" />
+            <element signature="e#769#770#0" expanded="false" />
+            <element signature="e#815#816#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2315,6 +2445,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#498#499#0" expanded="false" />
+            <element signature="e#524#525#0" expanded="false" />
+            <element signature="e#568#569#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#629#630#0" expanded="false" />
+            <element signature="e#656#657#0" expanded="false" />
+            <element signature="e#696#697#0" expanded="false" />
+            <element signature="e#728#729#0" expanded="false" />
+            <element signature="e#760#761#0" expanded="false" />
+            <element signature="e#788#789#0" expanded="false" />
+            <element signature="e#830#831#0" expanded="false" />
+            <element signature="e#864#865#0" expanded="false" />
+            <element signature="e#896#897#0" expanded="false" />
+            <element signature="e#924#925#0" expanded="false" />
+            <element signature="e#966#967#0" expanded="false" />
+            <element signature="e#1000#1001#0" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
+            <element signature="e#1068#1069#0" expanded="false" />
+            <element signature="e#1118#1119#0" expanded="false" />
+            <element signature="e#1154#1155#0" expanded="false" />
+            <element signature="e#1182#1183#0" expanded="false" />
+            <element signature="e#1209#1210#0" expanded="false" />
+            <element signature="e#1246#1247#0" expanded="false" />
+            <element signature="e#1278#1279#0" expanded="false" />
+            <element signature="e#1332#1333#0" expanded="false" />
+            <element signature="e#1357#1358#0" expanded="false" />
+            <element signature="e#1390#1391#0" expanded="false" />
+            <element signature="e#1418#1419#0" expanded="false" />
+            <element signature="e#1469#1470#0" expanded="false" />
+            <element signature="e#1493#1494#0" expanded="false" />
+            <element signature="e#2276#2277#0" expanded="false" />
+            <element signature="e#2324#2325#0" expanded="false" />
+            <element signature="e#2369#2370#0" expanded="false" />
+            <element signature="e#2415#2416#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2340,7 +2507,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2357,7 +2525,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="45" selection-start-line="41" selection-start-column="45" selection-end-line="41" selection-end-column="45" />
-          <folding />
+          <folding>
+            <element signature="e#2949#2989#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2372,35 +2542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/ApiUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Daily.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Story.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.liuguangqiang.aframework/library/1.0.2/jars/classes.jar!/com/liuguangqiang/framework/utils/HtmlUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2412,27 +2553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/StoryAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2467,9 +2587,188 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/color.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23206751">
+        <state vertical-scroll-proportion="0.0">
           <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.379311">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+          <folding>
+            <element signature="e#2949#2989#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/DailyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37457433">
+          <caret line="22" column="70" selection-start-line="22" selection-start-column="70" selection-end-line="22" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/tools/Android/android-sdk/sources/android-22/android/graphics/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="207" column="22" selection-start-line="207" selection-start-column="22" selection-end-line="207" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/widget/LinearRecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/uitls/ApiUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_loading_footer.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Daily.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/BaseRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11918275">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/Story.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/entity/StorySection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding>
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.586207">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/Bookends.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22451994">
+          <caret line="157" column="84" selection-start-line="157" selection-start-column="84" selection-end-line="157" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding>
+            <element signature="e#2589#2629#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="86" selection-start-line="73" selection-start-column="86" selection-end-line="73" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3290#3291#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="e#3582#3583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/adapter/StoryAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36241612">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
