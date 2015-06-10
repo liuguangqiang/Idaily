@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 22
@@ -29,4 +28,5 @@ dependencies {
     compile 'com.github.liuguangqiang.aframework:library:1.0.2'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.liuguangqiang.mvp:library:1.0.4'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
 }
