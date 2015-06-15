@@ -34,7 +34,7 @@ public class StoryPresenter extends Presenter<StoryView, StoryViewCallback> {
 
             @Override
             public void getStory(int id) {
-                mStoryModel.getStory(mContext, id, new StoryModel.OnRequestListener() {
+                mStoryModel.getStory(id, new StoryModel.OnRequestListener() {
                     @Override
                     public void onSuccess(Story story) {
                         view.bindStory(story);
@@ -42,7 +42,6 @@ public class StoryPresenter extends Presenter<StoryView, StoryViewCallback> {
                     }
                 });
             }
-
         };
     }
 

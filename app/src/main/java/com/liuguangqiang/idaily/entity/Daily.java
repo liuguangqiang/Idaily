@@ -1,26 +1,26 @@
 package com.liuguangqiang.idaily.entity;
 
+import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonObject;
+
 import java.util.List;
 
 /**
  * Created by Eric on 15/6/6.
  */
+@JsonObject
 public class Daily {
 
+    @JsonField
     private int id;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    @JsonField
     private int date;
 
+    @JsonField
     private List<Story> stories;
 
+    @JsonField
     private List<Story> top_stories;
 
     public int getDate() {
@@ -46,5 +46,14 @@ public class Daily {
     public void setTop_stories(List<Story> top_stories) {
         this.top_stories = top_stories;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
 }

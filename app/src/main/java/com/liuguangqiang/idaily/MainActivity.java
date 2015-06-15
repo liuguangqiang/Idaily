@@ -3,12 +3,17 @@ package com.liuguangqiang.idaily;
 import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.google.gson.Gson;
+import com.liuguangqiang.asyncokhttp.AsyncOkHttp;
+import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
+import com.liuguangqiang.asyncokhttp.json.GsonEngine;
 import com.liuguangqiang.framework.utils.Logs;
 import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
 import com.liuguangqiang.idaily.adapter.StoryAdapter;
@@ -31,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerlayout;
     private NavigationView navigationView;
 
-    private PageableRecyclerView recylerView;
+    private PageableRecyclerView recyclerView;
     private StoryAdapter adapter;
     private List<BaseEntity> data = new ArrayList<>();
 
@@ -42,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
         initToolbar();
         initViews();
         getDaily();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerlayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initToolbar() {
@@ -57,9 +72,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        recylerView = (PageableRecyclerView) findViewById(R.id.rv_news);
+        drawerlayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.nav_menu);
+
+        recyclerView = (PageableRecyclerView) findViewById(R.id.rv_news);
         adapter = new StoryAdapter(getApplicationContext(), data);
-        recylerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
         adapter.setOnItemClickListener(new BaseRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -74,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recylerView.setOnPageListener(new PageableRecyclerView.OnPageListener() {
+        recyclerView.setOnPageListener(new PageableRecyclerView.OnPageListener() {
             @Override
             public void onPage() {
                 getDaily();
@@ -92,28 +110,24 @@ public class MainActivity extends AppCompatActivity {
         String url = datetime > 0 ? ApiUtils.getNewsBefore(datetime) : ApiUtils.getLatest();
         Logs.i(url);
 
-        AsyncHttpClient httpClient = new AsyncHttpClient();
-        httpClient.get(getApplicationContext(), url, new TextHttpResponseHandler() {
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-            }
+        AsyncOkHttp.getInstance().getConfiguration().setJsonEngine(new GsonEngine(false));
 
+        AsyncOkHttp.getInstance().get(url, new JsonResponseHandler<Daily>(Daily.class) {
             @Override
-            public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                Daily daily = new Gson().fromJson(responseString, Daily.class);
+            public void onSuccess(Daily daily) {
                 if (daily != null) {
                     StorySection section = new StorySection(daily.getDate());
                     lastDatetime = daily.getDate();
                     data.add(section);
                     data.addAll(daily.getStories());
-                    recylerView.notifyDataSetChanged();
+                    recyclerView.notifyDataSetChanged();
                 }
             }
 
             @Override
             public void onFinish() {
                 super.onFinish();
-                recylerView.onPageFinished();
+                recyclerView.onPageFinished();
             }
         });
     }

@@ -3,26 +3,37 @@ package com.liuguangqiang.idaily.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.bluelinelabs.logansquare.annotation.JsonField;
+import com.bluelinelabs.logansquare.annotation.JsonObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Eric on 15/6/8.
  */
+@JsonObject
 public class Story extends BaseEntity implements Parcelable {
 
+    @JsonField
     private int id;
 
+    @JsonField
     private String title;
 
+    @JsonField
     private int type = 0;
 
+    @JsonField
     private List<String> images = new ArrayList<>();
 
+    @JsonField
     private String image;
 
+    @JsonField
     private String body;
 
+    @JsonField
     private List<String> css;
 
     public List<String> getCss() {
