@@ -119,17 +119,6 @@
 
             </android.support.v4.widget.NestedScrollView>
 
-            <android.support.design.widget.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:clickable="true"
-                android:src="@mipmap/ic_menu"
-                app:layout_anchor="@id/appbar"
-                app:layout_anchorGravity="bottom|right|end"
-                app:onClickListener="@{storyViewModel.favClickListener}"
-                app:rippleColor="@android:color/darker_gray" />
-
         </android.support.design.widget.CoordinatorLayout>
 
         <LinearLayout

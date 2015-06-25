@@ -1,18 +1,16 @@
 package com.liuguangqiang.idaily.adapter;
 
 import android.content.Context;
+import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.liuguangqiang.idaily.R;
+import com.liuguangqiang.idaily.databinding.ItemStoryBinding;
+import com.liuguangqiang.idaily.databinding.ItemStoryHeaderBinding;
 import com.liuguangqiang.idaily.entity.BaseEntity;
 import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.entity.StorySection;
-import com.liuguangqiang.idaily.uitls.DailyUtils;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -31,26 +29,20 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
 
     @Override
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.item_story, parent, false);
-        View itemSection = layoutInflater.inflate(R.layout.item_story_header, parent, false);
-
-        if (viewType == ITEM_STORY) {
-            return new NewsViewHolder(view);
-        } else {
-            return new NewsViewHolder(itemSection, true);
-        }
+        if (viewType == ITEM_STORY)
+            return NewsViewHolder.createViewHolder(ItemStoryBinding.inflate(layoutInflater));
+        else
+            return NewsViewHolder.createViewHolder(ItemStoryHeaderBinding.inflate(layoutInflater));
     }
 
     @Override
     public void onBindViewHolder(NewsViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
-
         BaseEntity entity = data.get(position);
-        if (getItemViewType(position) == ITEM_STORY) {
+        if (getItemViewType(position) == ITEM_STORY)
             holder.bindData((Story) entity);
-        } else {
+        else
             holder.bindSection((StorySection) entity);
-        }
     }
 
     @Override
@@ -63,30 +55,25 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
 
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvTitle;
-        private ImageView ivPic;
-        private TextView tvDatetime;
-
-        public NewsViewHolder(View view) {
-            super(view);
-            tvTitle = (TextView) view.findViewById(R.id.item_tv_title);
-            ivPic = (ImageView) view.findViewById(R.id.item_iv_pic);
+        public static NewsViewHolder createViewHolder(ViewDataBinding binding) {
+            return new NewsViewHolder(binding.getRoot(), binding);
         }
 
-        public NewsViewHolder(View view, boolean section) {
+        public NewsViewHolder(View view, ViewDataBinding binding) {
             super(view);
-            tvDatetime = (TextView) view.findViewById(R.id.tv_datetime);
+            itemView.setTag(binding);
         }
 
         public void bindData(Story story) {
-            tvTitle.setText(story.getTitle());
-            if (!story.getImages().isEmpty())
-                Picasso.with(itemView.getContext()).load(story.getImages().get(0)).into(ivPic);
+            ItemStoryBinding binding = (ItemStoryBinding) itemView.getTag();
+            binding.setStory(story);
+            binding.executePendingBindings();
         }
 
         public void bindSection(StorySection section) {
-            tvDatetime.setText(DailyUtils.getDisplayDate(itemView.getContext(), section.datetime));
+            ItemStoryHeaderBinding binding = (ItemStoryHeaderBinding) itemView.getTag();
+            binding.setSection(section);
+            binding.executePendingBindings();
         }
     }
-
 }

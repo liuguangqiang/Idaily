@@ -1,17 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/gray_light_p50">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tv_datetime"
+    <data>
+
+        <variable
+            name="section"
+            type="com.liuguangqiang.idaily.entity.StorySection" />
+    </data>
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:paddingLeft="16dp"
-        android:paddingTop="10dp"
-        android:text="Test"
-        android:textColor="@color/gray_middle"
-        android:textSize="@dimen/font_size_small" />
+        android:background="@color/gray_light_p50">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_datetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="10dp"
+            android:textColor="@color/gray_middle"
+            android:textSize="@dimen/font_size_small"
+            app:datetime="@{section.datetime}"
+            tools:text="2015-6-25" />
+    </RelativeLayout>
+
+</layout>

@@ -4,6 +4,7 @@ import android.databinding.BindingAdapter;
 import android.text.TextUtils;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -25,5 +26,9 @@ public class DataBindingUtils {
         }
     }
 
+    @BindingAdapter({"bind:datetime"})
+    public static void loadDatetime(TextView textView, int datetime) {
+        textView.setText(DailyUtils.getDisplayDate(textView.getContext(), datetime));
+    }
 
 }
