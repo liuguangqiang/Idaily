@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.widget.TextView;
 
 import com.liuguangqiang.idaily.base.BaseActivity;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
@@ -24,14 +21,6 @@ public class StoryActivity extends BaseActivity {
 
     private Story mStory;
 
-    /**
-     * For fix a bug.
-     * NestedScrollView and WebView height issue.
-     * http://stackoverflow.com/questions/30643081/nestedscrollview-and-webview-height-issue
-     */
-    @InjectView(R.id.tv_empty)
-    public TextView tvEmpty;
-
     @InjectView(R.id.web_content)
     public WebView webview;
 
@@ -44,14 +33,22 @@ public class StoryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
-        ButterKnife.inject(this);
-
-        viewModel = new StoryViewModel();
-        binding.setStoryViewModel(viewModel);
-
+        binding();
         initViews();
         getExtraData();
+    }
+
+    private void binding() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
+        ButterKnife.inject(this);
+        viewModel = new StoryViewModel();
+        binding.setStoryViewModel(viewModel);
+    }
+
+    private void initViews() {
+        Toolbar toolbar = findById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -75,19 +72,4 @@ public class StoryActivity extends BaseActivity {
         }
     }
 
-    private void initViews() {
-        Toolbar toolbar = findById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        webview.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public void onProgressChanged(WebView view, int newProgress) {
-                if (newProgress == 100) {
-                    tvEmpty.setVisibility(View.GONE);
-                }
-                super.onProgressChanged(view, newProgress);
-            }
-        });
-    }
 }

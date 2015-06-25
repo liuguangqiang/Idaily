@@ -79,18 +79,18 @@
 
             </android.support.design.widget.AppBarLayout>
 
-
             <android.support.v4.widget.NestedScrollView
                 android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="fill_vertical"
                 android:layout_weight="1"
                 android:scrollbars="vertical"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
@@ -98,26 +98,21 @@
                         android:layout_height="wrap_content"
                         android:background="@color/window_color"
                         android:padding="16dp"
-                        android:text="@{storyViewModel.title}" />
+                        android:text="@{storyViewModel.title}"
+                        android:visibility="visible" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent">
 
                         <WebView
                             android:id="@+id/web_content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="80dp"
                             android:layout_marginTop="-210dp"
                             android:background="@color/window_color"
                             app:body="@{storyViewModel.body}" />
-
-                        <TextView
-                            android:id="@+id/tv_empty"
-                            android:layout_width="match_parent"
-                            android:layout_height="500dp" />
-
                     </LinearLayout>
 
                 </LinearLayout>
