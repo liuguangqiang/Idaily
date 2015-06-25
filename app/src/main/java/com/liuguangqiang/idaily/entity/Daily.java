@@ -39,14 +39,6 @@ public class Daily {
         this.stories = stories;
     }
 
-    public List<Story> getTop_stories() {
-        return top_stories;
-    }
-
-    public void setTop_stories(List<Story> top_stories) {
-        this.top_stories = top_stories;
-    }
-
     public int getId() {
         return id;
     }
@@ -55,5 +47,12 @@ public class Daily {
         this.id = id;
     }
 
+    public List<Story> getTop_stories() {
+        return top_stories;
+    }
+
+    public void setTop_stories(List<Story> top_stories) {
+        this.top_stories = top_stories;
+    }
 
 }

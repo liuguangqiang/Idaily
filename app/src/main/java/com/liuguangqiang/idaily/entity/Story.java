@@ -16,25 +16,25 @@ import java.util.List;
 public class Story extends BaseEntity implements Parcelable {
 
     @JsonField
-    private int id;
+    public int id;
 
     @JsonField
-    private String title;
+    public String title;
 
     @JsonField
-    private int type = 0;
+    public int type = 0;
 
     @JsonField
-    private List<String> images = new ArrayList<>();
+    public List<String> images = new ArrayList<>();
 
     @JsonField
-    private String image;
+    public String image;
 
     @JsonField
-    private String body;
+    public String body;
 
     @JsonField
-    private List<String> css;
+    public List<String> css;
 
     public List<String> getCss() {
         return css;
