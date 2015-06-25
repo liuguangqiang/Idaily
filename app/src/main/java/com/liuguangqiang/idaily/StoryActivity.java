@@ -1,5 +1,6 @@
 package com.liuguangqiang.idaily;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
@@ -7,48 +8,50 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.liuguangqiang.android.mvp.Presenter;
 import com.liuguangqiang.idaily.base.BaseActivity;
+import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.presenter.StoryPresenter;
-import com.liuguangqiang.idaily.view.StoryView;
-import com.liuguangqiang.idaily.view.callback.StoryViewCallback;
-import com.squareup.picasso.Picasso;
+import com.liuguangqiang.idaily.viewmodel.StoryViewModel;
 
-public class StoryActivity extends BaseActivity implements StoryView {
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
+public class StoryActivity extends BaseActivity {
 
     public static final String EXTRA_STORY = "EXTRA_STORY";
 
-    private StoryViewCallback mCallback;
-
     private Story mStory;
 
-    private CollapsingToolbarLayout collapsingToolbar;
-    private ImageView ivPic;
-    private WebView webViewContent;
+    /**
+     * For fix a bug.
+     * NestedScrollView and WebView height issue.
+     * http://stackoverflow.com/questions/30643081/nestedscrollview-and-webview-height-issue
+     */
+    @InjectView(R.id.tv_empty)
+    public TextView tvEmpty;
 
-    //这个View是为了解决CoordinatorLayout的一个bug
-    private TextView tvEmpty;
+    @InjectView(R.id.web_content)
+    public WebView webview;
+
+    @InjectView(R.id.collapsing_toolbar)
+    public CollapsingToolbarLayout collapsingToolbar;
+
+    private ActivityStoryBinding binding;
+    private StoryViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_story);
-        initToolbar();
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
+        ButterKnife.inject(this);
+
+        viewModel = new StoryViewModel();
+        binding.setStoryViewModel(viewModel);
+
         initViews();
-    }
-
-    @Override
-    public Presenter createPresenter() {
-        return new StoryPresenter(getApplicationContext(), this);
-    }
-
-    @Override
-    public void setUiCallback(StoryViewCallback storyViewCallback) {
-        mCallback = storyViewCallback;
+        getExtraData();
     }
 
     @Override
@@ -61,31 +64,23 @@ public class StoryActivity extends BaseActivity implements StoryView {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onAttachedUi() {
-        super.onAttachedUi();
+    private void getExtraData() {
         Bundle bundle = getIntent().getExtras();
         if (bundle != null && bundle.containsKey(EXTRA_STORY)) {
             mStory = bundle.getParcelable(EXTRA_STORY);
-            collapsingToolbar.setTitle(mStory.getTitle());
-            mCallback.getStory(mStory.getId());
+            if (mStory != null) {
+                collapsingToolbar.setTitle(mStory.getTitle());
+                viewModel.getStory(mStory.getId());
+            }
         }
     }
 
-    private void initToolbar() {
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    private void initViews() {
+        Toolbar toolbar = findById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-    }
 
-    private void initViews() {
-        tvEmpty = (TextView) findViewById(R.id.tv_empty);
-        ivPic = (ImageView) findViewById(R.id.iv_pic);
-
-        webViewContent = (WebView) findViewById(R.id.web_content);
-        webViewContent.setWebChromeClient(new WebChromeClient() {
+        webview.setWebChromeClient(new WebChromeClient() {
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
                 if (newProgress == 100) {
@@ -93,21 +88,6 @@ public class StoryActivity extends BaseActivity implements StoryView {
                 }
                 super.onProgressChanged(view, newProgress);
             }
-
-            @Override
-            public void onReceivedTitle(WebView view, String title) {
-            }
         });
     }
-
-    @Override
-    public void bindStory(Story story) {
-        Picasso.with(getApplicationContext()).load(story.getImage()).into(ivPic);
-    }
-
-    @Override
-    public void bindContent(String content) {
-        webViewContent.loadData(content, "text/html; charset=UTF-8", null);
-    }
-
 }
