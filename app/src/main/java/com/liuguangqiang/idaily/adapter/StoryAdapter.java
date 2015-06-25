@@ -33,6 +33,7 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
     public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.item_story, parent, false);
         View itemSection = layoutInflater.inflate(R.layout.item_story_header, parent, false);
+
         if (viewType == ITEM_STORY) {
             return new NewsViewHolder(view);
         } else {
@@ -64,7 +65,6 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
 
         private TextView tvTitle;
         private ImageView ivPic;
-
         private TextView tvDatetime;
 
         public NewsViewHolder(View view) {
@@ -85,7 +85,7 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
         }
 
         public void bindSection(StorySection section) {
-            tvDatetime.setText(DailyUtils.getDiplayDate(itemView.getContext(), section.datetime));
+            tvDatetime.setText(DailyUtils.getDisplayDate(itemView.getContext(), section.datetime));
         }
     }
 

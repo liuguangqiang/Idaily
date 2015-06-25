@@ -10,10 +10,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.google.gson.Gson;
 import com.liuguangqiang.asyncokhttp.AsyncOkHttp;
 import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
-import com.liuguangqiang.asyncokhttp.json.GsonEngine;
 import com.liuguangqiang.framework.utils.Logs;
 import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
 import com.liuguangqiang.idaily.adapter.StoryAdapter;
@@ -23,10 +21,6 @@ import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.entity.StorySection;
 import com.liuguangqiang.idaily.uitls.ApiUtils;
 import com.liuguangqiang.idaily.widget.PageableRecyclerView;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.TextHttpResponseHandler;
-
-import org.apache.http.Header;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,9 +103,6 @@ public class MainActivity extends AppCompatActivity {
     private void getDaily(int datetime) {
         String url = datetime > 0 ? ApiUtils.getNewsBefore(datetime) : ApiUtils.getLatest();
         Logs.i(url);
-
-        AsyncOkHttp.getInstance().getConfiguration().setJsonEngine(new GsonEngine(false));
-
         AsyncOkHttp.getInstance().get(url, new JsonResponseHandler<Daily>(Daily.class) {
             @Override
             public void onSuccess(Daily daily) {

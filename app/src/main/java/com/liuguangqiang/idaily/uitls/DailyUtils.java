@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
  */
 public class DailyUtils {
 
-    public static String getDiplayDate(Context context, int datetime) {
+    public static String getDisplayDate(Context context, int datetime) {
         String[] weekTitle = context.getResources().getStringArray(R.array.weeks);
 
         int year = datetime / 10000;

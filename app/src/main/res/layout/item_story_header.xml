@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/gray_light_p50">
 
     <TextView
         android:id="@+id/tv_datetime"
@@ -11,6 +12,6 @@
         android:paddingTop="10dp"
         android:text="Test"
         android:textColor="@color/gray_middle"
-        android:textSize="14sp" />
+        android:textSize="@dimen/font_size_small" />
 
 </RelativeLayout>

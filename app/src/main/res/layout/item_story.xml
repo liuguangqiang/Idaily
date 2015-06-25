@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?android:selectableItemBackground"
@@ -22,6 +23,7 @@
         android:layout_toRightOf="@+id/item_iv_pic"
         android:padding="6dp"
         android:textColor="@color/gray_dark"
-        android:textSize="@dimen/font_size_middle" />
+        android:textSize="@dimen/font_size_middle"
+        tools:text="Hello world" />
 
 </RelativeLayout>

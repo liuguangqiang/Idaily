@@ -1,7 +1,7 @@
 package com.liuguangqiang.idaily.model;
 
 import com.liuguangqiang.asyncokhttp.AsyncOkHttp;
-import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
+import com.liuguangqiang.asyncokhttp.BaseResponseHandler;
 import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.uitls.ApiUtils;
 
@@ -10,19 +10,13 @@ import com.liuguangqiang.idaily.uitls.ApiUtils;
  */
 public class StoryModel {
 
-    public void getStory(int id, final OnRequestListener listener) {
+    public void getStory(int id, BaseResponseHandler responseHandler) {
         String url = ApiUtils.getStory(id);
-        AsyncOkHttp.getInstance().get(url, new JsonResponseHandler<Story>(Story.class) {
-            @Override
-            public void onSuccess(Story result) {
-                if (result != null) {
-                    listener.onSuccess(result);
-                }
-            }
-        });
+        AsyncOkHttp.getInstance().get(url, responseHandler);
     }
 
-    public String getContent(Story story) {
+    public String getBody(Story story) {
+        if (story == null) return "";
         return loadDataWithCSS(story.getBody(), story.getCss().get(0));
     }
 
@@ -34,12 +28,6 @@ public class StoryModel {
         sb.append(loadData);
         sb.append(footer);
         return sb.toString();
-    }
-
-    public interface OnRequestListener {
-
-        void onSuccess(Story story);
-
     }
 
 }

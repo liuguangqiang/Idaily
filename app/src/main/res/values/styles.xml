@@ -5,6 +5,7 @@
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#4886f3</item>
         <item name="colorPrimaryDark">#4179da</item>
+        <item name="colorAccent">#FF4081</item>
     </style>
 
 

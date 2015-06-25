@@ -6,7 +6,7 @@ package com.liuguangqiang.idaily.uitls;
 public class ApiUtils {
 
     private static final String HOST_NAME = "http://news-at.zhihu.com/api/4";
-
+    
     private static final String FORMAT = HOST_NAME + "/%s";
 
     public static String getLatest() {
