@@ -6,7 +6,6 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.liuguangqiang.framework.utils.Logs;
 import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
 import com.liuguangqiang.idaily.entity.BaseEntity;
 import com.liuguangqiang.idaily.widget.PageableRecyclerView;
@@ -15,9 +14,11 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 /**
+ * Custom binding.
+ * <p/>
  * Created by Eric on 15/6/23.
  */
-public class DataBindingUtils {
+public class DataBindingAdapter {
 
     @BindingAdapter({"bind:imageUrl"})
     public static void loadImage(ImageView iv, String imageUrl) {
@@ -27,9 +28,8 @@ public class DataBindingUtils {
 
     @BindingAdapter({"bind:body"})
     public static void loadBody(WebView webView, String body) {
-        if (!TextUtils.isEmpty(body)) {
+        if (!TextUtils.isEmpty(body))
             webView.loadData(body, "text/html; charset=UTF-8", null);
-        }
     }
 
     @BindingAdapter({"bind:datetime"})
@@ -37,9 +37,10 @@ public class DataBindingUtils {
         textView.setText(DailyUtils.getDisplayDate(textView.getContext(), datetime));
     }
 
+    //**************************** RecyclerView ****************************
+
     @BindingAdapter({"bind:adapter"})
     public static void bindAdapter(PageableRecyclerView recyclerView, BaseRecyclerAdapter adapter) {
-        Logs.i("bindAdapter");
         adapter.setRecylerView(recyclerView);
         recyclerView.setAdapter(adapter);
     }
