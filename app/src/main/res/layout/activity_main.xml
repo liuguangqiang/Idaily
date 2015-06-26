@@ -1,71 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    <data>
 
-    <android.support.design.widget.CoordinatorLayout
-        android:id="@+id/main_content"
+        <variable
+            name="viewModel"
+            type="com.liuguangqiang.idaily.viewmodel.MainViewModel" />
+
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/appbar"
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/main_content"
             android:layout_width="match_parent"
-            android:layout_height="256dp"
-            android:fitsSystemWindows="true"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/collapsing_toolbar"
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="256dp"
                 android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginEnd="50dp"
-                app:expandedTitleMarginStart="50dp"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-                <ImageView
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/test"
-                    app:layout_collapseMode="parallax"
-                    app:layout_scrollFlags="scroll|enterAlways" />
+                    app:contentScrim="?attr/colorPrimary"
+                    app:expandedTitleMarginEnd="50dp"
+                    app:expandedTitleMarginStart="50dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-                    app:layout_scrollFlags="scroll|enterAlways"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/test"
+                        app:layout_collapseMode="parallax"
+                        app:layout_scrollFlags="scroll|enterAlways" />
 
-            </android.support.design.widget.CollapsingToolbarLayout>
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        </android.support.design.widget.AppBarLayout>
+                </android.support.design.widget.CollapsingToolbarLayout>
 
-        <com.liuguangqiang.idaily.widget.PageableRecyclerView
-            android:id="@+id/rv_news"
-            android:layout_width="match_parent"
+            </android.support.design.widget.AppBarLayout>
+
+            <com.liuguangqiang.idaily.widget.PageableRecyclerView
+                android:id="@+id/rv_news"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                app:adapter="@{viewModel.adapter}"
+                app:data="@{viewModel.data}"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:onPageListener="@{viewModel.onPageListener}" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_menu"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header_nav"
+            app:menu="@menu/menu_nav" />
 
-    </android.support.design.widget.CoordinatorLayout>
+    </android.support.v4.widget.DrawerLayout>
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/header_nav"
-        app:menu="@menu/menu_nav" />
-
-</android.support.v4.widget.DrawerLayout>
+</layout>

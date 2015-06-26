@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.liuguangqiang.idaily.widget.PageableRecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +61,20 @@ public abstract class BaseRecyclerAdapter<T, VH extends RecyclerView.ViewHolder>
 
     public interface OnItemClickListener {
         void onItemClick(int position);
+    }
+
+    public void add(List<T> list) {
+        data.addAll(list);
+    }
+
+    PageableRecyclerView recyclerView;
+
+    public void setRecylerView(PageableRecyclerView recylerView) {
+        this.recyclerView = recylerView;
+    }
+
+    public PageableRecyclerView getRecyclerView() {
+        return recyclerView;
     }
 
 }

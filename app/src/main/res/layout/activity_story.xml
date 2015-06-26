@@ -35,8 +35,8 @@
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
                     app:contentScrim="?attr/colorPrimary"
-                    app:expandedTitleMarginEnd="50dp"
-                    app:expandedTitleMarginStart="50dp"
+                    app:expandedTitleMarginEnd="16dp"
+                    app:expandedTitleMarginStart="48dp"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                     <RelativeLayout
@@ -110,7 +110,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="80dp"
-                            android:layout_marginTop="-210dp"
+                            android:layout_marginTop="-190dp"
                             android:background="@color/window_color"
                             app:body="@{storyViewModel.body}" />
                     </LinearLayout>

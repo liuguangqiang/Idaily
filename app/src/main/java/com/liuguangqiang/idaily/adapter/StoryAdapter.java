@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by Eric on 15/6/6.
  */
-public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.NewsViewHolder> {
+public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.StoryViewHolder> {
 
     private static final int ITEM_STORY = 0;
 
@@ -28,15 +28,15 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
     }
 
     @Override
-    public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_STORY)
-            return NewsViewHolder.createViewHolder(ItemStoryBinding.inflate(layoutInflater));
+            return StoryViewHolder.createViewHolder(ItemStoryBinding.inflate(layoutInflater));
         else
-            return NewsViewHolder.createViewHolder(ItemStoryHeaderBinding.inflate(layoutInflater));
+            return StoryViewHolder.createViewHolder(ItemStoryHeaderBinding.inflate(layoutInflater));
     }
 
     @Override
-    public void onBindViewHolder(NewsViewHolder holder, int position) {
+    public void onBindViewHolder(StoryViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
         BaseEntity entity = data.get(position);
         if (getItemViewType(position) == ITEM_STORY)
@@ -53,13 +53,13 @@ public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.N
         return ITEM_STORY;
     }
 
-    public static class NewsViewHolder extends RecyclerView.ViewHolder {
+    public static class StoryViewHolder extends RecyclerView.ViewHolder {
 
-        public static NewsViewHolder createViewHolder(ViewDataBinding binding) {
-            return new NewsViewHolder(binding.getRoot(), binding);
+        public static StoryViewHolder createViewHolder(ViewDataBinding binding) {
+            return new StoryViewHolder(binding.getRoot(), binding);
         }
 
-        public NewsViewHolder(View view, ViewDataBinding binding) {
+        public StoryViewHolder(View view, ViewDataBinding binding) {
             super(view);
             itemView.setTag(binding);
         }
