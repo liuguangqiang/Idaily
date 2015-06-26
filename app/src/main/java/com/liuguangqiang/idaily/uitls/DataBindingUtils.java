@@ -6,7 +6,13 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.liuguangqiang.framework.utils.Logs;
+import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
+import com.liuguangqiang.idaily.entity.BaseEntity;
+import com.liuguangqiang.idaily.widget.PageableRecyclerView;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 /**
  * Created by Eric on 15/6/23.
@@ -29,6 +35,19 @@ public class DataBindingUtils {
     @BindingAdapter({"bind:datetime"})
     public static void loadDatetime(TextView textView, int datetime) {
         textView.setText(DailyUtils.getDisplayDate(textView.getContext(), datetime));
+    }
+
+    @BindingAdapter({"bind:adapter"})
+    public static void bindAdapter(PageableRecyclerView recyclerView, BaseRecyclerAdapter adapter) {
+        Logs.i("bindAdapter");
+        adapter.setRecylerView(recyclerView);
+        recyclerView.setAdapter(adapter);
+    }
+
+    @BindingAdapter({"bind:data"})
+    public static void bindData(PageableRecyclerView recyclerView, List<BaseEntity> data) {
+        recyclerView.notifyDataSetChanged();
+        recyclerView.onPageFinished();
     }
 
 }
