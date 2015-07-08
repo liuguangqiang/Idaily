@@ -130,4 +130,17 @@ public class Story extends BaseEntity implements Parcelable {
             return new Story[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Story{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", type=" + type +
+                ", images=" + images +
+                ", image='" + image + '\'' +
+                ", body='" + body + '\'' +
+                ", css=" + css +
+                '}';
+    }
 }
