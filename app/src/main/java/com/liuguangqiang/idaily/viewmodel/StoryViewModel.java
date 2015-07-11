@@ -4,6 +4,7 @@ import android.databinding.BaseObservable;
 import android.view.View;
 
 import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
+import com.liuguangqiang.framework.utils.IntentUtils;
 import com.liuguangqiang.framework.utils.ToastUtils;
 import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.model.StoryModel;
@@ -47,6 +48,15 @@ public class StoryViewModel extends BaseObservable {
             @Override
             public void onClick(View v) {
                 ToastUtils.show(v.getContext(), "OnClick Fav");
+            }
+        };
+    }
+
+    public View.OnClickListener getShareClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentUtils.openShare(v.getContext(), story.getTitle() + story.share_url, "");
             }
         };
     }
