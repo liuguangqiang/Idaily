@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.uitls;
+package com.liuguangqiang.idaily.utils;
 
 import android.databinding.BindingAdapter;
 import android.text.TextUtils;
@@ -6,10 +6,10 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
+import com.bumptech.glide.Glide;
+import com.liuguangqiang.idaily.ui.adapter.BaseRecyclerAdapter;
 import com.liuguangqiang.idaily.entity.BaseEntity;
-import com.liuguangqiang.idaily.widget.PageableRecyclerView;
-import com.squareup.picasso.Picasso;
+import com.liuguangqiang.idaily.ui.widget.PageableRecyclerView;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class DataBindingAdapter {
     @BindingAdapter({"bind:imageUrl"})
     public static void loadImage(ImageView iv, String imageUrl) {
         if (!TextUtils.isEmpty(imageUrl))
-            Picasso.with(iv.getContext()).load(imageUrl).into(iv);
+            Glide.with(iv.getContext()).load(imageUrl).into(iv);
     }
 
     @BindingAdapter({"bind:body"})

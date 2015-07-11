@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.uitls;
+package com.liuguangqiang.idaily.utils;
 
 /**
  * Created by Eric on 15/6/6.

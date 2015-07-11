@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.uitls;
+package com.liuguangqiang.idaily.utils;
 
 import android.content.Context;
 
