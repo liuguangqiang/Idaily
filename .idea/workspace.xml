@@ -13,20 +13,9 @@
     <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="implemented sharing stories.">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/helper/NoneUiFragment.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/helper/TestFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_text.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_test.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/header_nav.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/header_nav.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_nav.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_nav.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Idaily.iws" />
@@ -3074,7 +3063,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437966571780</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="updated res files.">
+      <created>1437966719296</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1437966719296</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3133,7 +3128,8 @@
     <MESSAGE value="Fixed." />
     <MESSAGE value="update entities for supporting the LoganSquare." />
     <MESSAGE value="fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed." />
+    <MESSAGE value="updated res files." />
+    <option name="LAST_COMMIT_MESSAGE" value="updated res files." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
