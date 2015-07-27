@@ -1,9 +1,9 @@
-package com.liuguangqiang.idaily.model;
+package com.liuguangqiang.idaily.ui.model;
 
 import com.liuguangqiang.asyncokhttp.AsyncOkHttp;
 import com.liuguangqiang.asyncokhttp.BaseResponseHandler;
 import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.uitls.ApiUtils;
+import com.liuguangqiang.idaily.utils.ApiUtils;
 
 /**
  * Created by Eric on 15/6/9.

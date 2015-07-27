@@ -1,20 +1,20 @@
-package com.liuguangqiang.idaily.viewmodel;
+package com.liuguangqiang.idaily.ui.viewmodel;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.os.Bundle;
 
 import com.liuguangqiang.idaily.BR;
-import com.liuguangqiang.idaily.StoryActivity;
-import com.liuguangqiang.idaily.adapter.BaseRecyclerAdapter;
-import com.liuguangqiang.idaily.adapter.StoryAdapter;
+import com.liuguangqiang.idaily.ui.act.StoryActivity;
+import com.liuguangqiang.idaily.ui.adapter.BaseRecyclerAdapter;
+import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.entity.BaseEntity;
 import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.listener.RequestCallback;
-import com.liuguangqiang.idaily.model.MainModel;
-import com.liuguangqiang.idaily.widget.PageableRecyclerView;
+import com.liuguangqiang.idaily.ui.model.MainModel;
+import com.liuguangqiang.idaily.ui.widget.PageableRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class MainViewModel extends BaseObservable implements RequestCallback<List<BaseEntity>>, BaseRecyclerAdapter.OnItemClickListener {
 
-    private Context mContext;
+    private Activity mContext;
 
     private MainModel mMainModel;
 
@@ -33,12 +33,12 @@ public class MainViewModel extends BaseObservable implements RequestCallback<Lis
     @Bindable
     private List<BaseEntity> data = new ArrayList<>();
 
-    public MainViewModel(Context context) {
+    public MainViewModel(Activity context, OnDisplayTopStoryListener onDisplayTopStoryListener) {
         this.mContext = context;
         adapter = new StoryAdapter(context, data);
         adapter.setOnItemClickListener(this);
 
-        mMainModel = new MainModel(this);
+        mMainModel = new MainModel(this, onDisplayTopStoryListener);
         mMainModel.getDaily();
     }
 
@@ -59,6 +59,7 @@ public class MainViewModel extends BaseObservable implements RequestCallback<Lis
             bundle.putParcelable(StoryActivity.EXTRA_STORY, (Story) entity);
             intent.putExtras(bundle);
             mContext.startActivity(intent);
+//            mContext.overridePendingTransition(0, 0);
         }
     }
 
@@ -84,6 +85,10 @@ public class MainViewModel extends BaseObservable implements RequestCallback<Lis
     public void requestSuccess(List<BaseEntity> list) {
         data.addAll(list);
         notifyPropertyChanged(BR.data);
+    }
+
+    public interface OnDisplayTopStoryListener {
+        void onDisplayTopStories(List<Story> stories);
     }
 
 }

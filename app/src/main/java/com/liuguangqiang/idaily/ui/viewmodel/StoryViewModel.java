@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.viewmodel;
+package com.liuguangqiang.idaily.ui.viewmodel;
 
 import android.databinding.BaseObservable;
 import android.view.View;
@@ -7,7 +7,7 @@ import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
 import com.liuguangqiang.framework.utils.IntentUtils;
 import com.liuguangqiang.framework.utils.ToastUtils;
 import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.model.StoryModel;
+import com.liuguangqiang.idaily.ui.model.StoryModel;
 
 /**
  * Created by Eric on 15/6/23.

@@ -16,10 +16,11 @@ import android.widget.ImageView;
 
 import com.liuguangqiang.framework.utils.Logs;
 import com.liuguangqiang.idaily.R;
+import com.liuguangqiang.idaily.helper.TestFragment;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
 import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.viewmodel.MainViewModel;
+import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,7 +31,6 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.Vitamio;
-
 
 public class MainActivity extends AppCompatActivity implements MainViewModel.OnDisplayTopStoryListener {
 
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements MainViewModel.OnD
         initBinding();
         initToolbar();
         initViews();
+        TestFragment.attach(this);
     }
 
     private void initBinding() {

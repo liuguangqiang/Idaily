@@ -11,7 +11,7 @@ import android.webkit.WebView;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.viewmodel.StoryViewModel;
+import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
