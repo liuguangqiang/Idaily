@@ -6,7 +6,7 @@
 
         <variable
             name="storyViewModel"
-            type="com.liuguangqiang.idaily.viewmodel.StoryViewModel" />
+            type="com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel" />
     </data>
 
     <LinearLayout

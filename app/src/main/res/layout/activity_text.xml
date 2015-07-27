@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liuguangqiang.idaily.ui.act.TextActivity">
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="20dp"
+        android:background="@mipmap/ic_launcher"
+        android:text="@string/hello_world"
+        android:transitionName="share1" />
+
+</RelativeLayout>

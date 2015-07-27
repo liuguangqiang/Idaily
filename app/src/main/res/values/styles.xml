@@ -6,11 +6,25 @@
         <item name="colorPrimary">#4886f3</item>
         <item name="colorPrimaryDark">#4179da</item>
         <item name="colorAccent">#FF4081</item>
+        <item name="android:actionBarStyle">@style/AppActionBar</item>
     </style>
 
-
-    <style name="AppTheme" parent="BaseAppTheme"></style>
+    <style name="AppTheme" parent="BaseAppTheme">
+    </style>
 
     <style name="AppTheme.Detail" parent="AppTheme"></style>
+
+    <style name="AppActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/AppActionBar.Title</item>
+    </style>
+
+    <style name="AppActionBar.Title" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.TransparentActivity">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
 </resources>
