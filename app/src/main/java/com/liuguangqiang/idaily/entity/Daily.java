@@ -1,6 +1,5 @@
 package com.liuguangqiang.idaily.entity;
 
-import com.bluelinelabs.logansquare.annotation.JsonField;
 import com.bluelinelabs.logansquare.annotation.JsonObject;
 
 import java.util.List;
@@ -8,19 +7,15 @@ import java.util.List;
 /**
  * Created by Eric on 15/6/6.
  */
-@JsonObject
-public class Daily {
+@JsonObject(fieldDetectionPolicy = JsonObject.FieldDetectionPolicy.NONPRIVATE_FIELDS_AND_ACCESSORS)
+public class Daily extends BaseEntity {
 
-    @JsonField
     private int id;
 
-    @JsonField
     private int date;
 
-    @JsonField
     private List<Story> stories;
 
-    @JsonField
     private List<Story> top_stories;
 
     public int getDate() {

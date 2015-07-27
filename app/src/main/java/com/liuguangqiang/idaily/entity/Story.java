@@ -3,7 +3,6 @@ package com.liuguangqiang.idaily.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.bluelinelabs.logansquare.annotation.JsonField;
 import com.bluelinelabs.logansquare.annotation.JsonObject;
 
 import java.util.ArrayList;
@@ -12,29 +11,24 @@ import java.util.List;
 /**
  * Created by Eric on 15/6/8.
  */
-@JsonObject
+@JsonObject(fieldDetectionPolicy = JsonObject.FieldDetectionPolicy.NONPRIVATE_FIELDS_AND_ACCESSORS)
 public class Story extends BaseEntity implements Parcelable {
 
-    @JsonField
     public int id;
 
-    @JsonField
     public String title;
 
-    @JsonField
     public int type = 0;
 
-    @JsonField
     public List<String> images = new ArrayList<>();
 
-    @JsonField
     public String image;
 
-    @JsonField
     public String body;
 
-    @JsonField
     public List<String> css;
+
+    public String share_url;
 
     public List<String> getCss() {
         return css;
@@ -96,6 +90,19 @@ public class Story extends BaseEntity implements Parcelable {
     }
 
     @Override
+    public String toString() {
+        return "Story{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", type=" + type +
+                ", images=" + images +
+                ", image='" + image + '\'' +
+                ", body='" + body + '\'' +
+                ", css=" + css +
+                '}';
+    }
+
+    @Override
     public int describeContents() {
         return 0;
     }
@@ -109,6 +116,7 @@ public class Story extends BaseEntity implements Parcelable {
         dest.writeString(this.image);
         dest.writeString(this.body);
         dest.writeStringList(this.css);
+        dest.writeString(this.share_url);
     }
 
     protected Story(Parcel in) {
@@ -119,6 +127,7 @@ public class Story extends BaseEntity implements Parcelable {
         this.image = in.readString();
         this.body = in.readString();
         this.css = in.createStringArrayList();
+        this.share_url = in.readString();
     }
 
     public static final Creator<Story> CREATOR = new Creator<Story>() {
@@ -130,17 +139,4 @@ public class Story extends BaseEntity implements Parcelable {
             return new Story[size];
         }
     };
-
-    @Override
-    public String toString() {
-        return "Story{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", type=" + type +
-                ", images=" + images +
-                ", image='" + image + '\'' +
-                ", body='" + body + '\'' +
-                ", css=" + css +
-                '}';
-    }
 }
