@@ -6,11 +6,11 @@ All the content are come from Zhihu Daily, so the open source project is only fo
 Idaily是一个使用了Android Data Binding，Android Desgin Support 和 MVVM 的一个开源客户端。Idaily仅供学习和讨论使用，不得用于商业用途。
 
 ##Screenshots
-<img src="art/1.png" width="270" height="480" />
-<img src="art/2.png" width="270" height="480" />
+<img src="art/1.png" width="308" height="548"/>
+<img src="art/2.png" width="308" height="548"/>
 
-<img src="art/3.png" width="270" height="480" />
-<img src="art/4.png" width="270" height="480" />
+<img src="art/3.png" width="308" height="548"/>
+<img src="art/4.png" width="308" height="548"/>
 
 ##License
 
