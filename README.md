@@ -3,7 +3,14 @@ A news project that used Android Data Binding, Android Desgin Support and MVVM.
 All the content are come from Zhihu Daily, so the open source project is only for learning.
 
 
-Idaily是一个使用了Android Data Binding，Android Desgin Support 和 MVVM 的一个开源客户端。Idaily仅供学习和讨论使用，不得用于商业用途。所有内容来自"知乎日报"。
+Idaily是一个使用了Android Data Binding，Android Desgin Support 和 MVVM 的一个开源客户端。Idaily仅供学习和讨论使用，不得用于商业用途。
+
+##Screenshots
+<img src="art/1.png" width="270" height="480" />
+<img src="art/2.png" width="270" height="480" />
+
+<img src="art/3.png" width="270" height="480" />
+<img src="art/4.png" width="270" height="480" />
 
 ##License
 
