@@ -5,6 +5,8 @@
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.liuguangqiang.aframework/library/1.0.2/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.liuguangqiang.aframework/library/1.0.2/2c85c22045dfbda76739edaa9134c31a5eaeb5d5/library-1.0.2-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
