@@ -61,9 +61,26 @@ public class StoryViewModel extends BaseObservable {
         };
     }
 
+    public View.OnClickListener getPreviousClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.show(v.getContext(), "previous");
+            }
+        };
+    }
+
+    public View.OnClickListener getNextClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtils.show(v.getContext(), "next");
+            }
+        };
+    }
+
     public void getStory(int id) {
         mStoryModel.getStory(id, new JsonResponseHandler<Story>(Story.class) {
-
             @Override
             public void onSuccess(Story result) {
                 if (result != null) {

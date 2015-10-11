@@ -1,12 +1,26 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="256dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/iv_pic"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.liuguangqiang.idaily.ui.viewmodel.TopStoryViewModel" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="256dp"
-        android:background="@color/gray_light"
-        android:scaleType="centerCrop" />
+        android:layout_height="256dp">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:background="@color/gray_light"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{viewModel.image}"
+            app:onClickListener="@{viewModel.picClickListener}" />
+
+    </RelativeLayout>
+
+</layout>
