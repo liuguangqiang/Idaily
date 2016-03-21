@@ -1,17 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'com.android.databinding'
+
+def ext = rootProject.ext
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22"
+    compileSdkVersion ext.compileSdkVersion
+    buildToolsVersion ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.liuguangqiang.idaily"
-        minSdkVersion 17
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        applicationId ext.applicationId
+        minSdkVersion ext.minSdkVersion
+        targetSdkVersion ext.targetSdkVersion
+        versionCode ext.versionCode
+        versionName ext.versionName
     }
 
     packagingOptions {
@@ -26,19 +27,35 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 }
 
 dependencies {
+
+    def dependencies = ext.dependencies
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.1'
-    compile 'com.android.support:design:22.2.1'
-    compile 'com.android.support:recyclerview-v7:22.2.1'
-    compile 'com.android.support:cardview-v7:22.2.1'
+
+    compile dependencies.supportAppCompat
+    compile dependencies.supportRecyclerView
+    compile dependencies.supportDesgin
+    compile dependencies.supportCardView
+
+    compile dependencies.glide
+    compile dependencies.butterknife
+    compile dependencies.logansquare
+
+    apt dependencies.logansquareCompiler
+
     compile 'com.github.liuguangqiang.aframework:library:1.0.2'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
     compile 'com.github.liuguangqiang.asyncokhttp:library:0.0.1'
-    compile 'com.jakewharton:butterknife:6.1.0'
-    apt 'com.bluelinelabs:logansquare-compiler:1.1.0'
-    apt 'com.android.databinding:compiler:1.0-rc0'
-    compile 'com.github.bumptech.glide:glide:3.6.1'
+
 }

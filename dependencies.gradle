@@ -1,0 +1,43 @@
+ext {
+    applicationId = "com.liuguangqiang.idaily"
+    versionCode = 1
+    versionName = "1.0.0"
+
+    minSdkVersion = 15
+    compileSdkVersion = 23
+    targetSdkVersion = 23
+    buildToolsVersion = '23.0.2'
+
+    dependencies = [
+            supportAppCompat    : 'com.android.support:appcompat-v7:23.1.1',
+            supportDesgin       : 'com.android.support:design:23.1.1',
+            supportRecyclerView : 'com.android.support:recyclerview-v7:23.1.1',
+            supportCardView     : 'com.android.support:appcompat-v7:23.1.1',
+
+            logansquare         : 'com.bluelinelabs:logansquare:1.3.4',
+            logansquareCompiler : 'com.bluelinelabs:logansquare-compiler:1.3.4',
+            logansquareConverter: "com.github.aurae.retrofit2:converter-logansquare:1.4.0",
+
+            glide               : 'com.github.bumptech.glide:glide:3.6.1',
+
+            gson                : 'com.google.code.gson:gson:2.5',
+            butterknife         : 'com.jakewharton:butterknife:7.0.1',
+
+            dagger              : 'com.squareup.dagger:dagger:1.2.2',
+            daggerCompiler      : 'com.squareup.dagger:dagger-compiler:1.2.2',
+            eventbus            : 'de.greenrobot:eventbus:3.0.0-beta1',
+            rxandroid           : 'io.reactivex:rxandroid:1.0.1',
+            rxjava              : 'io.reactivex:rxjava:1.0.14',
+
+            okhttpLog           : 'com.squareup.okhttp3:logging-interceptor:3.0.1',
+            retrofit            : 'com.squareup.retrofit2:retrofit:2.0.0',
+            retrofitAdapter     : 'com.squareup.retrofit2:adapter-rxjava:2.0.0',
+
+            systembartint       : 'com.readystatesoftware.systembartint:systembartint:1.0.3',
+
+            guangqiangWidgets   : 'com.liuguangqiang.support:widgets:0.0.1',
+            guangqiangMVP       : 'com.github.liuguangqiang.mvp:library:1.0.4',
+            guangqiangSframework: 'com.github.liuguangqiang.aframework:library:1.0.2'
+    ]
+
+}
