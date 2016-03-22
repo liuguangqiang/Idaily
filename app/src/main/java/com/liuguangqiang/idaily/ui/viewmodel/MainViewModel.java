@@ -20,6 +20,8 @@ import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import de.greenrobot.event.EventBus;
 
 /**
@@ -33,13 +35,13 @@ public class MainViewModel extends AbsRecyclerViewModel<BaseEntity> implements M
 
     private StoryAdapter adapter;
 
-
-    public MainViewModel(Context context) {
+    @Inject
+    public MainViewModel(Context context, MainModel mainModel) {
         this.context = context;
         adapter = new StoryAdapter(context, getData());
         adapter.setOnItemClickListener(this);
 
-        mainModel = new MainModel();
+        this.mainModel = mainModel;
         mainModel.setView(this, this);
         requestData();
     }

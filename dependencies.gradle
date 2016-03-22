@@ -23,8 +23,8 @@ ext {
             gson                : 'com.google.code.gson:gson:2.5',
             butterknife         : 'com.jakewharton:butterknife:7.0.1',
 
-            dagger              : 'com.squareup.dagger:dagger:1.2.2',
-            daggerCompiler      : 'com.squareup.dagger:dagger-compiler:1.2.2',
+            dagger              : 'com.google.dagger:dagger:2.0.2',
+            daggerCompiler      : 'com.google.dagger:dagger-compiler:2.0.2',
             eventbus            : 'de.greenrobot:eventbus:3.0.0-beta1',
             rxandroid           : 'io.reactivex:rxandroid:1.0.1',
             rxjava              : 'io.reactivex:rxjava:1.0.14',

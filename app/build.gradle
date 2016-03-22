@@ -13,6 +13,7 @@ android {
         targetSdkVersion ext.targetSdkVersion
         versionCode ext.versionCode
         versionName ext.versionName
+        multiDexEnabled true
     }
 
     packagingOptions {
@@ -62,6 +63,8 @@ dependencies {
     compile dependencies.eventbus
     compile dependencies.dagger
 
+    provided dependencies.daggerCompiler
     apt dependencies.logansquareCompiler
-    apt dependencies.daggerCompiler
+
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }

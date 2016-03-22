@@ -11,6 +11,8 @@ import com.liuguangqiang.idaily.ui.view.RequestView;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -27,6 +29,7 @@ public class MainModel {
 
     private DailyService dailyService;
 
+    @Inject
     public MainModel() {
         dailyService = RetrofitClient.getInstance().create(DailyService.class);
     }

@@ -11,6 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.liuguangqiang.idaily.R;
+import com.liuguangqiang.idaily.app.DailyApplication;
+import com.liuguangqiang.idaily.di.components.DaggerMainComponent;
+import com.liuguangqiang.idaily.di.modules.MainModule;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
@@ -21,6 +24,8 @@ import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
@@ -34,6 +39,9 @@ public class MainActivity extends BaseActivity {
     private ViewPager viewPager;
     private TopStoryAdapter topStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
+
+    @Inject
+    MainViewModel mainViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +63,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onCreateBinding() {
+        DaggerMainComponent
+                .builder()
+                .mainModule(new MainModule(getApplicationContext()))
+                .build().inject(this);
+
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        MainViewModel mainViewModel = new MainViewModel(getApplicationContext());
         binding.setViewModel(mainViewModel);
     }
 
