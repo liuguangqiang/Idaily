@@ -2,21 +2,20 @@ package com.liuguangqiang.idaily.ui.act;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.liuguangqiang.idaily.R;
-import com.liuguangqiang.idaily.app.DailyApplication;
+import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
 import com.liuguangqiang.idaily.di.components.DaggerMainComponent;
 import com.liuguangqiang.idaily.di.modules.MainModule;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
-import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
 import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
 import com.liuguangqiang.support.utils.Logs;
@@ -27,12 +26,19 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 
 public class MainActivity extends BaseActivity {
 
-    private DrawerLayout drawerlayout;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
+
+    @Bind(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+
     private CollapsingToolbarLayout collapsingToolbar;
     private CirclePageIndicator pageIndicator;
 
@@ -70,20 +76,20 @@ public class MainActivity extends BaseActivity {
 
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setViewModel(mainViewModel);
+        ButterKnife.bind(this);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                drawerlayout.openDrawer(GravityCompat.START);
+                drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_menu);
@@ -99,7 +105,6 @@ public class MainActivity extends BaseActivity {
 
     private void initViews() {
         pageIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
-        drawerlayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         viewPager = (ViewPager) findViewById(R.id.vp_top_stories);
         topStoryAdapter = new TopStoryAdapter(getSupportFragmentManager(), topStories);
 

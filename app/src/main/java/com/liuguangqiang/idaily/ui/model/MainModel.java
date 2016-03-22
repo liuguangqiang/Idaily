@@ -24,7 +24,6 @@ import rx.schedulers.Schedulers;
 public class MainModel {
 
     private int lastDatetime = 0;
-
     private List<BaseEntity> data = new ArrayList<>();
 
     private DailyService dailyService;
@@ -46,6 +45,8 @@ public class MainModel {
         getDaily(lastDatetime);
     }
 
+    private StorySection section;
+
     public void getDaily(final int datetime) {
         Observable<Daily> observable = datetime > 0 ? dailyService.getBefore(datetime) : dailyService.getLatest();
         observable.subscribeOn(Schedulers.io())
@@ -64,17 +65,17 @@ public class MainModel {
                     @Override
                     public void onNext(Daily daily) {
                         if (daily != null) {
+                            lastDatetime = daily.getDate();
+                            data.clear();
+
                             if (datetime == 0) {
                                 view.bindTopStories(daily.getTop_stories());
+                            } else {
+                                section = new StorySection(daily.getDate());
+                                data.add(section);
                             }
 
-                            StorySection section = new StorySection(daily.getDate());
-                            lastDatetime = daily.getDate();
-
-                            data.clear();
-                            data.add(section);
                             data.addAll(daily.getStories());
-
                             requestView.onRequestSuccess(data);
                         }
                     }

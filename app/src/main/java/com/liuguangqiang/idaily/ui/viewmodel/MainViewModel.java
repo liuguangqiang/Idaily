@@ -38,11 +38,12 @@ public class MainViewModel extends AbsRecyclerViewModel<BaseEntity> implements M
     @Inject
     public MainViewModel(Context context, MainModel mainModel) {
         this.context = context;
+        this.mainModel = mainModel;
+        mainModel.setView(this, this);
+
         adapter = new StoryAdapter(context, getData());
         adapter.setOnItemClickListener(this);
 
-        this.mainModel = mainModel;
-        mainModel.setView(this, this);
         requestData();
     }
 

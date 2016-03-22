@@ -12,7 +12,7 @@ import com.liuguangqiang.idaily.ui.viewmodel.TopStoryViewModel;
 
 public class TopStoryFragment extends Fragment {
 
-    public static final String EXTRA_STORY = "ARG_STORY";
+    public static final String ARG_STORY = "ARG_STORY";
 
     private Story story;
 
@@ -21,7 +21,7 @@ public class TopStoryFragment extends Fragment {
     public static TopStoryFragment newInstance(Story story) {
         TopStoryFragment fragment = new TopStoryFragment();
         Bundle args = new Bundle();
-        args.putParcelable(EXTRA_STORY, story);
+        args.putParcelable(ARG_STORY, story);
         fragment.setArguments(args);
         return fragment;
     }
@@ -30,8 +30,8 @@ public class TopStoryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = getArguments();
-        if (bundle != null && bundle.containsKey(EXTRA_STORY)) {
-            story = bundle.getParcelable(EXTRA_STORY);
+        if (bundle != null && bundle.containsKey(ARG_STORY)) {
+            story = bundle.getParcelable(ARG_STORY);
         }
     }
 

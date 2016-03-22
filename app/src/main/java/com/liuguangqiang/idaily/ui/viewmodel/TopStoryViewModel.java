@@ -32,14 +32,6 @@ public class TopStoryViewModel extends BaseObservable {
         };
     }
 
-    public void onClickPic(View view) {
-        Intent intent = new Intent(view.getContext(), StoryActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelable(StoryActivity.ARG_STORY, story);
-        intent.putExtras(bundle);
-        view.getContext().startActivity(intent);
-    }
-
     public String getImage() {
         if (story == null) return "";
 

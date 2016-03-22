@@ -16,4 +16,5 @@ import dagger.Component;
 public interface AppComponent {
 
     DailyApplication inject(DailyApplication application);
+
 }
