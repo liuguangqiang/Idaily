@@ -60,6 +60,8 @@ dependencies {
     compile dependencies.rxandroid
     compile dependencies.rxjava
     compile dependencies.eventbus
+    compile dependencies.dagger
 
     apt dependencies.logansquareCompiler
+    apt dependencies.daggerCompiler
 }
