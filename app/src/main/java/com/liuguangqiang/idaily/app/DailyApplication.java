@@ -2,8 +2,8 @@ package com.liuguangqiang.idaily.app;
 
 import android.app.Application;
 
-import com.liuguangqiang.framework.utils.Logs;
 import com.liuguangqiang.idaily.BuildConfig;
+import com.liuguangqiang.support.utils.Logs;
 
 /**
  * Created by Eric on 15/6/29.
