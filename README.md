@@ -1,18 +1,30 @@
-# Idaily
-A news project that used Android Data Binding, Android Desgin Support and MVVM.
-All the content are come from Zhihu Daily, so the open source project is only for learning.
+DAILY
+==============================================
+DAILY是一个非官方的基于MVVM架构的知乎日报APP。 
 
+##项目结构
+ * android data binding来实现MVVM。
+ * dagger2来完成依赖注入。
+ * retrofit2+rxjava实现restful的http请求。
 
-Idaily是一个使用了Android Data Binding，Android Design Support 和 MVVM 的一个开源客户端。
+##第三方类库
+* retrofit2
+* dagger2
+* butterknife
+* rxjava+rxandroid
+* LoganSquare
+* glide
+* android data binding
+* android support design
 
-##Screenshots
+##截图
 <img src="art/1.png" width="308" height="548"/>
 <img src="art/2.png" width="308" height="548"/>
 
 <img src="art/3.png" width="308" height="548"/>
 <img src="art/4.png" width="308" height="548"/>
 
-##License
+## License
 
     Copyright 2015 Eric Liu
 
