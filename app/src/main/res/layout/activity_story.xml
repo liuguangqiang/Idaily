@@ -36,9 +36,10 @@
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
                     app:contentScrim="?attr/colorPrimary"
-                    app:expandedTitleMarginEnd="16dp"
-                    app:expandedTitleMarginStart="48dp"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                    app:expandedTitleMarginEnd="24dp"
+                    app:expandedTitleMarginStart="50dp"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:title="@{storyViewModel.title}">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -106,7 +107,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <WebView
+                        <com.liuguangqiang.idaily.ui.widget.MyWebView
                             android:id="@+id/web_content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -122,42 +123,6 @@
 
         </android.support.design.widget.CoordinatorLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@android:color/white"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@mipmap/ic_back" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@mipmap/ic_next" />
-
-            <ImageView
-                app:onClickListener="@{storyViewModel.shareClickListener}"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@mipmap/ic_share" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@mipmap/ic_message" />
-
-        </LinearLayout>
     </LinearLayout>
 
 </layout>

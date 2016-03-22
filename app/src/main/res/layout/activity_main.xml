@@ -14,6 +14,7 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="true"
         android:fitsSystemWindows="true">
 
         <android.support.design.widget.CoordinatorLayout
@@ -35,17 +36,39 @@
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
                     app:contentScrim="?attr/colorPrimary"
-                    app:expandedTitleMarginEnd="50dp"
+                    app:expandedTitleMarginEnd="24dp"
                     app:expandedTitleMarginStart="50dp"
                     app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/vp_top_stories"
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:fitsSystemWindows="true"
                         app:layout_collapseMode="parallax"
-                        app:layout_scrollFlags="scroll|enterAlways" />
+                        app:layout_scrollFlags="scroll|enterAlways">
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/vp_top_stories"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_alignParentBottom="true">
+
+                            <com.viewpagerindicator.CirclePageIndicator
+                                android:id="@+id/indicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="10dp"
+                                app:fillColor="@color/white"
+                                app:gapWidth="8dp"
+                                app:pageColor="@color/gray_light"
+                                app:strokeWidth="0dp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
 
                     <android.support.v7.widget.Toolbar
                         android:id="@+id/toolbar"
@@ -59,25 +82,72 @@
 
             </android.support.design.widget.AppBarLayout>
 
-            <com.liuguangqiang.idaily.ui.widget.PageableRecyclerView
+            <com.liuguangqiang.support.widgets.recyclerview.SuperRecyclerView
                 android:id="@+id/rv_news"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
                 app:adapter="@{viewModel.adapter}"
                 app:data="@{viewModel.data}"
+                app:footerStatus="@{viewModel.footerStatus}"
+                app:isLoading="@{viewModel.isLoading}"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:onPageListener="@{viewModel.onPageListener}" />
 
         </android.support.design.widget.CoordinatorLayout>
 
-        <android.support.design.widget.NavigationView
-            android:id="@+id/nav_menu"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="320dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:headerLayout="@layout/header_nav"
-            app:menu="@menu/menu_nav" />
+            android:background="@color/white"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+                android:fitsSystemWindows="true"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tv_username"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="48sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:text="Unofficial Zhihu Daily"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_github"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rv_selector"
+                android:drawableLeft="@mipmap/ic_github"
+                android:drawablePadding="32dp"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:text="Github"
+                android:textColor="@color/gray_middle"
+                android:textSize="@dimen/font_size_middle"
+                app:onClickListener="@{viewModel.onClickListener}" />
+        </LinearLayout>
 
     </android.support.v4.widget.DrawerLayout>
 

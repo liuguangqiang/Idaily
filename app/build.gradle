@@ -47,15 +47,19 @@ dependencies {
     compile dependencies.supportRecyclerView
     compile dependencies.supportDesgin
     compile dependencies.supportCardView
-
     compile dependencies.glide
     compile dependencies.butterknife
     compile dependencies.logansquare
+    compile dependencies.viewpagerIndicator
+    compile dependencies.guangqiangWidgets
+    compile dependencies.guangqiangUtils
+    compile dependencies.retrofit
+    compile dependencies.retrofitAdapter
+    compile dependencies.okhttpLog
+    compile dependencies.logansquareConverter
+    compile dependencies.rxandroid
+    compile dependencies.rxjava
+    compile dependencies.eventbus
 
     apt dependencies.logansquareCompiler
-
-    compile 'com.github.liuguangqiang.aframework:library:1.0.2'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
-    compile 'com.github.liuguangqiang.asyncokhttp:library:0.0.1'
-
 }

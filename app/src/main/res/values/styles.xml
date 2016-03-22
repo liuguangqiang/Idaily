@@ -5,12 +5,11 @@
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#4886f3</item>
         <item name="colorPrimaryDark">#4179da</item>
-        <item name="colorAccent">#FF4081</item>
+        <item name="colorAccent">#4886f3</item>
         <item name="android:actionBarStyle">@style/AppActionBar</item>
     </style>
 
-    <style name="AppTheme" parent="BaseAppTheme">
-    </style>
+    <style name="AppTheme" parent="BaseAppTheme"></style>
 
     <style name="AppTheme.Detail" parent="AppTheme"></style>
 
@@ -22,9 +21,18 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="CollapsingToolbarTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
     <style name="AppTheme.TransparentActivity">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="ItemBackagroundBorderless">
+        <item name="android:background">@drawable/rv_selector</item>
     </style>
 
 </resources>

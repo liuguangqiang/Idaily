@@ -5,7 +5,7 @@
 
         <variable
             name="section"
-            type="com.liuguangqiang.idaily.entity.StorySection" />
+            type="com.liuguangqiang.idaily.domain.entity.StorySection" />
     </data>
 
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,10 +17,10 @@
             android:id="@+id/tv_datetime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
+            android:paddingBottom="12dp"
             android:paddingLeft="16dp"
-            android:paddingTop="10dp"
-            android:textColor="@color/gray_middle"
+            android:paddingTop="12dp"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/font_size_small"
             app:datetime="@{section.datetime}"
             tools:text="2015-6-25" />

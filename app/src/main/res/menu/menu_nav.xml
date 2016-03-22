@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/navi_item_1"
-            android:icon="@mipmap/ic_menu"
-            android:title="首页" />
+    <item
+        android:id="@+id/nav_item_0"
+        android:icon="@mipmap/ic_github"
+        android:title="Github" />
 
-        <item
-            android:id="@+id/navi_item_2"
-            android:icon="@mipmap/ic_menu"
-            android:title="收藏" />
-
-        <item
-            android:id="@+id/navi_item_3"
-            android:icon="@mipmap/ic_menu"
-            android:title="专题" />
-
-    </group>
-
-    <item android:title="其他">
-
-        <menu>
-            <item
-                android:id="@+id/navi_item_4"
-                android:icon="@mipmap/ic_menu"
-                android:title="消息" />
-
-            <item
-                android:id="@+id/navi_item_5"
-                android:icon="@mipmap/ic_menu"
-                android:title="设置" />
-        </menu>
-
-    </item>
 
 </menu>

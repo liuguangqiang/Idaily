@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~  Copyright 2015 GoIn Inc. All rights reserved.
+  -->
+
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/selecotr_color" />
+</shape>
