@@ -26,13 +26,6 @@
         <activity
             android:name=".ui.act.StoryActivity"
             android:theme="@style/AppTheme.Detail" />
-        <activity
-            android:name=".ui.act.TextActivity"
-            android:label="@string/title_activity_text" />
-        <activity
-            android:name=".ui.act.OtherActivity"
-            android:label="@string/title_activity_other"
-            android:theme="@style/AppTheme.TransparentActivity" />
     </application>
 
 </manifest>
