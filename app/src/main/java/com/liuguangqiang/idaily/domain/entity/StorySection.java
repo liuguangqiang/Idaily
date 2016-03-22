@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.entity;
+package com.liuguangqiang.idaily.domain.entity;
 
 /**
  * Created by Eric on 15/6/9.

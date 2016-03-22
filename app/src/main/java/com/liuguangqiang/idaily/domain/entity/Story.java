@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.entity;
+package com.liuguangqiang.idaily.domain.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;

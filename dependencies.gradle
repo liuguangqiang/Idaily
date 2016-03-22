@@ -35,9 +35,10 @@ ext {
 
             systembartint       : 'com.readystatesoftware.systembartint:systembartint:1.0.3',
 
-            guangqiangWidgets   : 'com.liuguangqiang.support:widgets:0.0.1',
-            guangqiangMVP       : 'com.github.liuguangqiang.mvp:library:1.0.4',
-            guangqiangSframework: 'com.github.liuguangqiang.aframework:library:1.0.2'
+            guangqiangWidgets   : 'com.liuguangqiang.support:widgets:0.1.0',
+            guangqiangUtils     : 'com.liuguangqiang.support:utils:0.1.0',
+
+            viewpagerIndicator  : "com.mcxiaoke.viewpagerindicator:library:2.4.1"
     ]
 
 }
