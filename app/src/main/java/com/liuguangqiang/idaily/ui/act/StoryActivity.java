@@ -6,26 +6,22 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.webkit.WebView;
 
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
-import com.liuguangqiang.idaily.entity.Story;
+import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class StoryActivity extends BaseActivity {
 
-    public static final String EXTRA_STORY = "EXTRA_STORY";
+    public static final String ARG_STORY = "ARG_STORY";
 
     private Story mStory;
 
-    @InjectView(R.id.web_content)
-    public WebView webview;
-
-    @InjectView(R.id.collapsing_toolbar)
+    @Bind(R.id.collapsing_toolbar)
     public CollapsingToolbarLayout collapsingToolbar;
 
     private ActivityStoryBinding binding;
@@ -34,16 +30,16 @@ public class StoryActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding();
         initViews();
-        getExtraData();
     }
 
-    private void binding() {
+    @Override
+    public void onCreateBinding() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
-        ButterKnife.inject(this);
         viewModel = new StoryViewModel();
         binding.setStoryViewModel(viewModel);
+        ButterKnife.bind(this);
+        viewModel.pushArguments(getIntent().getExtras());
     }
 
     private void initViews() {
@@ -64,12 +60,12 @@ public class StoryActivity extends BaseActivity {
 
     private void getExtraData() {
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null && bundle.containsKey(EXTRA_STORY)) {
-            mStory = bundle.getParcelable(EXTRA_STORY);
+        if (bundle != null && bundle.containsKey(ARG_STORY)) {
+            mStory = bundle.getParcelable(ARG_STORY);
             if (mStory != null) {
-                collapsingToolbar.setTitle(mStory.getTitle());
                 collapsingToolbar.setExpandedTitleColor(Color.WHITE);
                 collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
+                collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
                 viewModel.getStory(mStory.getId());
             }
         }

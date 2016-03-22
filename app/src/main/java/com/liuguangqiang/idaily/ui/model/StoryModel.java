@@ -1,18 +1,28 @@
 package com.liuguangqiang.idaily.ui.model;
 
-import com.liuguangqiang.asyncokhttp.AsyncOkHttp;
-import com.liuguangqiang.asyncokhttp.BaseResponseHandler;
-import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.utils.ApiUtils;
+import com.liuguangqiang.idaily.domain.RetrofitClient;
+import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.domain.service.StoryService;
+
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Eric on 15/6/9.
  */
 public class StoryModel {
 
-    public void getStory(int id, BaseResponseHandler responseHandler) {
-        String url = ApiUtils.getStory(id);
-        AsyncOkHttp.getInstance().get(url, responseHandler);
+    private StoryService storyService;
+
+    public StoryModel() {
+        storyService = RetrofitClient.getInstance().create(StoryService.class);
+    }
+
+    public void getStory(int id, Observer<Story> observer) {
+        storyService.getStory(id).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
     }
 
     public String getBody(Story story) {

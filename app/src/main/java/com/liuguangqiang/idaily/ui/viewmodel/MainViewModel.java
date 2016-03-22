@@ -1,94 +1,99 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
 import android.os.Bundle;
+import android.view.View;
 
-import com.liuguangqiang.idaily.BR;
+import com.liuguangqiang.idaily.R;
+import com.liuguangqiang.idaily.domain.entity.BaseEntity;
+import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.act.StoryActivity;
-import com.liuguangqiang.idaily.ui.adapter.BaseRecyclerAdapter;
 import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
-import com.liuguangqiang.idaily.entity.BaseEntity;
-import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.listener.RequestCallback;
 import com.liuguangqiang.idaily.ui.model.MainModel;
-import com.liuguangqiang.idaily.ui.widget.PageableRecyclerView;
+import com.liuguangqiang.idaily.ui.view.MainView;
+import com.liuguangqiang.idaily.ui.view.RequestView;
+import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
+import com.liuguangqiang.support.utils.IntentUtils;
+import com.liuguangqiang.support.widgets.recyclerview.OnPageListener;
+import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by Eric on 15/6/26.
  */
-public class MainViewModel extends BaseObservable implements RequestCallback<List<BaseEntity>>, BaseRecyclerAdapter.OnItemClickListener {
+public class MainViewModel extends AbsRecyclerViewModel<BaseEntity> implements MainView, RequestView<BaseEntity>, AbsRVAdapter.OnItemClickListener {
 
-    private Activity mContext;
+    private Context context;
 
-    private MainModel mMainModel;
+    private MainModel mainModel;
 
     private StoryAdapter adapter;
 
-    @Bindable
-    private List<BaseEntity> data = new ArrayList<>();
 
-    public MainViewModel(Activity context, OnDisplayTopStoryListener onDisplayTopStoryListener) {
-        this.mContext = context;
-        adapter = new StoryAdapter(context, data);
+    public MainViewModel(Context context) {
+        this.context = context;
+        adapter = new StoryAdapter(context, getData());
         adapter.setOnItemClickListener(this);
 
-        mMainModel = new MainModel(this, onDisplayTopStoryListener);
-        mMainModel.getDaily();
+        mainModel = new MainModel();
+        mainModel.setView(this, this);
+        requestData();
     }
 
     public StoryAdapter getAdapter() {
         return adapter;
     }
 
-    public List<BaseEntity> getData() {
-        return data;
-    }
-
     @Override
-    public void onItemClick(int position) {
+    public void onItemClick(View view, int position) {
         BaseEntity entity = data.get(position);
         if (entity instanceof Story) {
-            Intent intent = new Intent(mContext, StoryActivity.class);
+            Intent intent = new Intent(context, StoryActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putParcelable(StoryActivity.EXTRA_STORY, (Story) entity);
+            bundle.putParcelable(StoryActivity.ARG_STORY, (Story) entity);
             intent.putExtras(bundle);
-            mContext.startActivity(intent);
-//            mContext.overridePendingTransition(0, 0);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
         }
     }
 
-    /**
-     * Create a PageListener for Main View.
-     *
-     * @return
-     */
-    public PageableRecyclerView.OnPageListener getOnPageListener() {
-        return new PageableRecyclerView.OnPageListener() {
+
+    @Override
+    public void requestData() {
+        super.requestData();
+        mainModel.getDaily();
+    }
+
+    @Override
+    public void bindTopStories(List<Story> stories) {
+        TopStoriesEvent event = new TopStoriesEvent(stories);
+        EventBus.getDefault().post(event);
+    }
+
+    public OnPageListener getOnPageListener() {
+        return new OnPageListener() {
             @Override
             public void onPage() {
-                mMainModel.getDaily();
+                requestData();
             }
         };
     }
 
-    @Override
-    public void requestFinished() {
-    }
-
-    @Override
-    public void requestSuccess(List<BaseEntity> list) {
-        data.addAll(list);
-        notifyPropertyChanged(BR.data);
-    }
-
-    public interface OnDisplayTopStoryListener {
-        void onDisplayTopStories(List<Story> stories);
+    public View.OnClickListener getOnClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.tv_github:
+                        IntentUtils.skipToBrowser(v.getContext(), "https://github.com/liuguangqiang/Idaily");
+                        break;
+                }
+            }
+        };
     }
 
 }

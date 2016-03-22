@@ -11,17 +11,17 @@ import android.widget.ImageView;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.ui.widget.RevealBackgroundView;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class OtherActivity extends AppCompatActivity implements RevealBackgroundView.OnStateChangeListener {
 
     public static final String ARG_REVEAL_START_LOCATION = "reveal_start_location";
 
-    @InjectView(R.id.iv_share)
+    @Bind(R.id.iv_share)
     ImageView ivTest;
 
-    @InjectView(R.id.rl_background)
+    @Bind(R.id.rl_background)
     RevealBackgroundView revealBackgroundView;
 
     public static void startUserProfileFromLocation(int[] startingLocation, Activity startingActivity) {
@@ -34,7 +34,7 @@ public class OtherActivity extends AppCompatActivity implements RevealBackground
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         initViews();
     }
 

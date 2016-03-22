@@ -1,16 +1,20 @@
 package com.liuguangqiang.idaily.ui.model;
 
-import com.liuguangqiang.asyncokhttp.AsyncOkHttp;
-import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
-import com.liuguangqiang.idaily.entity.BaseEntity;
-import com.liuguangqiang.idaily.entity.Daily;
-import com.liuguangqiang.idaily.entity.StorySection;
-import com.liuguangqiang.idaily.listener.RequestCallback;
-import com.liuguangqiang.idaily.utils.ApiUtils;
-import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
+import com.liuguangqiang.idaily.domain.RetrofitClient;
+import com.liuguangqiang.idaily.domain.entity.BaseEntity;
+import com.liuguangqiang.idaily.domain.entity.Daily;
+import com.liuguangqiang.idaily.domain.entity.StorySection;
+import com.liuguangqiang.idaily.domain.service.DailyService;
+import com.liuguangqiang.idaily.ui.view.MainView;
+import com.liuguangqiang.idaily.ui.view.RequestView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import rx.Observable;
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by Eric on 15/6/25.
@@ -21,13 +25,18 @@ public class MainModel {
 
     private List<BaseEntity> data = new ArrayList<>();
 
-    private RequestCallback<List<BaseEntity>> callback;
+    private DailyService dailyService;
 
-    private MainViewModel.OnDisplayTopStoryListener onDisplayTopStoryListener;
+    public MainModel() {
+        dailyService = RetrofitClient.getInstance().create(DailyService.class);
+    }
 
-    public MainModel(RequestCallback requestCallback, MainViewModel.OnDisplayTopStoryListener onDisplayTopStoryListener) {
-        this.callback = requestCallback;
-        this.onDisplayTopStoryListener = onDisplayTopStoryListener;
+    private MainView view;
+    private RequestView requestView;
+
+    public void setView(MainView view, RequestView<BaseEntity> requestView) {
+        this.view = view;
+        this.requestView = requestView;
     }
 
     public void getDaily() {
@@ -35,31 +44,38 @@ public class MainModel {
     }
 
     public void getDaily(final int datetime) {
-        String url = datetime > 0 ? ApiUtils.getNewsBefore(datetime) : ApiUtils.getLatest();
-        AsyncOkHttp.getInstance().get(url, new JsonResponseHandler<Daily>(Daily.class) {
-            @Override
-            public void onSuccess(Daily daily) {
-                if (daily != null) {
-                    if (datetime == 0) {
-                        onDisplayTopStoryListener.onDisplayTopStories(daily.getTop_stories());
+        Observable<Daily> observable = datetime > 0 ? dailyService.getBefore(datetime) : dailyService.getLatest();
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Daily>() {
+                    @Override
+                    public void onCompleted() {
+                        requestView.onRequestFinished();
                     }
 
-                    StorySection section = new StorySection(daily.getDate());
-                    lastDatetime = daily.getDate();
+                    @Override
+                    public void onError(Throwable e) {
 
-                    data.clear();
-                    data.add(section);
-                    data.addAll(daily.getStories());
+                    }
 
-                    callback.requestSuccess(data);
-                }
-            }
+                    @Override
+                    public void onNext(Daily daily) {
+                        if (daily != null) {
+                            if (datetime == 0) {
+                                view.bindTopStories(daily.getTop_stories());
+                            }
 
-            @Override
-            public void onFinish() {
-                callback.requestFinished();
-            }
-        });
+                            StorySection section = new StorySection(daily.getDate());
+                            lastDatetime = daily.getDate();
+
+                            data.clear();
+                            data.add(section);
+                            data.addAll(daily.getStories());
+
+                            requestView.onRequestSuccess(data);
+                        }
+                    }
+                });
     }
 
 }

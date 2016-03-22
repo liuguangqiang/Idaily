@@ -2,7 +2,6 @@ package com.liuguangqiang.idaily.utils;
 
 import android.content.Context;
 
-import com.liuguangqiang.framework.utils.TimeUtils;
 import com.liuguangqiang.idaily.R;
 
 import java.util.Calendar;
@@ -13,6 +12,9 @@ import java.util.GregorianCalendar;
  * Created by Eric on 15/6/9.
  */
 public class DailyUtils {
+
+    private DailyUtils() {
+    }
 
     public static String getDisplayDate(Context context, int datetime) {
         String[] weekTitle = context.getResources().getStringArray(R.array.weeks);

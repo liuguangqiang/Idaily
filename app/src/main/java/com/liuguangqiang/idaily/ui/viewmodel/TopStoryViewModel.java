@@ -5,7 +5,7 @@ import android.databinding.BaseObservable;
 import android.os.Bundle;
 import android.view.View;
 
-import com.liuguangqiang.idaily.entity.Story;
+import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.act.StoryActivity;
 
 /**
@@ -25,11 +25,19 @@ public class TopStoryViewModel extends BaseObservable {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), StoryActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putParcelable(StoryActivity.EXTRA_STORY, story);
+                bundle.putParcelable(StoryActivity.ARG_STORY, story);
                 intent.putExtras(bundle);
                 v.getContext().startActivity(intent);
             }
         };
+    }
+
+    public void onClickPic(View view) {
+        Intent intent = new Intent(view.getContext(), StoryActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(StoryActivity.ARG_STORY, story);
+        intent.putExtras(bundle);
+        view.getContext().startActivity(intent);
     }
 
     public String getImage() {

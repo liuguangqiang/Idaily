@@ -8,16 +8,17 @@ import android.view.ViewGroup;
 
 import com.liuguangqiang.idaily.databinding.ItemStoryBinding;
 import com.liuguangqiang.idaily.databinding.ItemStoryHeaderBinding;
-import com.liuguangqiang.idaily.entity.BaseEntity;
-import com.liuguangqiang.idaily.entity.Story;
-import com.liuguangqiang.idaily.entity.StorySection;
+import com.liuguangqiang.idaily.domain.entity.BaseEntity;
+import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.domain.entity.StorySection;
+import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 
 import java.util.List;
 
 /**
  * Created by Eric on 15/6/6.
  */
-public class StoryAdapter extends BaseRecyclerAdapter<BaseEntity, StoryAdapter.StoryViewHolder> {
+public class StoryAdapter extends AbsRVAdapter<BaseEntity, StoryAdapter.StoryViewHolder> {
 
     private static final int ITEM_STORY = 0;
 

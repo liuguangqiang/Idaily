@@ -7,16 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.liuguangqiang.idaily.databinding.FragmentTopStoryBinding;
-import com.liuguangqiang.idaily.entity.Story;
+import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.viewmodel.TopStoryViewModel;
 
 public class TopStoryFragment extends Fragment {
 
-    public static final String EXTRA_STORY = "EXTRA_STORY";
+    public static final String EXTRA_STORY = "ARG_STORY";
 
     private Story story;
 
-    private FragmentTopStoryBinding binding;
     private TopStoryViewModel viewModel;
 
     public static TopStoryFragment newInstance(Story story) {
@@ -39,11 +38,12 @@ public class TopStoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentTopStoryBinding.inflate(inflater);
+        FragmentTopStoryBinding binding = FragmentTopStoryBinding.inflate(inflater);
         viewModel = new TopStoryViewModel();
         viewModel.setStory(story);
         binding.setViewModel(viewModel);
         return binding.getRoot();
+
     }
 
 }

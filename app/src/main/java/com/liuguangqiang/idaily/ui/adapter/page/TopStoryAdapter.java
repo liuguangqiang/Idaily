@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.liuguangqiang.idaily.entity.Story;
+import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.fragment.TopStoryFragment;
 
 import java.util.ArrayList;

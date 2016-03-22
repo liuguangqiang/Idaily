@@ -1,31 +1,48 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
 import android.databinding.BaseObservable;
-import android.view.View;
+import android.databinding.Bindable;
+import android.graphics.Color;
+import android.os.Bundle;
 
-import com.liuguangqiang.asyncokhttp.JsonResponseHandler;
-import com.liuguangqiang.framework.utils.IntentUtils;
-import com.liuguangqiang.framework.utils.ToastUtils;
-import com.liuguangqiang.idaily.entity.Story;
+import com.liuguangqiang.idaily.BR;
+import com.liuguangqiang.idaily.R;
+import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.ui.act.StoryActivity;
 import com.liuguangqiang.idaily.ui.model.StoryModel;
+
+import rx.Observer;
 
 /**
  * Created by Eric on 15/6/23.
  */
 public class StoryViewModel extends BaseObservable {
 
-    private StoryModel mStoryModel;
+    private StoryModel storyModel;
 
-    private Story story;
+    @Bindable
+    public Story story;
+
+    public String title = "";
 
     public StoryViewModel() {
-        this.mStoryModel = new StoryModel();
+        this.storyModel = new StoryModel();
+    }
+
+    public void pushArguments(Bundle bundle) {
+        Story story = bundle.getParcelable(StoryActivity.ARG_STORY);
+        if (story != null) {
+            setTitle(story.getTitle());
+            getStory(story.id);
+        }
     }
 
     public String getTitle() {
-        if (story == null) return "";
+        return title;
+    }
 
-        return story.getTitle();
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getImage() {
@@ -35,57 +52,34 @@ public class StoryViewModel extends BaseObservable {
     }
 
     public String getBody() {
-        return mStoryModel.getBody(story);
+        return storyModel.getBody(story);
     }
 
     public void setStory(Story story) {
         this.story = story;
+        this.title = story.getTitle();
         notifyChange();
     }
 
-    public View.OnClickListener getFavClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtils.show(v.getContext(), "OnClick Fav");
-            }
-        };
-    }
-
-    public View.OnClickListener getShareClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                IntentUtils.openShare(v.getContext(), story.getTitle() + story.share_url, "");
-            }
-        };
-    }
-
-    public View.OnClickListener getPreviousClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtils.show(v.getContext(), "previous");
-            }
-        };
-    }
-
-    public View.OnClickListener getNextClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtils.show(v.getContext(), "next");
-            }
-        };
+    public Story getStory() {
+        return story;
     }
 
     public void getStory(int id) {
-        mStoryModel.getStory(id, new JsonResponseHandler<Story>(Story.class) {
+        storyModel.getStory(id, new Observer<Story>() {
             @Override
-            public void onSuccess(Story result) {
-                if (result != null) {
-                    setStory(result);
-                }
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(Story story) {
+                setStory(story);
             }
         });
     }
