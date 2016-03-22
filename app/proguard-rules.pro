@@ -23,17 +23,25 @@
 -keep class sun.misc.Unsafe { *; }
 
 -dontwarn android.net.http.**
+-dontwarn android.support.v4.**
+-dontwarn  com.google.common.**
 
--keep class com.google.** { *; }
+#Keep the annotated things annotated
+-keepattributes *Annotation*
+-keep class javax.inject.** { *; }
 
--keep class com.google.gson.** { *; }
+-keep class com.liuguangqiang.di.** { *; }
+-keep class com.liuguangqiang.ui.widget.** { *; }
+-keep class com.liuguangqiang.domain.** { *; }
+
+-keep class com.viewpagerindicator.** { *; }
+-keep class com.android.okhttp.** { *; }
+-keep class com.makeramen.** { *; }
 
 #ButterKnife
 -keep class butterknife.** { *; }
-
 -dontwarn butterknife.internal.**
-
--keep class **$$ViewInjector { *; }
+-keep class **$$ViewBinder { *; }
 
 -keepclasseswithmembernames class * {
     @butterknife.* <fields>;
@@ -48,9 +56,48 @@
 -keep @com.bluelinelabs.logansquare.annotation.JsonObject class *
 -keep class **$$JsonObjectMapper { *; }
 
+#EventBus
+-keep class de.greenrobot.** { *; }
+
+-keepclassmembers class ** {
+    public void onEvent*(**);
+}
+
+# Only required if you use AsyncExecutor
+-keepclassmembers class * extends de.greenrobot.event.util.ThrowableFailureEvent {
+    <init>(java.lang.Throwable);
+}
+
 #DataBinding
 -dontwarn android.databinding.**
+-keep class android.databinding.** { *; }
 -keep class * extends android.databinding.ViewDataBinding
 -keep class com.liuguangqiang.idaily.databinding.** { *; }
 
 -keep class android.support.design.** { *; }
+
+#Retrofit
+-dontwarn retrofit.**
+-keep class retrofit.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+
+###### dagger 2.0
+-keep class dagger.** { *; }
+-keep interface dagger.** { *; }
+
+-keep class **$$ModuleAdapter { *; }
+-keepnames class **$$InjectAdapter { *; }
+
+-keepclassmembers class * {
+    @javax.inject.Inject <fields>;
+    @javax.inject.Inject <init>(...);
+}
+-adaptclassstrings
+
+#Glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+    **[] $VALUES;
+    public *;
+}

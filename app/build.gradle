@@ -3,6 +3,10 @@ apply plugin: 'com.neenbedankt.android-apt'
 
 def ext = rootProject.ext
 
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
 android {
     compileSdkVersion ext.compileSdkVersion
     buildToolsVersion ext.buildToolsVersion
@@ -20,11 +24,47 @@ android {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
 
-    buildTypes {
+    signingConfigs {
         release {
+            try {
+                storeFile file("../daily.jks")
+                storePassword KEYSTORE_PWD
+                keyAlias KEY_ALIAS
+                keyPassword KEY_PWD
+            } catch (ex) {
+                throw new InvalidUserDataException("Have to define KEYSTORE_PWD and KEY_PWD.")
+            }
+        }
+    }
+
+    productFlavors {
+        daily {}
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+            zipAlignEnabled false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            signingConfig signingConfigs.release
             zipAlignEnabled true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // goin_v1.0.0_2015-07-30_xiaomi.apk
+                        def fileName = "daily_v${ext.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
         }
     }
 
