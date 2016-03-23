@@ -1,19 +1,17 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.act.StoryActivity;
 import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.ui.model.MainModel;
 import com.liuguangqiang.idaily.ui.view.MainView;
 import com.liuguangqiang.idaily.ui.view.RequestView;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
+import com.liuguangqiang.idaily.utils.navigator.Navigator;
 import com.liuguangqiang.support.utils.IntentUtils;
 import com.liuguangqiang.support.widgets.recyclerview.OnPageListener;
 import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
@@ -55,15 +53,9 @@ public class MainViewModel extends AbsRecyclerViewModel<BaseEntity> implements M
     public void onItemClick(View view, int position) {
         BaseEntity entity = data.get(position);
         if (entity instanceof Story) {
-            Intent intent = new Intent(context, StoryActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putParcelable(StoryActivity.ARG_STORY, (Story) entity);
-            intent.putExtras(bundle);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
+            Navigator.getInstance().openStory(context, (Story) entity);
         }
     }
-
 
     @Override
     public void requestData() {
