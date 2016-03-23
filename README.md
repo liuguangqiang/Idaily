@@ -2,7 +2,7 @@ DAILY
 ==============================================
 DAILY是一个非官方的基于MVVM架构的知乎日报APP。
 
-[![Get it on Google Play](art/googleplay.png)][1]
+[![Get it on Google Play](art/download.png)][1]
 
 ##项目结构
  * android data binding来实现MVVM。
@@ -43,4 +43,4 @@ DAILY是一个非官方的基于MVVM架构的知乎日报APP。
     limitations under the License.
 
 
-[1]:https://play.google.com/store/apps/details?id=com.liuguangqiang.idaily
+[1]:http://fir.im/idaily
