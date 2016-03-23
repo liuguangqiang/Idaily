@@ -39,10 +39,15 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
-    private CollapsingToolbarLayout collapsingToolbar;
-    private CirclePageIndicator pageIndicator;
+    @Bind(R.id.view_pager)
+    ViewPager viewPager;
 
-    private ViewPager viewPager;
+    @Bind(R.id.indicator)
+    CirclePageIndicator indicator;
+
+    @Bind(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbar;
+
     private TopStoryAdapter topStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
 
@@ -104,13 +109,11 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initViews() {
-        pageIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
-        viewPager = (ViewPager) findViewById(R.id.vp_top_stories);
         topStoryAdapter = new TopStoryAdapter(getSupportFragmentManager(), topStories);
 
         viewPager.setAdapter(topStoryAdapter);
-        pageIndicator.setViewPager(viewPager);
-        pageIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        indicator.setViewPager(viewPager);
+        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -118,7 +121,6 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position) {
-                Logs.i(topStories.get(position).getTitle());
                 collapsingToolbar.setTitle(topStories.get(position).getTitle());
                 setTitle(topStories.get(position).getTitle());
             }
