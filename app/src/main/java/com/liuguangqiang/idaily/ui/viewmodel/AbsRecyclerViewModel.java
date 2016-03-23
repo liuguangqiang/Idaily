@@ -4,7 +4,7 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 import com.liuguangqiang.idaily.BR;
-import com.liuguangqiang.idaily.utils.databinding.DBRecylerView;
+import com.liuguangqiang.idaily.utils.databinding.DBRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ public abstract class AbsRecyclerViewModel<T> extends BaseObservable {
     public List<T> data = new ArrayList<>();
 
     @Bindable
-    public int footerStatus = DBRecylerView.SHOW_FOOTER;
+    public int footerStatus = DBRecyclerView.SHOW_FOOTER;
 
     @Bindable
     public boolean loading = false;
@@ -61,9 +61,9 @@ public abstract class AbsRecyclerViewModel<T> extends BaseObservable {
 
     public void onRequestSuccess(List<T> list) {
         if (list.size() < 20) {
-            footerStatus = DBRecylerView.HIDE_FOOTER;
+            footerStatus = DBRecyclerView.HIDE_FOOTER;
         } else {
-            footerStatus = DBRecylerView.SHOW_FOOTER;
+            footerStatus = DBRecyclerView.SHOW_FOOTER;
         }
 
         data.addAll(list);

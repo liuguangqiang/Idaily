@@ -9,13 +9,12 @@ import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 
 import java.util.List;
 
-
 /**
  * Custom binding for RecyclerView.
  * <p/>
  * Created by Eric on 15/6/23.
  */
-public class DBRecylerView {
+public class DBRecyclerView {
 
     public static int SHOW_FOOTER = 0;
 
