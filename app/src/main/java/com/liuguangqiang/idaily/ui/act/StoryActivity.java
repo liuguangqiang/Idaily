@@ -8,7 +8,11 @@ import android.view.MenuItem;
 
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
+import com.liuguangqiang.idaily.di.components.DaggerStoryComponent;
+import com.liuguangqiang.idaily.di.modules.StoryModule;
 import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -17,11 +21,11 @@ public class StoryActivity extends BaseActivity {
 
     public static final String ARG_STORY = "ARG_STORY";
 
+    @Inject
+    StoryViewModel viewModel;
+
     @Bind(R.id.collapsing_toolbar)
     public CollapsingToolbarLayout collapsingToolbar;
-
-    private ActivityStoryBinding binding;
-    private StoryViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +35,14 @@ public class StoryActivity extends BaseActivity {
 
     @Override
     public void onCreateBinding() {
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
-        viewModel = new StoryViewModel();
-        binding.setStoryViewModel(viewModel);
+        DaggerStoryComponent.builder()
+                .storyModule(new StoryModule())
+                .build()
+                .inject(this);
+
+        ActivityStoryBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
         ButterKnife.bind(this);
+        binding.setStoryViewModel(viewModel);
         viewModel.pushArguments(getIntent().getExtras());
     }
 

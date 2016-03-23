@@ -2,14 +2,13 @@ package com.liuguangqiang.idaily.ui.viewmodel;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.graphics.Color;
 import android.os.Bundle;
 
-import com.liuguangqiang.idaily.BR;
-import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.act.StoryActivity;
 import com.liuguangqiang.idaily.ui.model.StoryModel;
+
+import javax.inject.Inject;
 
 import rx.Observer;
 
@@ -25,8 +24,9 @@ public class StoryViewModel extends BaseObservable {
 
     public String title = "";
 
-    public StoryViewModel() {
-        this.storyModel = new StoryModel();
+    @Inject
+    public StoryViewModel(StoryModel storyMode) {
+        this.storyModel = storyMode;
     }
 
     public void pushArguments(Bundle bundle) {
