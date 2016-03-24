@@ -1,6 +1,6 @@
 DAILY
 ==============================================
-DAILY是一个非官方的基于MVVM架构的知乎日报APP。
+DAILY是一个非官方的基于MVVM架构的知乎日报APP。所有内容均来自网络，仅供学习使用。
 
 [![Get it on Google Play](art/download.png)][1]
 
