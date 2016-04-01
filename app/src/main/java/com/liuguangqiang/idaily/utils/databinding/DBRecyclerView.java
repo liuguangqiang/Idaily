@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Custom binding for RecyclerView.
- * <p/>
+ * <p>
  * Created by Eric on 15/6/23.
  */
 public class DBRecyclerView {
@@ -20,24 +20,24 @@ public class DBRecyclerView {
 
     public static int HIDE_FOOTER = 1;
 
-    @BindingAdapter({"bind:adapter"})
+    @BindingAdapter({"adapter"})
     public static void bindAdapter(SuperRecyclerView recyclerView, AbsRVAdapter adapter) {
         recyclerView.setAdapter(adapter);
         recyclerView.setPageFooter(R.layout.layout_loading_footer);
     }
 
-    @BindingAdapter({"bind:data"})
+    @BindingAdapter({"data"})
     public static void bindData(SuperRecyclerView recyclerView, List<BaseEntity> data) {
         recyclerView.notifyDataSetChanged();
         recyclerView.setIsLoading(false);
     }
 
-    @BindingAdapter({"bind:isLoading"})
+    @BindingAdapter({"isLoading"})
     public static void isLoading(SuperRecyclerView recyclerView, boolean isLoading) {
         recyclerView.setIsLoading(isLoading);
     }
 
-    @BindingAdapter({"bind:footerStatus"})
+    @BindingAdapter({"footerStatus"})
     public static void footerStatus(SuperRecyclerView recyclerView, int footerStatus) {
         if (footerStatus == SHOW_FOOTER) {
             recyclerView.setPageEnable(true);
