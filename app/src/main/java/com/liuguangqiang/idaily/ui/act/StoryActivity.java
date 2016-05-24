@@ -28,6 +28,14 @@ public class StoryActivity extends BaseActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (viewModel != null) {
+            viewModel.onDestroy();
+        }
+    }
+
+    @Override
     public void onCreateBinding() {
         DaggerStoryComponent.builder()
                 .storyModule(new StoryModule())

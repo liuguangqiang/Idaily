@@ -11,6 +11,7 @@ import com.liuguangqiang.idaily.ui.model.StoryModel;
 import javax.inject.Inject;
 
 import rx.Observer;
+import rx.Subscription;
 
 /**
  * Created by Eric on 15/6/23.
@@ -24,9 +25,17 @@ public class StoryViewModel extends BaseObservable {
 
     public String title = "";
 
+    private Subscription subscription;
+
     @Inject
     public StoryViewModel(StoryModel storyMode) {
         this.storyModel = storyMode;
+    }
+
+    public void onDestroy() {
+        if (subscription != null) {
+            subscription.unsubscribe();
+        }
     }
 
     public void pushArguments(Bundle bundle) {
@@ -66,7 +75,7 @@ public class StoryViewModel extends BaseObservable {
     }
 
     public void getStory(int id) {
-        storyModel.getStory(id, new Observer<Story>() {
+        subscription = storyModel.getStory(id, new Observer<Story>() {
             @Override
             public void onCompleted() {
 

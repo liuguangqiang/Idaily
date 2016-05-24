@@ -7,6 +7,7 @@ import com.liuguangqiang.idaily.domain.service.StoryService;
 import javax.inject.Inject;
 
 import rx.Observer;
+import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -22,8 +23,8 @@ public class StoryModel {
         storyService = RetrofitClient.getInstance().create(StoryService.class);
     }
 
-    public void getStory(int id, Observer<Story> observer) {
-        storyService.getStory(id).subscribeOn(Schedulers.io())
+    public Subscription getStory(int id, Observer<Story> observer) {
+        return storyService.getStory(id).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }

@@ -13,10 +13,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import hugo.weaving.DebugLog;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 /**
  * Created by Eric on 15/6/25.
@@ -47,7 +49,9 @@ public class MainModel {
 
     private StorySection section;
 
+    @DebugLog
     public void getDaily(final int datetime) {
+        Timber.d("getDaily %d ", datetime);
         Observable<Daily> observable = datetime > 0 ? dailyService.getBefore(datetime) : dailyService.getLatest();
         observable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -78,6 +82,26 @@ public class MainModel {
                             data.addAll(daily.getStories());
                             requestView.onRequestSuccess(data);
                         }
+                    }
+                });
+
+
+        Observable<Daily> observabl1e = dailyService.getLatest();
+        observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Daily>() {
+                    @Override
+                    public void onCompleted() {
+                        requestView.onRequestFinished();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(Daily daily) {
                     }
                 });
     }
