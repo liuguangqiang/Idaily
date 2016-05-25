@@ -1,1 +1,1 @@
-FROM daocloud.io/lijy91/ci-android
+FROM daocloud.io/goinchina/android-env

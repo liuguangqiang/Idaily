@@ -1,4 +1,4 @@
-image: daocloud.io/lijy91/ci-android
+image: daocloud.io/goinchina/android-env
 
 script:
     - ./gradlew app:assembleDebug --debug
