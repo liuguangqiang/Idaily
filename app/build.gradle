@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.jakewharton.hugo'
+apply plugin: 'im.fir.plugin.gradle'
 
 def ext = rootProject.ext
 
@@ -46,6 +47,11 @@ android {
 
     productFlavors {
         daily {}
+    }
+
+    fir {
+        apiToken 'c7205d8417abec89edc200ab10d15d4a'
+        changeLog 'test'
     }
 
     buildTypes {
