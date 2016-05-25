@@ -129,8 +129,8 @@
       <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04601227">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -3100,7 +3100,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464145131824</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="EXPOSE 80">
+      <created>1464145426511</created>
+      <option name="number" value="00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1464145426511</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3199,7 +3205,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="update android support library to v22.2.1" />
     <MESSAGE value="Print logs just only in debug model." />
     <MESSAGE value="update REAMDE.md" />
     <MESSAGE value="implemented top stories." />
@@ -3224,7 +3229,8 @@
     <MESSAGE value="update the rules of @BindingAdapter for fixing the warning messages when build project." />
     <MESSAGE value="update daocloud.yml and Dockerfile" />
     <MESSAGE value="fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed." />
+    <MESSAGE value="EXPOSE 80" />
+    <option name="LAST_COMMIT_MESSAGE" value="EXPOSE 80" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3605,8 +3611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04601227">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
           <folding />
         </state>
       </provider>
