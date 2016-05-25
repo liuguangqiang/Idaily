@@ -84,6 +84,18 @@ android {
     dataBinding {
         enabled = true
     }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+    }
+
+    dexOptions {
+        incremental true
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
 }
 
 dependencies {

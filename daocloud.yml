@@ -1,5 +1,4 @@
 image: daocloud.io/guangqiang/android
 
 script:
-    - ./gradlew clean build
     - ./gradlew app:publishApkRelease
