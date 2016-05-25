@@ -1,4 +1,4 @@
-image: daocloud.io/373779166/android-env
+image: daocloud.io/guangqiang/android
 
 script:
     - ./gradlew publishApkRelease

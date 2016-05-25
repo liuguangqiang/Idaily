@@ -1,1 +1,1 @@
-FROM daocloud.io/373779166/android-env
+FROM daocloud.io/guangqiang/android
