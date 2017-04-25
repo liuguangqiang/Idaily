@@ -8,6 +8,7 @@ import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.di.components.DaggerStoryComponent;
 import com.liuguangqiang.idaily.di.modules.StoryModule;
+import com.liuguangqiang.idaily.ui.model.StoryModel;
 import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
 
 import javax.inject.Inject;

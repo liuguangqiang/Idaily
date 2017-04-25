@@ -27,15 +27,14 @@ import de.greenrobot.event.Subscribe;
 
 public class MainActivity extends BaseActivity {
 
-    CollapsingToolbarLayout collapsingToolbar;
-
-    private TopStoryAdapter topStoryAdapter;
-    private List<Story> topStories = new ArrayList<>();
-
     @Inject
     MainViewModel mainViewModel;
 
-    ActivityMainBinding binding;
+    private CollapsingToolbarLayout collapsingToolbar;
+    private TopStoryAdapter topStoryAdapter;
+    private List<Story> topStories = new ArrayList<>();
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

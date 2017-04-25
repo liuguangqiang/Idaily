@@ -130,4 +130,5 @@ dependencies {
     provided provides.annotation
 
     apt apts.logansquareCompiler
+    apt 'com.android.databinding:compiler:2.3.0'
 }
