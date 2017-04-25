@@ -4,12 +4,12 @@ DAILY是一个非官方的基于MVVM架构的知乎日报APP。所有内容均�
 
 [![Get it on Google Play](art/download.png)][1]
 
-##项目结构
+## 项目结构
  * android data binding来实现MVVM。
  * dagger2来完成依赖注入。
  * retrofit2+rxjava实现restful的http请求。
 
-##第三方类库
+## 第三方类库
 * retrofit2
 * dagger2
 * butterknife
@@ -19,7 +19,7 @@ DAILY是一个非官方的基于MVVM架构的知乎日报APP。所有内容均�
 * android data binding
 * android support design
 
-##截图
+## 截图
 <img src="art/1.png" width="308" height="548"/>
 <img src="art/2.png" width="308" height="548"/>
 
