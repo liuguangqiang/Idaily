@@ -20,11 +20,11 @@ DAILY是一个非官方的基于MVVM架构的知乎日报APP。所有内容均�
 * android support design
 
 ## 截图
-<img src="art/1.png" width="308" height="548"/>
-<img src="art/2.png" width="308" height="548"/>
+<img src="art/1.png" width="288" height="548"/>
+<img src="art/2.png" width="288" height="548"/>
 
-<img src="art/3.png" width="308" height="548"/>
-<img src="art/4.png" width="308" height="548"/>
+<img src="art/3.png" width="288" height="548"/>
+<img src="art/4.png" width="288" height="548"/>
 
 ## License
 
