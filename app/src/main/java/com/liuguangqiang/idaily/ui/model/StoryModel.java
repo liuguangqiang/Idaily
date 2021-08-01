@@ -4,12 +4,11 @@ import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.domain.service.StoryService;
 
-import javax.inject.Inject;
 
-import rx.Observer;
-import rx.Subscription;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
 
 /**
  * Created by Eric on 15/6/9.
@@ -18,8 +17,7 @@ public class StoryModel {
 
     private StoryService storyService;
 
-    @Inject
-    public StoryModel() {
+     public StoryModel() {
         storyService = RetrofitClient.getInstance().create(StoryService.class);
     }
 

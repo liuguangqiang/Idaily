@@ -3,7 +3,7 @@ package com.liuguangqiang.idaily.domain.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.bluelinelabs.logansquare.annotation.JsonObject;
+import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * Created by Eric on 15/6/8.
  */
-@JsonObject(fieldDetectionPolicy = JsonObject.FieldDetectionPolicy.NONPRIVATE_FIELDS_AND_ACCESSORS)
 public class Story extends BaseEntity implements Parcelable {
 
     public int id;
@@ -139,4 +138,9 @@ public class Story extends BaseEntity implements Parcelable {
             return new Story[size];
         }
     };
+
+    @Override
+    public int getItemType() {
+        return StoriesAdapter.ITEM_STORY;
+    }
 }

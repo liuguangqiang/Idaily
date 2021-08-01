@@ -3,20 +3,18 @@ apply from: rootProject.file('dependencies.gradle')
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+
+        google()
 
         mavenCentral()
-
-        maven {
-            url "http://maven.bughd.com/public"
-        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:4.2.1'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'me.tatarka:gradle-retrolambda:3.2.0'
         classpath 'com.jakewharton.hugo:hugo-plugin:1.2.1'
-        classpath 'im.fir:gradle-fir-publisher:1.0.2'
+//        classpath 'im.fir:gradle-fir-publisher:1.0.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -24,9 +22,15 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
-
         mavenCentral()
+
+        google()
+
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+
+        maven { url "https://jitpack.io" }
+
+        maven { url 'https://dl.google.com/dl/android/maven2/' }
     }
 }
 

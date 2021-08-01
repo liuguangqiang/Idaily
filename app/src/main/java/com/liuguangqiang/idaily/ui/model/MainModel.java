@@ -11,13 +11,14 @@ import com.liuguangqiang.idaily.ui.view.RequestView;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
 
 import hugo.weaving.DebugLog;
-import rx.Observable;
-import rx.Observer;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 /**
@@ -30,7 +31,6 @@ public class MainModel {
 
     private DailyService dailyService;
 
-    @Inject
     public MainModel() {
         dailyService = RetrofitClient.getInstance().create(DailyService.class);
     }
@@ -57,12 +57,17 @@ public class MainModel {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Daily>() {
                     @Override
-                    public void onCompleted() {
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
                         requestView.onRequestFinished();
                     }
 
                     @Override
-                    public void onError(Throwable e) {
+                    public void onSubscribe(Disposable d) {
 
                     }
 

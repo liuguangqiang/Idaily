@@ -1,7 +1,7 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 
 import com.liuguangqiang.idaily.BR;
 import com.liuguangqiang.idaily.utils.databinding.DBRecyclerView;

@@ -1,17 +1,20 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
-import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+
 import android.os.Bundle;
 
+import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.domain.service.StoryService;
 import com.liuguangqiang.idaily.ui.act.StoryActivity;
 import com.liuguangqiang.idaily.ui.model.StoryModel;
 
-import javax.inject.Inject;
-
-import rx.Observer;
-import rx.Subscription;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Eric on 15/6/23.
@@ -25,17 +28,8 @@ public class StoryViewModel extends BaseObservable {
 
     public String title = "";
 
-    private Subscription subscription;
-
-    @Inject
     public StoryViewModel(StoryModel storyMode) {
         this.storyModel = storyMode;
-    }
-
-    public void onDestroy() {
-        if (subscription != null) {
-            subscription.unsubscribe();
-        }
     }
 
     public void pushArguments(Bundle bundle) {
@@ -75,10 +69,17 @@ public class StoryViewModel extends BaseObservable {
     }
 
     public void getStory(int id) {
-        subscription = storyModel.getStory(id, new Observer<Story>() {
+        StoryService storyService = RetrofitClient.getInstance().create(StoryService.class);
+        storyService.getStory(id).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Story>() {
             @Override
-            public void onCompleted() {
+            public void onSubscribe(Disposable d) {
 
+            }
+
+            @Override
+            public void onNext(Story story) {
+                setStory(story);
             }
 
             @Override
@@ -87,8 +88,8 @@ public class StoryViewModel extends BaseObservable {
             }
 
             @Override
-            public void onNext(Story story) {
-                setStory(story);
+            public void onComplete() {
+
             }
         });
     }

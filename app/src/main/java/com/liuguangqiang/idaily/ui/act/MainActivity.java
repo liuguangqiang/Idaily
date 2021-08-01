@@ -1,50 +1,51 @@
 package com.liuguangqiang.idaily.ui.act;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
+
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
+
+import androidx.core.view.GravityCompat;
+
 import android.view.MenuItem;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
-import com.liuguangqiang.idaily.di.components.DaggerMainComponent;
-import com.liuguangqiang.idaily.di.modules.MainModule;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
+import com.liuguangqiang.idaily.ui.model.MainModel;
 import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
-import de.greenrobot.event.EventBus;
-import de.greenrobot.event.Subscribe;
-
 public class MainActivity extends BaseActivity {
-
-    @Inject
-    MainViewModel mainViewModel;
 
     private CollapsingToolbarLayout collapsingToolbar;
     private TopStoryAdapter topStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
 
     private ActivityMainBinding binding;
+    private MainViewModel mainViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mainViewModel = new MainViewModel(this, new MainModel());
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setViewModel(mainViewModel);
+
         initToolbar();
         initViews();
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);
         }
     }
+
 
     @Override
     protected void onDestroy() {
@@ -56,13 +57,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onCreateBinding() {
-        DaggerMainComponent
-                .builder()
-                .mainModule(new MainModule(getApplicationContext()))
-                .build().inject(this);
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setViewModel(mainViewModel);
+//        DaggerMainComponent
+//                .builder()
+//                .mainModule(new MainModule(getApplicationContext()))
+//                .build().inject(this);
     }
 
     @Override

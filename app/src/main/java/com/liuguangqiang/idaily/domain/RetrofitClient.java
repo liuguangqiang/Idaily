@@ -4,12 +4,11 @@
 
 package com.liuguangqiang.idaily.domain;
 
-import com.github.aurae.retrofit2.LoganSquareConverterFactory;
-
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A helper of retrofit2 for creating restful service easier.
@@ -42,8 +41,8 @@ public class RetrofitClient {
         retrofit = new Retrofit.Builder()
                 .baseUrl(HOST_NAME)
                 .client(okHttpClient)
-                .addConverterFactory(LoganSquareConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 
@@ -51,9 +50,6 @@ public class RetrofitClient {
     public <T> T create(Class<?> clazz) {
         return (T) retrofit.create(clazz);
     }
-
-
-
 }
 
 

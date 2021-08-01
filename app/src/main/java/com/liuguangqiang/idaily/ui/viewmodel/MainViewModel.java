@@ -6,6 +6,7 @@ import android.view.View;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.ui.act.MainActivity;
 import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.ui.model.MainModel;
 import com.liuguangqiang.idaily.ui.view.MainView;
@@ -16,11 +17,10 @@ import com.liuguangqiang.support.utils.IntentUtils;
 import com.liuguangqiang.support.widgets.recyclerview.OnPageListener;
 import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.List;
 
-import javax.inject.Inject;
-
-import de.greenrobot.event.EventBus;
 
 /**
  * Created by Eric on 15/6/26.
@@ -33,7 +33,8 @@ public class MainViewModel extends AbsRecyclerViewModel<BaseEntity> implements M
 
     private StoryAdapter adapter;
 
-    @Inject
+    public MainViewModel(){}
+
     public MainViewModel(Context context, MainModel mainModel) {
         this.context = context;
         this.mainModel = mainModel;

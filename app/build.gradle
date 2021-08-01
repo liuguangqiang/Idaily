@@ -1,8 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.jakewharton.hugo'
-apply plugin: 'im.fir.plugin.gradle'
 
 def ext = rootProject.ext
 
@@ -12,7 +9,6 @@ def releaseTime() {
 
 android {
     compileSdkVersion ext.compileSdkVersion
-    buildToolsVersion ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -25,6 +21,7 @@ android {
         targetSdkVersion ext.targetSdkVersion
         versionCode ext.versionCode
         versionName ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
 
@@ -45,13 +42,11 @@ android {
         }
     }
 
+    flavorDimensions "daily"
     productFlavors {
-        daily {}
-    }
-
-    fir {
-        apiToken 'c7205d8417abec89edc200ab10d15d4a'
-        changeLog 'test'
+        daily {
+            dimension "daily"
+        }
     }
 
     buildTypes {
@@ -81,10 +76,6 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
-    }
-
     lintOptions {
         quiet true
         abortOnError false
@@ -96,39 +87,46 @@ android {
         jumboMode true
         javaMaxHeapSize "4g"
     }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
+
+    implementation 'androidx.drawerlayout:drawerlayout:1.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.core:core-ktx:1.0.2'
 
     def compiles = ext.compiles
     def provides = ext.provides
     def apts = ext.apts
 
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile compiles.supportAppCompat
-    compile compiles.supportRecyclerView
-    compile compiles.supportDesgin
-    compile compiles.supportCardView
-    compile compiles.glide
-    compile compiles.logansquare
-    compile compiles.viewpagerIndicator
-    compile compiles.guangqiangWidgets
-    compile compiles.guangqiangUtils
-    compile compiles.retrofit
-    compile compiles.retrofitAdapter
-    compile compiles.okhttpLog
-    compile compiles.logansquareConverter
-    compile compiles.rxandroid
-    compile compiles.rxjava
-    compile compiles.eventbus
-    compile compiles.dagger
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
-    compile 'com.jakewharton.timber:timber:4.1.2'
+    //RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.15'
 
-    provided provides.daggerCompiler
-    provided provides.annotation
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
 
-    apt apts.logansquareCompiler
-    apt 'com.android.databinding:compiler:2.3.0'
+    implementation compiles.glide
+    implementation compiles.viewpagerIndicator
+    implementation compiles.guangqiangWidgets
+    implementation compiles.guangqiangUtils
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'com.jakewharton.timber:timber:4.1.2'
 }

@@ -1,6 +1,6 @@
 package com.liuguangqiang.idaily.utils.databinding;
 
-import android.databinding.BindingAdapter;
+import androidx.databinding.BindingAdapter;
 
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;

@@ -1,10 +1,11 @@
 package com.liuguangqiang.idaily.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.liuguangqiang.idaily.databinding.FragmentTopStoryBinding;
 import com.liuguangqiang.idaily.domain.entity.Story;

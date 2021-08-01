@@ -1,6 +1,6 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
-import android.databinding.BaseObservable;
+import androidx.databinding.BaseObservable;
 import android.view.View;
 
 import com.liuguangqiang.idaily.domain.entity.Story;

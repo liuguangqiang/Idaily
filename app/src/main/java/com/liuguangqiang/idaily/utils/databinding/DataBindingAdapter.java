@@ -1,6 +1,6 @@
 package com.liuguangqiang.idaily.utils.databinding;
 
-import android.databinding.BindingAdapter;
+import androidx.databinding.BindingAdapter;
 import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
