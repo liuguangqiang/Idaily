@@ -1,23 +1,21 @@
 package com.liuguangqiang.idaily.ui.act;
 
 import androidx.databinding.DataBindingUtil;
+
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.liuguangqiang.idaily.R;
+import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
-import com.liuguangqiang.idaily.di.components.DaggerStoryComponent;
-import com.liuguangqiang.idaily.di.modules.StoryModule;
+import com.liuguangqiang.idaily.ui.model.StoryModel;
 import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
-
-import javax.inject.Inject;
 
 public class StoryActivity extends BaseActivity {
 
     public static final String ARG_STORY = "ARG_STORY";
 
-    @Inject
-    StoryViewModel viewModel;
+    private StoryViewModel viewModel = new StoryViewModel(new StoryModel());
 
     private ActivityStoryBinding binding;
 
@@ -31,18 +29,14 @@ public class StoryActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (viewModel != null) {
-            viewModel.onDestroy();
+//            viewModel.onDestroy();
         }
     }
 
     @Override
     public void onCreateBinding() {
-        DaggerStoryComponent.builder()
-                .storyModule(new StoryModule())
-                .build()
-                .inject(this);
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
+//        binding = DataBindingUtil.setContentView(this, R.layout.activity_story);
+        binding = ActivityStoryBinding.inflate(getLayoutInflater());
         binding.setStoryViewModel(viewModel);
         viewModel.pushArguments(getIntent().getExtras());
     }

@@ -1,7 +1,5 @@
 package com.liuguangqiang.idaily.ui.adapter.page;
 
-import android.app.FragmentManager;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
@@ -18,9 +16,9 @@ public class TopStoryAdapter extends FragmentStatePagerAdapter {
 
     public List<Story> stories = new ArrayList<>();
 
-    public TopStoryAdapter(FragmentManager fragmentManager, List<Story> storyList) {
-        super(fragmentManager);
-        this.stories = storyList;
+    public TopStoryAdapter(androidx.fragment.app.FragmentManager fm, List<Story> stories) {
+        super(fm);
+        this.stories = stories;
     }
 
     @Override

@@ -91,24 +91,24 @@ public class MainModel {
                 });
 
 
-        Observable<Daily> observabl1e = dailyService.getLatest();
-        observable.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Daily>() {
-                    @Override
-                    public void onCompleted() {
-                        requestView.onRequestFinished();
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(Daily daily) {
-                    }
-                });
+//        Observable<Daily> observabl1e = dailyService.getLatest();
+//        observable.subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new Observer<Daily>() {
+//                    @Override
+//                    public void onCompleted() {
+//                        requestView.onRequestFinished();
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(Daily daily) {
+//                    }
+//                });
     }
 
 }

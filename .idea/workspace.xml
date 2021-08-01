@@ -50,52 +50,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/app/DailyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/app/DailyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/ScopeActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/components/AppComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/components/MainComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/components/StoryComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/modules/AppModule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/modules/MainModule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/di/modules/StoryModule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/RetrofitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/RetrofitClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/Daily.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/Daily.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/Story.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/StorySection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/StorySection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/service/DailyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/service/DailyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/service/StoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/service/StoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/BaseActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/page/TopStoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/page/TopStoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/fragment/TopStoryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/fragment/TopStoryFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/StoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/StoryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/AbsRecyclerViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/AbsRecyclerViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/StoryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/StoryViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/TopStoryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/TopStoryViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/databinding/DBRecyclerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/databinding/DBRecyclerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/databinding/DataBindingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/databinding/DataBindingAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idaily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/idaily.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -525,13 +487,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00014" summary="update android support library to v22.2.1">
-      <created>1443616554567</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1443616554567</updated>
-    </task>
     <task id="LOCAL-00015" summary="fixed.">
       <created>1443616587532</created>
       <option name="number" value="00015" />
@@ -868,7 +823,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493087987837</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="refactoring">
+      <created>1627829097197</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1627829097198</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TodoView">
@@ -903,7 +865,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove unused method." />
     <MESSAGE value="Create Navigator for starting activity." />
     <MESSAGE value="Inject a StoryViewModel into the StoryActivity." />
     <MESSAGE value="Fixed typo." />
@@ -928,33 +889,38 @@
     <MESSAGE value="update gradle version." />
     <MESSAGE value="change the primary color." />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1627725430451">
+    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1627829285074">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser/0.25.1440.817@0.25.1440.817" timestamp="1627725430451" />
-    <state width="1398" height="167" key="GridCell.Tab.0.bottom" timestamp="1627717379514">
+    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser/0.25.1440.817@0.25.1440.817" timestamp="1627829285074" />
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom" timestamp="1627829795232">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1398" height="167" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1627717379514" />
-    <state width="1398" height="167" key="GridCell.Tab.0.center" timestamp="1627717379513">
+    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1627829795232" />
+    <state width="1398" height="209" key="GridCell.Tab.0.center" timestamp="1627829795231">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1398" height="167" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1627717379513" />
-    <state width="1398" height="167" key="GridCell.Tab.0.left" timestamp="1627717379513">
+    <state width="1398" height="209" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1627829795231" />
+    <state width="1398" height="209" key="GridCell.Tab.0.left" timestamp="1627829795231">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1398" height="167" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1627717379513" />
-    <state width="1398" height="167" key="GridCell.Tab.0.right" timestamp="1627717379513">
+    <state width="1398" height="209" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1627829795231" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right" timestamp="1627829795232">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state width="1398" height="167" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1627717379513" />
+    <state width="1398" height="209" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1627829795232" />
     <state x="229" y="69" key="SettingsEditor" timestamp="1627657525433">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="229" y="69" key="SettingsEditor/0.25.1440.817@0.25.1440.817" timestamp="1627657525433" />
+    <state x="320" y="170" key="Vcs.Push.Dialog.v2" timestamp="1627829100384">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="320" y="170" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1627829100384" />
   </component>
   <component name="masterDetails">
     <states>

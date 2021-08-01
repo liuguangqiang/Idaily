@@ -21,11 +21,11 @@ public class StoryModel {
         storyService = RetrofitClient.getInstance().create(StoryService.class);
     }
 
-    public Subscription getStory(int id, Observer<Story> observer) {
-        return storyService.getStory(id).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
-    }
+//    public Subscription getStory(int id, Observer<Story> observer) {
+//        return storyService.getStory(id).subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(observer);
+//    }
 
     public String getBody(Story story) {
         if (story == null) return "";

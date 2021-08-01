@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.MenuItem;
 
@@ -19,6 +20,7 @@ import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mainViewModel = new MainViewModel(this, new MainModel());
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+//        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         binding.setViewModel(mainViewModel);
 
         initToolbar();
