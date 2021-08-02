@@ -1,12 +1,20 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
+import android.app.Application;
 import android.content.Context;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.act.MainActivity;
+import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
 import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.ui.model.MainModel;
 import com.liuguangqiang.idaily.ui.view.MainView;
@@ -21,75 +29,72 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
+import timber.log.Timber;
+
 
 /**
  * Created by Eric on 15/6/26.
  */
-public class MainViewModel extends AbsRecyclerViewModel<BaseEntity> implements MainView, RequestView<BaseEntity>, AbsRVAdapter.OnItemClickListener {
-
-    private Context context;
+public class MainViewModel extends AndroidViewModel {
 
     private MainModel mainModel;
 
-    private StoryAdapter adapter;
-
-    public MainViewModel(){}
-
-    public MainViewModel(Context context, MainModel mainModel) {
-        this.context = context;
-        this.mainModel = mainModel;
-        mainModel.setView(this, this);
-
-        adapter = new StoryAdapter(context, getData());
-        adapter.setOnItemClickListener(this);
-
-        requestData();
+    public MainViewModel(Application application) {
+        super(application);
+        mainModel = new MainModel();
     }
 
-    public StoryAdapter getAdapter() {
-        return adapter;
+
+    public MutableLiveData<List<BaseEntity>> getLiveData() {
+        return mainModel.getLiveData();
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-        BaseEntity entity = data.get(position);
-        if (entity instanceof Story) {
-            Navigator.getInstance().openStory(context, (Story) entity);
-        }
-    }
-
-    @Override
-    public void requestData() {
-        super.requestData();
+    public void getStories(){
         mainModel.getDaily();
     }
 
-    @Override
-    public void bindTopStories(List<Story> stories) {
-        TopStoriesEvent event = new TopStoriesEvent(stories);
-        EventBus.getDefault().post(event);
-    }
+//    public StoriesAdapter getAdapter() {
+//        return adapter;
+//    }
 
-    public OnPageListener getOnPageListener() {
-        return new OnPageListener() {
-            @Override
-            public void onPage() {
-                requestData();
-            }
-        };
-    }
+//    @Override
+//    public void onItemClick(View view, int position) {
+//        BaseEntity entity = data.get(position);
+//        if (entity instanceof Story) {
+//            Navigator.getInstance().openStory(context, (Story) entity);
+//        }
+//    }
+//
+//    @Override
+//    public void requestData() {
+//        super.requestData();
+//        mainModel.getDaily();
+//    }
+//
+//    @Override
+//    public void onRequestSuccess(List<BaseEntity> list) {
+//        super.onRequestSuccess(list);
+//        Timber.d("get daily onRequestSuccess:" + list.size());
+//    }
+//
+//    @Override
+//    public void bindTopStories(List<Story> stories) {
+//        TopStoriesEvent event = new TopStoriesEvent(stories);
+//        EventBus.getDefault().post(event);
+//    }
 
-    public View.OnClickListener getOnClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.tv_github:
-                        IntentUtils.skipToBrowser(v.getContext(), "https://github.com/liuguangqiang/Idaily");
-                        break;
-                }
-            }
-        };
-    }
+
+//    public View.OnClickListener getOnClickListener() {
+//        return new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                switch (v.getId()) {
+//                    case R.id.tv_github:
+//                        IntentUtils.skipToBrowser(v.getContext(), "https://github.com/liuguangqiang/Idaily");
+//                        break;
+//                }
+//            }
+//        };
+//    }
 
 }

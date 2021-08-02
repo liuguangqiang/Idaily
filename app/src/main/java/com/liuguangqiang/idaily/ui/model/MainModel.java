@@ -1,5 +1,8 @@
 package com.liuguangqiang.idaily.ui.model;
 
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+
 import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Daily;
@@ -15,7 +18,6 @@ import java.util.List;
 import hugo.weaving.DebugLog;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -28,15 +30,22 @@ public class MainModel {
 
     private int lastDatetime = 0;
     private List<BaseEntity> data = new ArrayList<>();
+    private MutableLiveData<List<BaseEntity>> liveData = new MutableLiveData<>();
 
     private DailyService dailyService;
 
     public MainModel() {
         dailyService = RetrofitClient.getInstance().create(DailyService.class);
+        liveData.setValue(data);
     }
+
 
     private MainView view;
     private RequestView requestView;
+
+    public MutableLiveData<List<BaseEntity>> getLiveData() {
+        return liveData;
+    }
 
     public void setView(MainView view, RequestView<BaseEntity> requestView) {
         this.view = view;
@@ -63,7 +72,7 @@ public class MainModel {
 
                     @Override
                     public void onComplete() {
-                        requestView.onRequestFinished();
+//                        requestView.onRequestFinished();
                     }
 
                     @Override
@@ -78,14 +87,16 @@ public class MainModel {
                             data.clear();
 
                             if (datetime == 0) {
-                                view.bindTopStories(daily.getTop_stories());
+//                                view.bindTopStories(daily.getTop_stories());
                             } else {
                                 section = new StorySection(daily.getDate());
                                 data.add(section);
                             }
 
+                            Timber.d("get daily size:"+daily.getStories().size());
                             data.addAll(daily.getStories());
-                            requestView.onRequestSuccess(data);
+                            liveData.postValue(data);
+//                            requestView.onRequestSuccess(data);
                         }
                     }
                 });

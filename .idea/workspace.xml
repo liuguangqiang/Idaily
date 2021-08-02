@@ -51,13 +51,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/SectionItemProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/page/TopStoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/page/TopStoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/StoryModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/StoryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +71,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/eric/.android/avd/Pixel_XL_9.0_Pie.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@131e3c64]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -135,6 +139,8 @@
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.Flavors" value="daily" />
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
+    <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.liuguangqiang.support/widgets/0.1.0/4e3007ca9a9f91f21b0959a82bc69790541ea12/widgets-0.1.0-sources.jar!/com/liuguangqiang/support/widgets/recyclerview/SuperRecyclerView.java_SELECTED" value="SuperRecyclerView" />
+    <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="CVH7N15C15001742" />
@@ -170,11 +176,11 @@
       <recent name="com.mvitamio" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.liuguangqiang.idaily.ui.adapter.ItemProvider" />
       <recent name="com.liuguangqiang.idaily.di.components" />
       <recent name="com.liuguangqiang.idaily.di.modules" />
       <recent name="com.liuguangqiang.idaily.utils" />
       <recent name="com.liuguangqiang.idaily.domain.service" />
-      <recent name="com.liuguangqiang.idaily.ui.view" />
     </key>
     <key name="android.template.parentActivityClass">
       <recent name="" />
@@ -486,13 +492,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fixed.">
-      <created>1443616587532</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1443616587532</updated>
     </task>
     <task id="LOCAL-00016" summary="Print logs just only in debug model.">
       <created>1443620397940</created>
@@ -830,7 +829,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627829097198</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="refactoring">
+      <created>1627829907574</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1627829907574</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView">
@@ -893,34 +899,39 @@
     <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser" timestamp="1627829285074">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state x="-1612" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1627913713265">
+      <screen x="-2560" y="25" width="2560" height="1357" />
     </state>
     <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser/0.25.1440.817@0.25.1440.817" timestamp="1627829285074" />
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom" timestamp="1627829795232">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state x="-1612" y="223" key="#com.intellij.ide.util.MemberChooser/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913713265" />
+    <state width="2518" height="589" key="GridCell.Tab.0.bottom" timestamp="1627913373741">
+      <screen x="-2560" y="25" width="2560" height="1357" />
     </state>
     <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1627829795232" />
-    <state width="1398" height="209" key="GridCell.Tab.0.center" timestamp="1627829795231">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state width="2518" height="589" key="GridCell.Tab.0.bottom/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373741" />
+    <state width="2518" height="589" key="GridCell.Tab.0.center" timestamp="1627913373741">
+      <screen x="-2560" y="25" width="2560" height="1357" />
     </state>
     <state width="1398" height="209" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1627829795231" />
-    <state width="1398" height="209" key="GridCell.Tab.0.left" timestamp="1627829795231">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state width="2518" height="589" key="GridCell.Tab.0.center/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373741" />
+    <state width="2518" height="589" key="GridCell.Tab.0.left" timestamp="1627913373740">
+      <screen x="-2560" y="25" width="2560" height="1357" />
     </state>
     <state width="1398" height="209" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1627829795231" />
-    <state width="1398" height="209" key="GridCell.Tab.0.right" timestamp="1627829795232">
-      <screen x="0" y="25" width="1440" height="817" />
+    <state width="2518" height="589" key="GridCell.Tab.0.left/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373740" />
+    <state width="2518" height="589" key="GridCell.Tab.0.right" timestamp="1627913373741">
+      <screen x="-2560" y="25" width="2560" height="1357" />
     </state>
     <state width="1398" height="209" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1627829795232" />
+    <state width="2518" height="589" key="GridCell.Tab.0.right/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373741" />
     <state x="229" y="69" key="SettingsEditor" timestamp="1627657525433">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="229" y="69" key="SettingsEditor/0.25.1440.817@0.25.1440.817" timestamp="1627657525433" />
-    <state x="320" y="170" key="Vcs.Push.Dialog.v2" timestamp="1627829100384">
+    <state x="320" y="170" key="Vcs.Push.Dialog.v2" timestamp="1627829910580">
       <screen x="0" y="25" width="1440" height="817" />
     </state>
-    <state x="320" y="170" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1627829100384" />
+    <state x="320" y="170" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1627829910580" />
   </component>
   <component name="masterDetails">
     <states>
