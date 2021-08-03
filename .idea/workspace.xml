@@ -25,6 +25,7 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="getLatest" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
@@ -51,17 +52,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/SectionItemProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_storys.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idaily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/idaily.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +73,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@131e3c64]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[131e3c64]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -117,6 +119,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -144,7 +154,7 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="CVH7N15C15001742" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="memory.settings.postsync.last.time.stamp" value="1627657506803" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="copyright" />
@@ -152,16 +162,16 @@
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.1.2" />
   </component>
   <component name="RecentsManager">
+    <key name="android.template.packageName">
+      <recent name="com.liuguangqiang.idaily.fragment" />
+      <recent name="com.liuguangqiang.idaily" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspaces\Eric\Idaily\app\src\main\res\layout" />
       <recent name="$PROJECT_DIR$/art" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/navigator" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-    </key>
-    <key name="android.template.packageName">
-      <recent name="com.liuguangqiang.idaily.fragment" />
-      <recent name="com.liuguangqiang.idaily" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain" />
@@ -169,6 +179,9 @@
       <recent name="$PROJECT_DIR$/mvitamio/src/main/jniLibs/armeabi" />
       <recent name="$PROJECT_DIR$/app/src/main/jniLibs/armeabi" />
       <recent name="$PROJECT_DIR$/app/src/main/jniLibs" />
+    </key>
+    <key name="android.template.parentActivityClass">
+      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.liuguangqiang.idaily.ui" />
@@ -182,11 +195,16 @@
       <recent name="com.liuguangqiang.idaily.utils" />
       <recent name="com.liuguangqiang.idaily.domain.service" />
     </key>
-    <key name="android.template.parentActivityClass">
-      <recent name="" />
-    </key>
   </component>
   <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="DEPLOY" value="true" />
@@ -315,14 +333,6 @@
     </configuration>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-    </configuration>
-    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Idaily.app" />
@@ -861,6 +871,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -897,41 +908,6 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="refactoring" />
     <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-1612" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1627913713265">
-      <screen x="-2560" y="25" width="2560" height="1357" />
-    </state>
-    <state x="533" y="144" key="#com.intellij.ide.util.MemberChooser/0.25.1440.817@0.25.1440.817" timestamp="1627829285074" />
-    <state x="-1612" y="223" key="#com.intellij.ide.util.MemberChooser/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913713265" />
-    <state width="2518" height="589" key="GridCell.Tab.0.bottom" timestamp="1627913373741">
-      <screen x="-2560" y="25" width="2560" height="1357" />
-    </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1627829795232" />
-    <state width="2518" height="589" key="GridCell.Tab.0.bottom/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373741" />
-    <state width="2518" height="589" key="GridCell.Tab.0.center" timestamp="1627913373741">
-      <screen x="-2560" y="25" width="2560" height="1357" />
-    </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1627829795231" />
-    <state width="2518" height="589" key="GridCell.Tab.0.center/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373741" />
-    <state width="2518" height="589" key="GridCell.Tab.0.left" timestamp="1627913373740">
-      <screen x="-2560" y="25" width="2560" height="1357" />
-    </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1627829795231" />
-    <state width="2518" height="589" key="GridCell.Tab.0.left/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373740" />
-    <state width="2518" height="589" key="GridCell.Tab.0.right" timestamp="1627913373741">
-      <screen x="-2560" y="25" width="2560" height="1357" />
-    </state>
-    <state width="1398" height="209" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1627829795232" />
-    <state width="2518" height="589" key="GridCell.Tab.0.right/0.25.1440.875/-2560.25.2560.1357@-2560.25.2560.1357" timestamp="1627913373741" />
-    <state x="229" y="69" key="SettingsEditor" timestamp="1627657525433">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state x="229" y="69" key="SettingsEditor/0.25.1440.817@0.25.1440.817" timestamp="1627657525433" />
-    <state x="320" y="170" key="Vcs.Push.Dialog.v2" timestamp="1627829910580">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state x="320" y="170" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1627829910580" />
   </component>
   <component name="masterDetails">
     <states>

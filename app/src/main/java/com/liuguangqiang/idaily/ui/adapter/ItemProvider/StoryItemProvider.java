@@ -7,7 +7,6 @@ import com.liuguangqiang.idaily.databinding.ItemStoryBinding;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
 
-
 import org.jetbrains.annotations.NotNull;
 
 /**

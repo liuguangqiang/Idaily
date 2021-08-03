@@ -39,17 +39,8 @@ public class MainModel {
         liveData.setValue(data);
     }
 
-
-    private MainView view;
-    private RequestView requestView;
-
     public MutableLiveData<List<BaseEntity>> getLiveData() {
         return liveData;
-    }
-
-    public void setView(MainView view, RequestView<BaseEntity> requestView) {
-        this.view = view;
-        this.requestView = requestView;
     }
 
     public void getDaily() {
@@ -72,7 +63,6 @@ public class MainModel {
 
                     @Override
                     public void onComplete() {
-//                        requestView.onRequestFinished();
                     }
 
                     @Override
@@ -93,10 +83,9 @@ public class MainModel {
                                 data.add(section);
                             }
 
-                            Timber.d("get daily size:"+daily.getStories().size());
+                            Timber.d("getDaily size:"+daily.getStories().size());
                             data.addAll(daily.getStories());
                             liveData.postValue(data);
-//                            requestView.onRequestSuccess(data);
                         }
                     }
                 });

@@ -1,5 +1,6 @@
 package com.liuguangqiang.idaily.ui.act;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.graphics.Color;
@@ -15,9 +16,14 @@ import android.view.MenuItem;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
+import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
+import com.liuguangqiang.idaily.domain.entity.Daily;
 import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.domain.service.DailyService;
+import com.liuguangqiang.idaily.domain.service.StoryService;
 import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
+import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
 import com.liuguangqiang.idaily.ui.model.MainModel;
 import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
@@ -29,12 +35,15 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private CollapsingToolbarLayout collapsingToolbar;
-    private TopStoryAdapter topStoryAdapter;
+//    private CollapsingToolbarLayout collapsingToolbar;
+//    private TopStoryAdapter topStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
 
     private ActivityMainBinding binding;
@@ -45,30 +54,20 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         mainViewModel = new MainViewModel(getApplication());
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-//        binding.setViewModel(mainViewModel);
-
-//        initToolbar();
+        setContentView(binding.getRoot());
         initViews();
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-        }
+//        if (!EventBus.getDefault().isRegistered(this)) {
+//            EventBus.getDefault().register(this);
+//        }
     }
 
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().unregister(this);
-        }
-    }
-
-    @Override
-    public void onCreateBinding() {
-//        DaggerMainComponent
-//                .builder()
-//                .mainModule(new MainModule(getApplicationContext()))
-//                .build().inject(this);
+//        if (EventBus.getDefault().isRegistered(this)) {
+//            EventBus.getDefault().unregister(this);
+//        }
     }
 
     @Override
@@ -97,13 +96,15 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initViews() {
+        adapter = new StoriesAdapter(new ArrayList<>());
         binding.rvNews.setLayoutManager(new LinearLayoutManager(this));
+        binding.rvNews.setAdapter(adapter);
         mainViewModel.getLiveData().observe(this, new Observer<List<BaseEntity>>() {
             @Override
             public void onChanged(List<BaseEntity> baseEntities) {
                 Timber.d("list onChanged:"+baseEntities.size());
-                adapter = new StoriesAdapter(baseEntities);
-                binding.rvNews.setAdapter(adapter);
+                adapter.setList(baseEntities);
+//                adapter.notifyDataSetChanged();
             }
         });
         mainViewModel.getStories();
@@ -134,11 +135,11 @@ public class MainActivity extends BaseActivity {
 
     @Subscribe
     public void onEvent(TopStoriesEvent event) {
-        if (event.stories != null) {
-            topStories.addAll(event.stories);
-            topStoryAdapter.notifyDataSetChanged();
-            collapsingToolbar.setTitle(topStories.get(0).getTitle());
-        }
+//        if (event.stories != null) {
+//            topStories.addAll(event.stories);
+//            topStoryAdapter.notifyDataSetChanged();
+//            collapsingToolbar.setTitle(topStories.get(0).getTitle());
+//        }
     }
 
 }

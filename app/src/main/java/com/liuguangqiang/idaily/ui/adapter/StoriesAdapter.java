@@ -12,6 +12,8 @@ import com.liuguangqiang.idaily.domain.entity.StorySection;
 import com.liuguangqiang.idaily.ui.adapter.ItemProvider.SectionItemProvider;
 import com.liuguangqiang.idaily.ui.adapter.ItemProvider.StoryItemProvider;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 import timber.log.Timber;
@@ -19,14 +21,21 @@ import timber.log.Timber;
 /**
  * Created by Eric at 2021/7/31
  */
-public class StoriesAdapter extends BaseProviderMultiAdapter<BaseEntity> {
+public class StoriesAdapter extends BaseMultiItemQuickAdapter<BaseEntity, BaseViewHolder> {
 
     public static final int ITEM_STORY = 0;
 
     public static final int ITEM_SECTION = 1;
-//
 
-//    public StoriesAdapter() {
+    public StoriesAdapter(@Nullable List<BaseEntity> data) {
+        super(data);
+        addItemType(ITEM_STORY, R.layout.item_story);
+        addItemType(ITEM_SECTION, R.layout.item_story_header);
+//        addItemProvider(new StoryItemProvider());*/
+//        addItemProvider(new SectionItemProvider());
+    }
+
+    //    public StoriesAdapter() {
 //        super();
 ////        addItemType(ITEM_STORY, R.layout.item_story);
 ////        addItemType(ITEM_SECTION, R.layout.item_story_header);
@@ -34,32 +43,32 @@ public class StoriesAdapter extends BaseProviderMultiAdapter<BaseEntity> {
 //        addItemProvider(new SectionItemProvider());
 //    }
 
-//    @Override
-//    protected void convert(BaseViewHolder helper, BaseEntity baseEntity) {
-//        switch (helper.getItemViewType()) {
-//            case ITEM_STORY:
-//                Timber.d("StoriesAdapter ITEM_STORY");
-//                ItemStoryBinding binding = (ItemStoryBinding) helper.itemView.getTag();
-//                binding.setStory((Story) baseEntity);
-//                binding.executePendingBindings();
-//                break;
-//            case ITEM_SECTION:
-//                Timber.d("StoriesAdapter ITEM_SECTION");
-//                ItemStoryHeaderBinding sectionBinding = (ItemStoryHeaderBinding) helper.itemView.getTag();
-//                sectionBinding.setSection((StorySection) baseEntity);
-//                sectionBinding.executePendingBindings();
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-
-
     @Override
-    protected int getItemType(List<? extends BaseEntity> list, int i) {
-        if (getItem(i) instanceof StorySection) {
-            return ITEM_SECTION;
+    protected void convert(BaseViewHolder helper, BaseEntity baseEntity) {
+        switch (helper.getItemViewType()) {
+            case ITEM_STORY:
+                Timber.d("StoriesAdapter ITEM_STORY");
+                ItemStoryBinding binding = (ItemStoryBinding) helper.itemView.getTag();
+                binding.setStory((Story) baseEntity);
+                binding.executePendingBindings();
+                break;
+            case ITEM_SECTION:
+                Timber.d("StoriesAdapter ITEM_SECTION");
+                ItemStoryHeaderBinding sectionBinding = (ItemStoryHeaderBinding) helper.itemView.getTag();
+                sectionBinding.setSection((StorySection) baseEntity);
+                sectionBinding.executePendingBindings();
+                break;
+            default:
+                break;
         }
-        return ITEM_STORY;
     }
+
+
+//    @Override
+//    protected int getItemType(List<? extends BaseEntity> list, int i) {
+//        if (getItem(i) instanceof StorySection) {
+//            return ITEM_SECTION;
+//        }
+//        return ITEM_STORY;
+//    }
 }

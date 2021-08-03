@@ -1,10 +1,15 @@
 package com.liuguangqiang.idaily.ui.adapter;
 
 import android.content.Context;
+
 import androidx.databinding.ViewDataBinding;
+
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ItemStoryBinding;
 import com.liuguangqiang.idaily.databinding.ItemStoryHeaderBinding;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
@@ -12,69 +17,35 @@ import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.domain.entity.StorySection;
 import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 /**
  * Created by Eric on 15/6/6.
  */
-public class StoryAdapter {
-//        extends AbsRVAdapter<BaseEntity, StoryAdapter.StoryViewHolder> {
+public class StoryAdapter extends BaseQuickAdapter<Story, BaseViewHolder> {
 
-//    private static final int ITEM_STORY = 0;
-//
-//    private static final int ITEM_SECTION = 1;
-//
-//    public StoryAdapter(Context context, List<BaseEntity> data) {
-//        super(context, data);
+
+    public StoryAdapter(int layoutResId, @Nullable List<Story> data) {
+        super(layoutResId, data);
+    }
+
+    /**
+     * 构造方法，此示例中，在实例化Adapter时就传入了一个List。
+     * 如果后期设置数据，不需要传入初始List，直接调用 super(layoutResId); 即可
+     */
+//    public StoryAdapter() {
+//        super(R.layout.item_story);
 //    }
-//
-//    @Override
-//    public StoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        if (viewType == ITEM_STORY)
-//            return StoryViewHolder.createViewHolder(ItemStoryBinding.inflate(layoutInflater));
-//        else
-//            return StoryViewHolder.createViewHolder(ItemStoryHeaderBinding.inflate(layoutInflater));
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(StoryViewHolder holder, int position) {
-//        super.onBindViewHolder(holder, position);
-//        BaseEntity entity = data.get(position);
-//        if (getItemViewType(position) == ITEM_STORY)
-//            holder.bindData((Story) entity);
-//        else
-//            holder.bindSection((StorySection) entity);
-//    }
-//
-//    @Override
-//    public int getItemViewType(int position) {
-//        if (data.get(position) instanceof StorySection)
-//            return ITEM_SECTION;
-//
-//        return ITEM_STORY;
-//    }
-//
-//    public static class StoryViewHolder extends RecyclerView.ViewHolder {
-//
-//        public static StoryViewHolder createViewHolder(ViewDataBinding binding) {
-//            return new StoryViewHolder(binding.getRoot(), binding);
-//        }
-//
-//        public StoryViewHolder(View view, ViewDataBinding binding) {
-//            super(view);
-//            itemView.setTag(binding);
-//        }
-//
-//        public void bindData(Story story) {
-//            ItemStoryBinding binding = (ItemStoryBinding) itemView.getTag();
-//            binding.setStory(story);
-//            binding.executePendingBindings();
-//        }
-//
-//        public void bindSection(StorySection section) {
-//            ItemStoryHeaderBinding binding = (ItemStoryHeaderBinding) itemView.getTag();
-//            binding.setSection(section);
-//            binding.executePendingBindings();
-//        }
-//    }
+
+
+
+    /**
+     * 在此方法中设置item数据
+     */
+    @Override
+    protected void convert(BaseViewHolder helper, Story item) {
+        helper.setText(R.id.item_tv_title, "This is an Item, pos: " + (helper.getAdapterPosition() - getHeaderLayoutCount()));
+    }
 }
