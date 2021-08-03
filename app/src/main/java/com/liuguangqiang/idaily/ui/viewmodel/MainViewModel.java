@@ -44,12 +44,15 @@ public class MainViewModel extends AndroidViewModel {
         mainModel = new MainModel();
     }
 
-
     public MutableLiveData<List<BaseEntity>> getLiveData() {
         return mainModel.getLiveData();
     }
 
-    public void getStories(){
+    public MutableLiveData<List<Story>> getTopLiveData() {
+        return mainModel.getTopLiveData();
+    }
+
+    public void getStories() {
         mainModel.getDaily();
     }
 

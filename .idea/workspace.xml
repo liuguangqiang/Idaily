@@ -25,9 +25,9 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="getLatest" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="getDaily" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
@@ -51,19 +51,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_storys.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/SectionItemProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/SectionItemProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idaily.iml" beforeDir="false" afterPath="$PROJECT_DIR$/idaily.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +106,7 @@
         <option value="NoneUiFragment" />
         <option value="MVP-Presenter" />
         <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -151,6 +150,8 @@
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
     <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.liuguangqiang.support/widgets/0.1.0/4e3007ca9a9f91f21b0959a82bc69790541ea12/widgets-0.1.0-sources.jar!/com/liuguangqiang/support/widgets/recyclerview/SuperRecyclerView.java_SELECTED" value="SuperRecyclerView" />
     <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
+    <property name="android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_CirclePageIndicator_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="CVH7N15C15001742" />
@@ -503,13 +504,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00016" summary="Print logs just only in debug model.">
-      <created>1443620397940</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1443620397940</updated>
-    </task>
     <task id="LOCAL-00017" summary="update README.md">
       <created>1443621621315</created>
       <option name="number" value="00017" />
@@ -846,7 +840,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627829907574</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="bug fix">
+      <created>1627970894565</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1627970894566</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView">
@@ -882,7 +883,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create Navigator for starting activity." />
     <MESSAGE value="Inject a StoryViewModel into the StoryActivity." />
     <MESSAGE value="Fixed typo." />
     <MESSAGE value="Update README.md. Waiting for release at Google Play." />
@@ -907,7 +907,8 @@
     <MESSAGE value="change the primary color." />
     <MESSAGE value="update README.md" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
   <component name="masterDetails">
     <states>

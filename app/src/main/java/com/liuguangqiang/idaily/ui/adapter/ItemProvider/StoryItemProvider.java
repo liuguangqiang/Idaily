@@ -1,5 +1,7 @@
 package com.liuguangqiang.idaily.ui.adapter.ItemProvider;
 
+import androidx.databinding.DataBindingUtil;
+
 import com.chad.library.adapter.base.provider.BaseItemProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.liuguangqiang.idaily.R;
@@ -9,10 +11,12 @@ import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
+import timber.log.Timber;
+
 /**
  * Created by Eric at 2021/8/2
  */
-public class StoryItemProvider extends BaseItemProvider<Story> {
+public class StoryItemProvider<T>  extends BaseItemProvider<Story> {
 
     @Override
     public int getItemViewType() {
@@ -26,13 +30,15 @@ public class StoryItemProvider extends BaseItemProvider<Story> {
 
     @Override
     public void onViewHolderCreated(BaseViewHolder viewHolder, int viewType) {
-        super.onViewHolderCreated(viewHolder, viewType);
+        DataBindingUtil.bind(viewHolder.itemView);
     }
 
     @Override
     public void convert(@NotNull BaseViewHolder helper, @NotNull Story data) {
-        ItemStoryBinding binding = helper.getBinding();
+        Timber.d("StoryItemProvider convert");
+        ItemStoryBinding binding =  DataBindingUtil.getBinding(helper.itemView);
         if (binding != null) {
+            Timber.d("StoryItemProvider binding");
             binding.setStory(data);
             binding.executePendingBindings();
         }

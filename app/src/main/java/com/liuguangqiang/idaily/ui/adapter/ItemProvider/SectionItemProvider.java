@@ -1,5 +1,7 @@
 package com.liuguangqiang.idaily.ui.adapter.ItemProvider;
 
+import androidx.databinding.DataBindingUtil;
+
 import com.chad.library.adapter.base.provider.BaseItemProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.liuguangqiang.idaily.R;
@@ -14,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Created by Eric at 2021/8/2
  */
-public class SectionItemProvider extends BaseItemProvider<StorySection> {
+public class SectionItemProvider<T> extends BaseItemProvider<StorySection> {
 
     @Override
     public int getItemViewType() {
@@ -28,12 +30,12 @@ public class SectionItemProvider extends BaseItemProvider<StorySection> {
 
     @Override
     public void onViewHolderCreated(BaseViewHolder viewHolder, int viewType) {
-        super.onViewHolderCreated(viewHolder, viewType);
+        DataBindingUtil.bind(viewHolder.itemView);
     }
 
     @Override
     public void convert(@NotNull BaseViewHolder helper, @NotNull StorySection data) {
-        ItemStoryHeaderBinding binding = helper.getBinding();
+        ItemStoryHeaderBinding binding =DataBindingUtil.getBinding(helper.itemView);
         if (binding != null) {
             binding.setSection(data);
             binding.executePendingBindings();

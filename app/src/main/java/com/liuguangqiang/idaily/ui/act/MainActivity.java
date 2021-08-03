@@ -13,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.view.MenuItem;
 
+import com.chad.library.adapter.base.listener.OnLoadMoreListener;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
@@ -42,8 +43,8 @@ import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private CollapsingToolbarLayout collapsingToolbar;
-//    private TopStoryAdapter topStoryAdapter;
+    private CollapsingToolbarLayout collapsingToolbar;
+    private TopStoryAdapter topStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
 
     private ActivityMainBinding binding;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         mainViewModel = new MainViewModel(getApplication());
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        initToolbar();
         initViews();
 //        if (!EventBus.getDefault().isRegistered(this)) {
 //            EventBus.getDefault().register(this);
@@ -83,35 +85,49 @@ public class MainActivity extends AppCompatActivity {
     private StoriesAdapter adapter;
 
     private void initToolbar() {
-//        setSupportActionBar(binding.toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_menu);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//
-//        collapsingToolbar = binding.collapsingToolbar;
-//        collapsingToolbar.setTitle(getString(R.string.app_name));
-//        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
-//        collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
-//        collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
+        setSupportActionBar(binding.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_menu);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        collapsingToolbar = binding.collapsingToolbar;
+        collapsingToolbar.setTitle(getString(R.string.app_name));
+        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
+        collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
+        collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
     }
 
     private void initViews() {
         adapter = new StoriesAdapter(new ArrayList<>());
+        adapter.getLoadMoreModule().setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                mainViewModel.getStories();
+            }
+        });
+
         binding.rvNews.setLayoutManager(new LinearLayoutManager(this));
         binding.rvNews.setAdapter(adapter);
         mainViewModel.getLiveData().observe(this, new Observer<List<BaseEntity>>() {
             @Override
             public void onChanged(List<BaseEntity> baseEntities) {
-                Timber.d("list onChanged:"+baseEntities.size());
-                adapter.setList(baseEntities);
-//                adapter.notifyDataSetChanged();
+                Timber.d("list onChanged:" + baseEntities.size());
+                adapter.addData(baseEntities);
+                adapter.getLoadMoreModule().loadMoreComplete();
+            }
+        });
+
+        mainViewModel.getTopLiveData().observe(this, new Observer<List<Story>>() {
+            @Override
+            public void onChanged(List<Story> stories) {
+                topStories.addAll(stories);
+                topStoryAdapter.notifyDataSetChanged();
             }
         });
         mainViewModel.getStories();
 
-
-//        topStoryAdapter = new TopStoryAdapter(getSupportFragmentManager(), topStories);
-//        binding.viewPager.setAdapter(topStoryAdapter);
+        topStoryAdapter = new TopStoryAdapter(getSupportFragmentManager(), topStories);
+        binding.viewPager.setAdapter(topStoryAdapter);
 //        binding.indicator.setViewPager(binding.viewPager);
 //        binding.indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 //            @Override

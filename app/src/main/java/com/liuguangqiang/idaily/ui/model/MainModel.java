@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Daily;
+import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.domain.entity.StorySection;
 import com.liuguangqiang.idaily.domain.service.DailyService;
 import com.liuguangqiang.idaily.ui.view.MainView;
@@ -30,7 +31,9 @@ public class MainModel {
 
     private int lastDatetime = 0;
     private List<BaseEntity> data = new ArrayList<>();
+
     private MutableLiveData<List<BaseEntity>> liveData = new MutableLiveData<>();
+    private MutableLiveData<List<Story>> topLiveData = new MutableLiveData<>();
 
     private DailyService dailyService;
 
@@ -41,6 +44,10 @@ public class MainModel {
 
     public MutableLiveData<List<BaseEntity>> getLiveData() {
         return liveData;
+    }
+
+    public MutableLiveData<List<Story>> getTopLiveData() {
+        return topLiveData;
     }
 
     public void getDaily() {
@@ -78,12 +85,13 @@ public class MainModel {
 
                             if (datetime == 0) {
 //                                view.bindTopStories(daily.getTop_stories());
+                                topLiveData.postValue(daily.getTop_stories());
                             } else {
                                 section = new StorySection(daily.getDate());
                                 data.add(section);
                             }
 
-                            Timber.d("getDaily size:"+daily.getStories().size());
+                            Timber.d("getDaily size:" + daily.getStories().size());
                             data.addAll(daily.getStories());
                             liveData.postValue(data);
                         }
