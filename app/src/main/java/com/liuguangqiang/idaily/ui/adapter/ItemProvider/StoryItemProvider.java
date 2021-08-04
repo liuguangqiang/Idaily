@@ -16,7 +16,7 @@ import timber.log.Timber;
 /**
  * Created by Eric at 2021/8/2
  */
-public class StoryItemProvider<T>  extends BaseItemProvider<Story> {
+public class StoryItemProvider<T> extends BaseItemProvider<Story> {
 
     @Override
     public int getItemViewType() {
@@ -36,7 +36,7 @@ public class StoryItemProvider<T>  extends BaseItemProvider<Story> {
     @Override
     public void convert(@NotNull BaseViewHolder helper, @NotNull Story data) {
         Timber.d("StoryItemProvider convert");
-        ItemStoryBinding binding =  DataBindingUtil.getBinding(helper.itemView);
+        ItemStoryBinding binding = DataBindingUtil.getBinding(helper.itemView);
         if (binding != null) {
             Timber.d("StoryItemProvider binding");
             binding.setStory(data);

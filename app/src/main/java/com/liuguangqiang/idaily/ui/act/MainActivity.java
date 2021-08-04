@@ -37,6 +37,7 @@ import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
+    private StoriesAdapter adapter;
     private CollapsingToolbarLayout collapsingToolbar;
     private TopStoryAdapter topStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
@@ -75,8 +76,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-    private StoriesAdapter adapter;
 
     private void initToolbar() {
         setSupportActionBar(binding.toolbar);

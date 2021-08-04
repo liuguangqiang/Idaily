@@ -13,6 +13,12 @@
 
   <style name="AppTheme.Detail" parent="AppTheme"></style>
 
+  <style name="AppTheme.NoActionBar" parent="BaseAppTheme">
+    <item name="android:statusBarColor">@android:color/white</item>
+    <item name="android:windowActionBar">false</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
   <style name="AppActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
     <item name="android:titleTextStyle">@style/AppActionBar.Title</item>
   </style>

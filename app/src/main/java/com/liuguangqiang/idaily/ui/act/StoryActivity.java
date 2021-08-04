@@ -2,6 +2,8 @@ package com.liuguangqiang.idaily.ui.act;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -9,11 +11,17 @@ import android.webkit.WebViewClient;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.ui.adapter.WebViewAdapter;
 import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
+
+import java.util.ArrayList;
+
+import timber.log.Timber;
 
 public class StoryActivity extends BaseActivity {
 
@@ -22,6 +30,7 @@ public class StoryActivity extends BaseActivity {
     private StoryViewModel viewModel;
 
     private ActivityStoryBinding binding;
+    private WebViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +45,6 @@ public class StoryActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (viewModel != null) {
-//            viewModel.onDestroy();
-        }
     }
 
     @Override
@@ -46,27 +52,40 @@ public class StoryActivity extends BaseActivity {
     }
 
     private void initViews() {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        binding.webContent.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-        binding.webContent.getSettings().setJavaScriptEnabled(true);
-        binding.webContent.setWebViewClient(new WebViewClient(){
+        binding.collapsingToolbarLayout.post(new Runnable() {
             @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                view.loadUrl("javascript:window.myapp.resize(document.body.getBoundingClientRect().bottom);") ;
-                //This call invokes an injected js method to override the webview height, which resolves the initial loading of the page. Problem, 1
+            public void run() {
+                binding.collapsingToolbarLayout.requestLayout();
             }
         });
+
+        adapter = new WebViewAdapter(new ArrayList<>());
+        binding.rvWebView.setLayoutManager(new LinearLayoutManager(this));
+        binding.rvWebView.setAdapter(adapter);
 
         viewModel.storyLiveData.observe(this, new Observer<Story>() {
             @Override
             public void onChanged(Story story) {
-                binding.collapsingToolbar.setTitle(story.title);
+                binding.collapsingToolbarLayout.setTitle(story.title);
                 Glide.with(StoryActivity.this).load(story.getImage()).into(binding.ivPic);
-                binding.webContent.loadData(viewModel.getBody(), "text/html; charset=UTF-8", null);
+                adapter.addData(story);
             }
         });
+        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) binding.toolbar.getLayoutParams();
+        layoutParams.topMargin = getStatusBarHeight();
+        Timber.d("status bar height:" + getStatusBarHeight());
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 
     @Override

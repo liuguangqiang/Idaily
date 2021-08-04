@@ -1,35 +1,15 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
 import android.app.Application;
-import android.content.Context;
-import android.view.View;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Observer;
 
-import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.act.MainActivity;
-import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
-import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.ui.model.MainModel;
-import com.liuguangqiang.idaily.ui.view.MainView;
-import com.liuguangqiang.idaily.ui.view.RequestView;
-import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
-import com.liuguangqiang.idaily.utils.navigator.Navigator;
-import com.liuguangqiang.support.utils.IntentUtils;
-import com.liuguangqiang.support.widgets.recyclerview.OnPageListener;
-import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
-
-import timber.log.Timber;
 
 
 /**

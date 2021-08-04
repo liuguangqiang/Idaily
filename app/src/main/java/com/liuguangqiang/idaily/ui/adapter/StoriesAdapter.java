@@ -14,6 +14,8 @@ import java.util.List;
 import timber.log.Timber;
 
 /**
+ * 首页列表adapter
+ *
  * Created by Eric at 2021/7/31
  */
 public class StoriesAdapter extends BaseProviderMultiAdapter<BaseEntity> implements LoadMoreModule {
