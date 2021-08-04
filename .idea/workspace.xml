@@ -52,16 +52,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="bug fix">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/app/DailyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/app/DailyApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/SectionItemProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/SectionItemProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/MainModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/model/StoryModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/StoryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/StoryViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idaily.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +76,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[131e3c64]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[2a7765dc]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -152,14 +157,15 @@
     <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
     <property name="android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_CirclePageIndicator_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/ui/widget/MyWebView.java_MyWebView_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/ui/widget/MyWebView.java_SELECTED" value="MyWebView" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="CVH7N15C15001742" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="memory.settings.postsync.last.time.stamp" value="1627657506803" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.1.2" />
   </component>
   <component name="RecentsManager">
@@ -504,13 +510,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00017" summary="update README.md">
-      <created>1443621621315</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1443621621315</updated>
-    </task>
     <task id="LOCAL-00018" summary="implemented top stories.">
       <created>1444569193243</created>
       <option name="number" value="00018" />
@@ -847,7 +846,14 @@
       <option name="project" value="LOCAL" />
       <updated>1627970894566</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="refactoring">
+      <created>1627984222825</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1627984222825</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView">

@@ -1,7 +1,8 @@
 package com.liuguangqiang.idaily.ui.viewmodel;
 
-import androidx.databinding.BaseObservable;
-import androidx.databinding.Bindable;
+
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import android.os.Bundle;
 
@@ -9,7 +10,6 @@ import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.domain.service.StoryService;
 import com.liuguangqiang.idaily.ui.act.StoryActivity;
-import com.liuguangqiang.idaily.ui.model.StoryModel;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -19,18 +19,13 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by Eric on 15/6/23.
  */
-public class StoryViewModel extends BaseObservable {
+public class StoryViewModel extends ViewModel {
 
-    private StoryModel storyModel;
-
-    @Bindable
     public Story story;
 
     public String title = "";
 
-    public StoryViewModel(StoryModel storyMode) {
-        this.storyModel = storyMode;
-    }
+    public MutableLiveData<Story> storyLiveData = new MutableLiveData<>();
 
     public void pushArguments(Bundle bundle) {
         Story story = bundle.getParcelable(StoryActivity.ARG_STORY);
@@ -55,13 +50,11 @@ public class StoryViewModel extends BaseObservable {
     }
 
     public String getBody() {
-        return storyModel.getBody(story);
+        return getBody(storyLiveData.getValue());
     }
 
     public void setStory(Story story) {
-        this.story = story;
-        this.title = story.getTitle();
-        notifyChange();
+        storyLiveData.postValue(story);
     }
 
     public Story getStory() {
@@ -92,6 +85,21 @@ public class StoryViewModel extends BaseObservable {
 
             }
         });
+    }
+
+    public String getBody(Story story) {
+        if (story == null) return "";
+        return loadDataWithCSS(story.getBody(), story.getCss().get(0));
+    }
+
+    private String loadDataWithCSS(String loadData, String cssPath) {
+        String header = "<html><head><link href=\"%s\" type=\"text/css\" rel=\"stylesheet\"/></head><body>";
+        String footer = "</body></html>";
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format(header, cssPath));
+        sb.append(loadData);
+        sb.append(footer);
+        return sb.toString();
     }
 
 }

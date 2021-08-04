@@ -1,34 +1,31 @@
 package com.liuguangqiang.idaily.ui.act;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.core.view.GravityCompat;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.viewpager.widget.ViewPager;
 
 import android.view.MenuItem;
+import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chad.library.adapter.base.listener.OnLoadMoreListener;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
-import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
-import com.liuguangqiang.idaily.domain.entity.Daily;
 import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.domain.service.DailyService;
-import com.liuguangqiang.idaily.domain.service.StoryService;
 import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
-import com.liuguangqiang.idaily.ui.adapter.StoryAdapter;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
-import com.liuguangqiang.idaily.ui.model.MainModel;
+
 import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
+import com.liuguangqiang.idaily.utils.navigator.Navigator;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -36,9 +33,6 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
@@ -103,6 +97,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLoadMore() {
                 mainViewModel.getStories();
+            }
+        });
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
+                BaseEntity entity = (BaseEntity) adapter.getItem(position);
+                if (entity instanceof Story) {
+                    Navigator.getInstance().openStory(MainActivity.this, (Story) entity);
+                }
             }
         });
 

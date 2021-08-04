@@ -6,7 +6,6 @@ import android.content.Context;
 import com.liuguangqiang.idaily.BuildConfig;
 import com.liuguangqiang.support.utils.Logs;
 
-import hugo.weaving.DebugLog;
 import timber.log.Timber;
 
 
@@ -15,8 +14,6 @@ import timber.log.Timber;
  */
 public class DailyApplication extends Application {
 
-
-    @DebugLog
     @Override
     public void onCreate() {
         super.onCreate();

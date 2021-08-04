@@ -1,6 +1,5 @@
 package com.liuguangqiang.idaily.ui.model;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.liuguangqiang.idaily.domain.RetrofitClient;
@@ -9,14 +8,10 @@ import com.liuguangqiang.idaily.domain.entity.Daily;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.domain.entity.StorySection;
 import com.liuguangqiang.idaily.domain.service.DailyService;
-import com.liuguangqiang.idaily.ui.view.MainView;
-import com.liuguangqiang.idaily.ui.view.RequestView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-import hugo.weaving.DebugLog;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -56,7 +51,6 @@ public class MainModel {
 
     private StorySection section;
 
-    @DebugLog
     public void getDaily(final int datetime) {
         Timber.d("getDaily %d ", datetime);
         Observable<Daily> observable = datetime > 0 ? dailyService.getBefore(datetime) : dailyService.getLatest();
