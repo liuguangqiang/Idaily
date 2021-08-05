@@ -25,8 +25,7 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="status bar" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="AutoImportSettings">
@@ -51,19 +50,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="bug fix">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/WebViewAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_webview.xml" afterDir="false" />
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="动态获取statusbar高度">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/BannerStoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/DisplayUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_banner_story.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/ItemProvider/StoryItemProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoriesAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/StoryAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/viewmodel/MainViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_webview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_webview.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[131e3c64]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[2a7765dc]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -107,9 +105,9 @@
       <list>
         <option value="NoneUiFragment" />
         <option value="MVP-Presenter" />
-        <option value="Class" />
         <option value="Kotlin Class" />
         <option value="valueResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -510,13 +508,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00019" summary="update the config for android data binding.">
-      <created>1458531189741</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1458531189741</updated>
-    </task>
     <task id="LOCAL-00020" summary="move entity to other package.">
       <created>1458612263905</created>
       <option name="number" value="00020" />
@@ -853,7 +844,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628063393291</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="动态获取statusbar高度">
+      <created>1628070807388</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1628070807388</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView">
@@ -889,7 +887,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Inject a StoryViewModel into the StoryActivity." />
     <MESSAGE value="Fixed typo." />
     <MESSAGE value="Update README.md. Waiting for release at Google Play." />
     <MESSAGE value="Bind views with ButterKnife." />
@@ -914,7 +911,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="动态获取statusbar高度" />
+    <option name="LAST_COMMIT_MESSAGE" value="动态获取statusbar高度" />
   </component>
   <component name="masterDetails">
     <states>

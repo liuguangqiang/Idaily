@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
@@ -20,12 +22,17 @@ import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
 import com.liuguangqiang.idaily.domain.entity.BaseEntity;
 import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.ui.adapter.BannerStoryAdapter;
 import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
 import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
 
 import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
+import com.liuguangqiang.idaily.utils.DisplayUtils;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
 import com.liuguangqiang.idaily.utils.navigator.Navigator;
+import com.youth.banner.indicator.CircleIndicator;
+import com.youth.banner.listener.OnBannerListener;
+import com.youth.banner.listener.OnPageChangeListener;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -40,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private StoriesAdapter adapter;
     private CollapsingToolbarLayout collapsingToolbar;
     private TopStoryAdapter topStoryAdapter;
+    private BannerStoryAdapter bannerStoryAdapter;
     private List<Story> topStories = new ArrayList<>();
 
     private ActivityMainBinding binding;
@@ -83,6 +91,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.mipmap.ic_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) binding.toolbar.getLayoutParams();
+        layoutParams.topMargin = DisplayUtils.getStatusBarHeight(this);
+
         collapsingToolbar = binding.collapsingToolbar;
         collapsingToolbar.setTitle(getString(R.string.app_name));
         collapsingToolbar.setExpandedTitleColor(Color.WHITE);
@@ -91,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         adapter = new StoriesAdapter(new ArrayList<>());
         adapter.getLoadMoreModule().setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
@@ -119,36 +131,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.banner.setIndicator(new CircleIndicator(this));
+        binding.banner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(Object data, int position) {
+
+            }
+        });
+        binding.banner.addOnPageChangeListener(new OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                collapsingToolbar.setTitle(topStories.get(position).getTitle());
+                setTitle(topStories.get(position).getTitle());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         mainViewModel.getTopLiveData().observe(this, new Observer<List<Story>>() {
             @Override
             public void onChanged(List<Story> stories) {
                 topStories.addAll(stories);
-                topStoryAdapter.notifyDataSetChanged();
+                bannerStoryAdapter = new BannerStoryAdapter(stories);
+                binding.banner.setAdapter(bannerStoryAdapter);
+                collapsingToolbar.setTitle(topStories.get(0).getTitle());
+                setTitle(topStories.get(0).getTitle());
             }
         });
         mainViewModel.getStories();
-
-        topStoryAdapter = new TopStoryAdapter(getSupportFragmentManager(), topStories);
-        binding.viewPager.setAdapter(topStoryAdapter);
-//        binding.indicator.setViewPager(binding.viewPager);
-//        binding.indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                collapsingToolbar.setTitle(topStories.get(position).getTitle());
-//                setTitle(topStories.get(position).getTitle());
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//
-//            }
-//        });
-//        binding.rvNews.setAdapter(mainViewModel.getStories(););
     }
 
     @Subscribe

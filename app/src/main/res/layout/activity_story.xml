@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 app:contentScrim="?attr/colorPrimary"
                 app:expandedTitleMarginEnd="24dp"
+                app:maxLines="2"
                 app:expandedTitleMarginStart="50dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 

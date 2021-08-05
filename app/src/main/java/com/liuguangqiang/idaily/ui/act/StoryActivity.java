@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
+import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.ui.adapter.WebViewAdapter;
@@ -55,6 +56,8 @@ public class StoryActivity extends BaseActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        binding.collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
         binding.collapsingToolbarLayout.post(new Runnable() {
             @Override
             public void run() {

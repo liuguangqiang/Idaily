@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/activity_main.xml" value="0.276268115942029" />
         <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/activity_story.xml" value="0.17806484295845998" />
+        <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/fragment_top_story.xml" value="0.276268115942029" />
+        <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/item_banner_story.xml" value="0.276268115942029" />
         <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/item_story.xml" value="0.276268115942029" />
+        <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/item_story_header.xml" value="0.276268115942029" />
         <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/item_storys.xml" value="0.276268115942029" />
         <entry key="..\:/workspaces/Eric/Idaily/app/src/main/res/layout/item_webview.xml" value="0.2966485507246377" />
       </map>
