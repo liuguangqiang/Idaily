@@ -1,5 +1,6 @@
 package com.liuguangqiang.idaily.ui.act;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
@@ -8,12 +9,15 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.AppBarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.domain.entity.Story;
@@ -58,10 +62,16 @@ public class StoryActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         binding.collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
-        binding.collapsingToolbarLayout.post(new Runnable() {
+        binding.collapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.gray_dark));
+        binding.collapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.gray_dark));
+        binding.collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
+        binding.appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
-            public void run() {
-                binding.collapsingToolbarLayout.requestLayout();
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                float maxOffset = (appBarLayout.getHeight() - binding.toolbar.getHeight());
+                float ratio = (verticalOffset + maxOffset) / maxOffset;
+                int color = ColorUtils.blendARGB(Color.WHITE, Color.BLACK, 1 - ratio);
+                binding.toolbar.getNavigationIcon().setTint(color);
             }
         });
 

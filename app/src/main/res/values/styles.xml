@@ -24,7 +24,7 @@
   </style>
 
   <style name="AppActionBar.Title" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-    <item name="android:textColor">@android:color/white</item>
+    <item name="android:textColor">@color/gray_dark</item>
   </style>
 
   <style name="CollapsingToolbarTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">

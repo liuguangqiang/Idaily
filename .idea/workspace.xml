@@ -50,18 +50,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="动态获取statusbar高度">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/adapter/BannerStoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/utils/DisplayUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_banner_story.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="引入youth banner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/StoryActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_story.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_webview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_webview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/color.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+    </list>
+    <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +122,20 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="52" end1="57" start2="52" end2="59" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
+        <range start1="58" end1="64" start2="60" end2="60" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
+        <range start1="128" end1="128" start2="124" end2="138" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
+        <range start1="505" end1="505" start2="515" end2="516" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
+        <range start1="509" end1="516" start2="520" end2="520" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
+        <range start1="853" end1="854" start2="857" end2="865" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
+        <range start1="889" end1="890" start2="900" end2="900" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
+        <range start1="914" end1="915" start2="924" end2="926" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
+      </ranges>
+    </file>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -503,6 +513,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="" />
+      <changelist id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="" />
       <created>1435398705628</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

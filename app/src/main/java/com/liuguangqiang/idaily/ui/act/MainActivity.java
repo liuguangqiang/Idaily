@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -17,6 +19,7 @@ import android.view.WindowManager;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.chad.library.adapter.base.listener.OnLoadMoreListener;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
@@ -96,9 +99,18 @@ public class MainActivity extends AppCompatActivity {
 
         collapsingToolbar = binding.collapsingToolbar;
         collapsingToolbar.setTitle(getString(R.string.app_name));
-        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
-        collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
+        collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(this, R.color.gray_dark));
+        collapsingToolbar.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.gray_dark));
         collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsingToolbarTitle);
+        binding.appbar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                float maxOffset = (appBarLayout.getHeight() - binding.toolbar.getHeight());
+                float ratio = (verticalOffset + maxOffset) / maxOffset;
+                int color = ColorUtils.blendARGB(Color.WHITE, Color.BLACK, 1 - ratio);
+                binding.toolbar.getNavigationIcon().setTint(color);
+            }
+        });
     }
 
     private void initViews() {
