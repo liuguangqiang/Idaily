@@ -50,15 +50,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="引入youth banner">
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="使用ColorUtils计算两个颜色的过渡">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/ui/act/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/color.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/color.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml" afterDir="false" />
     </list>
-    <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,20 +119,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="52" end1="57" start2="52" end2="59" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
-        <range start1="58" end1="64" start2="60" end2="60" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
-        <range start1="128" end1="128" start2="124" end2="138" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
-        <range start1="505" end1="505" start2="515" end2="516" changelist="daef5a13-00c6-4a55-b291-a5e03928dd70" />
-        <range start1="509" end1="516" start2="520" end2="520" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
-        <range start1="853" end1="854" start2="857" end2="865" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
-        <range start1="889" end1="890" start2="900" end2="900" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
-        <range start1="914" end1="915" start2="924" end2="926" changelist="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" />
-      </ranges>
-    </file>
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -158,6 +140,8 @@
     <property name="ExportApk.ApkPath" value="$USER_HOME$/Desktop" />
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.Flavors" value="daily" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
     <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.liuguangqiang.support/widgets/0.1.0/4e3007ca9a9f91f21b0959a82bc69790541ea12/widgets-0.1.0-sources.jar!/com/liuguangqiang/support/widgets/recyclerview/SuperRecyclerView.java_SELECTED" value="SuperRecyclerView" />
     <property name="android-custom-view/Users/eric/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
@@ -519,20 +503,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00020" summary="move entity to other package.">
-      <created>1458612263905</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1458612263905</updated>
-    </task>
-    <task id="LOCAL-00021" summary="remove unused classes.">
-      <created>1458612304023</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1458612304023</updated>
-    </task>
     <task id="LOCAL-00022" summary="Implemented retrofit for http request.">
       <created>1458618175246</created>
       <option name="number" value="00022" />
@@ -862,7 +832,21 @@
       <option name="project" value="LOCAL" />
       <updated>1628070807388</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="引入youth banner">
+      <created>1628131517111</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1628131517111</updated>
+    </task>
+    <task id="LOCAL-00070" summary="使用ColorUtils计算两个颜色的过渡">
+      <created>1628472589123</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1628472589123</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TodoView">
@@ -898,8 +882,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed typo." />
-    <MESSAGE value="Update README.md. Waiting for release at Google Play." />
     <MESSAGE value="Bind views with ButterKnife." />
     <MESSAGE value="Remove unused classes." />
     <MESSAGE value="Remove dependency butterknife." />
@@ -923,7 +905,9 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="动态获取statusbar高度" />
-    <option name="LAST_COMMIT_MESSAGE" value="动态获取statusbar高度" />
+    <MESSAGE value="引入youth banner" />
+    <MESSAGE value="使用ColorUtils计算两个颜色的过渡" />
+    <option name="LAST_COMMIT_MESSAGE" value="使用ColorUtils计算两个颜色的过渡" />
   </component>
   <component name="masterDetails">
     <states>
