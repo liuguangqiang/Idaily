@@ -29,6 +29,8 @@ public class Story extends BaseEntity implements Parcelable {
 
     public String share_url;
 
+    public String hint;
+
     public List<String> getCss() {
         return css;
     }

@@ -25,8 +25,8 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="OkHttp" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
@@ -50,9 +50,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="使用ColorUtils计算两个颜色的过渡">
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="change section style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_story_header.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/Story.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/liuguangqiang/idaily/domain/entity/Story.java" afterDir="false" />
     </list>
     <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other" />
     <option name="SHOW_DIALOG" value="false" />
@@ -503,13 +503,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00022" summary="Implemented retrofit for http request.">
-      <created>1458618175246</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1458618175246</updated>
-    </task>
     <task id="LOCAL-00023" summary="update res files.">
       <created>1458618320342</created>
       <option name="number" value="00023" />
@@ -846,7 +839,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628472589123</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="change section style">
+      <created>1628556861362</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1628556861362</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView">
@@ -882,7 +882,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bind views with ButterKnife." />
     <MESSAGE value="Remove unused classes." />
     <MESSAGE value="Remove dependency butterknife." />
     <MESSAGE value="update the rules of @BindingAdapter for fixing the warning messages when build project." />
@@ -907,7 +906,8 @@
     <MESSAGE value="动态获取statusbar高度" />
     <MESSAGE value="引入youth banner" />
     <MESSAGE value="使用ColorUtils计算两个颜色的过渡" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用ColorUtils计算两个颜色的过渡" />
+    <MESSAGE value="change section style" />
+    <option name="LAST_COMMIT_MESSAGE" value="change section style" />
   </component>
   <component name="masterDetails">
     <states>
