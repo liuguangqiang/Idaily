@@ -11,14 +11,14 @@
 
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="102dp"
         android:background="@drawable/rv_selector"
         android:padding="@dimen/default_padding">
 
         <ImageView
             android:id="@+id/item_iv_pic"
-            android:layout_width="90dp"
-            android:layout_height="70dp"
+            android:layout_width="100dp"
+            android:layout_height="78dp"
             android:background="@color/gray_light"
             android:scaleType="centerCrop"
             app:imageUrl="@{story.images[0]}" />
@@ -27,12 +27,26 @@
             android:id="@+id/item_tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
             android:layout_toRightOf="@+id/item_iv_pic"
-            android:padding="6dp"
+            android:maxLines="2"
             android:text="@{story.title}"
             android:textColor="@color/gray_dark"
-            android:textSize="@dimen/font_size_big"
+            android:textSize="17sp"
+            tools:text="Hello world" />
+
+        <TextView
+            android:id="@+id/tvHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toRightOf="@+id/item_iv_pic"
+            android:text="@{story.hint}"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_size_least"
             tools:text="Hello world" />
 
     </RelativeLayout>
