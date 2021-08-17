@@ -1,19 +1,14 @@
-package com.liuguangqiang.idaily.ui.act;
+package com.liuguangqiang.idaily.feature.detail;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +16,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
 import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.app.BaseActivity;
 import com.liuguangqiang.idaily.ui.adapter.WebViewAdapter;
 import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
 

@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.ui.act;
+package com.liuguangqiang.idaily.app;
 
 import android.os.Bundle;
 import android.view.View;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.act.StoryActivity;
+import com.liuguangqiang.idaily.feature.detail.StoryActivity;
 
 /**
  * Created by Eric on 15/10/11.

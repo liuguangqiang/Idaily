@@ -9,7 +9,7 @@ import android.os.Bundle;
 import com.liuguangqiang.idaily.domain.RetrofitClient;
 import com.liuguangqiang.idaily.domain.entity.Story;
 import com.liuguangqiang.idaily.domain.service.StoryService;
-import com.liuguangqiang.idaily.ui.act.StoryActivity;
+import com.liuguangqiang.idaily.feature.detail.StoryActivity;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

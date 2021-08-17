@@ -50,9 +50,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="增加hint字段">
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="show the author's name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_story.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_story.xml" afterDir="false" />
     </list>
     <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[2a7765dc]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Administrator\.android\avd\Pixel_3a_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -505,13 +504,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00024" summary="fixed.">
-      <created>1458618381363</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1458618381363</updated>
-    </task>
     <task id="LOCAL-00025" summary="add dependencies for dagger2.">
       <created>1458618522117</created>
       <option name="number" value="00025" />
@@ -848,7 +840,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628642948704</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="show the author's name">
+      <created>1628747395604</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1628747395604</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView">
@@ -884,7 +883,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove dependency butterknife." />
     <MESSAGE value="update the rules of @BindingAdapter for fixing the warning messages when build project." />
     <MESSAGE value="update daocloud.yml and Dockerfile" />
     <MESSAGE value="EXPOSE 80" />
@@ -909,7 +907,8 @@
     <MESSAGE value="使用ColorUtils计算两个颜色的过渡" />
     <MESSAGE value="change section style" />
     <MESSAGE value="增加hint字段" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加hint字段" />
+    <MESSAGE value="show the author's name" />
+    <option name="LAST_COMMIT_MESSAGE" value="show the author's name" />
   </component>
   <component name="masterDetails">
     <states>
