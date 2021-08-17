@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.ui.viewmodel;
+package com.liuguangqiang.idaily.feature.detail;
 
 
 import androidx.lifecycle.MutableLiveData;
@@ -6,10 +6,9 @@ import androidx.lifecycle.ViewModel;
 
 import android.os.Bundle;
 
-import com.liuguangqiang.idaily.domain.RetrofitClient;
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.domain.service.StoryService;
-import com.liuguangqiang.idaily.feature.detail.StoryActivity;
+import com.liuguangqiang.idaily.api.RetrofitClient;
+import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.api.service.StoryService;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

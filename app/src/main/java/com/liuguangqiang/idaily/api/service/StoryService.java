@@ -1,6 +1,6 @@
-package com.liuguangqiang.idaily.domain.service;
+package com.liuguangqiang.idaily.api.service;
 
-import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.api.entity.Story;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

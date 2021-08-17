@@ -2,7 +2,7 @@
  *  Copyright 2015 GoIn Inc. All rights reserved.
  */
 
-package com.liuguangqiang.idaily.domain;
+package com.liuguangqiang.idaily.api;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

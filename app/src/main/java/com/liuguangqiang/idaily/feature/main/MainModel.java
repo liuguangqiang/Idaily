@@ -1,13 +1,13 @@
-package com.liuguangqiang.idaily.ui.model;
+package com.liuguangqiang.idaily.feature.main;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.liuguangqiang.idaily.domain.RetrofitClient;
-import com.liuguangqiang.idaily.domain.entity.BaseEntity;
-import com.liuguangqiang.idaily.domain.entity.Daily;
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.domain.entity.StorySection;
-import com.liuguangqiang.idaily.domain.service.DailyService;
+import com.liuguangqiang.idaily.api.RetrofitClient;
+import com.liuguangqiang.idaily.api.entity.BaseEntity;
+import com.liuguangqiang.idaily.api.entity.Daily;
+import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.api.entity.StorySection;
+import com.liuguangqiang.idaily.api.service.DailyService;
 
 import java.util.ArrayList;
 import java.util.List;

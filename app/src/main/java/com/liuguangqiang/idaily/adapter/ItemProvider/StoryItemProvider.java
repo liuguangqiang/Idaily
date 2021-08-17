@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.ui.adapter.ItemProvider;
+package com.liuguangqiang.idaily.adapter.ItemProvider;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -6,8 +6,8 @@ import com.chad.library.adapter.base.provider.BaseItemProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ItemStoryBinding;
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
+import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.adapter.StoriesAdapter;
 
 import org.jetbrains.annotations.NotNull;
 

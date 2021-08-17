@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.ui.widget;
+package com.liuguangqiang.idaily.widget;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

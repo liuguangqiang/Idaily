@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.ui.fragment;
+package com.liuguangqiang.idaily.feature.main;
 
 import android.os.Bundle;
  import android.view.LayoutInflater;
@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.liuguangqiang.idaily.databinding.FragmentTopStoryBinding;
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.viewmodel.TopStoryViewModel;
+import com.liuguangqiang.idaily.api.entity.Story;
 
 public class TopStoryFragment extends Fragment {
 

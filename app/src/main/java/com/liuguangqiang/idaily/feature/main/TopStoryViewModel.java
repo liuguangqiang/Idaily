@@ -1,9 +1,9 @@
-package com.liuguangqiang.idaily.ui.viewmodel;
+package com.liuguangqiang.idaily.feature.main;
 
 import androidx.databinding.BaseObservable;
 import android.view.View;
 
-import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.api.entity.Story;
 import com.liuguangqiang.idaily.utils.navigator.Navigator;
 
 /**

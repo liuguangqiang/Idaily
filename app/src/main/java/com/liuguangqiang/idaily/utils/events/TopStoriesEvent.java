@@ -1,6 +1,6 @@
 package com.liuguangqiang.idaily.utils.events;
 
-import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.api.entity.Story;
 
 import java.util.List;
 

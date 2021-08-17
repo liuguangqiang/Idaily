@@ -15,10 +15,9 @@ import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.AppBarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityStoryBinding;
-import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.api.entity.Story;
 import com.liuguangqiang.idaily.app.BaseActivity;
-import com.liuguangqiang.idaily.ui.adapter.WebViewAdapter;
-import com.liuguangqiang.idaily.ui.viewmodel.StoryViewModel;
+import com.liuguangqiang.idaily.adapter.WebViewAdapter;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,9 @@
-package com.liuguangqiang.idaily.domain.entity;
+package com.liuguangqiang.idaily.api.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
+import com.liuguangqiang.idaily.adapter.StoriesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

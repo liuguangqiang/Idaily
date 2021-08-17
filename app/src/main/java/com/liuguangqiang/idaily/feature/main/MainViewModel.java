@@ -1,13 +1,12 @@
-package com.liuguangqiang.idaily.ui.viewmodel;
+package com.liuguangqiang.idaily.feature.main;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.liuguangqiang.idaily.domain.entity.BaseEntity;
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.model.MainModel;
+import com.liuguangqiang.idaily.api.entity.BaseEntity;
+import com.liuguangqiang.idaily.api.entity.Story;
 
 import java.util.List;
 

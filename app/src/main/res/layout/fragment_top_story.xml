@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.liuguangqiang.idaily.ui.viewmodel.TopStoryViewModel" />
+            type="com.liuguangqiang.idaily.feature.main.TopStoryViewModel" />
     </data>
 
     <RelativeLayout

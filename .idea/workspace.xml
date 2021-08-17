@@ -50,7 +50,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="show the author's name">
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other" />
@@ -504,13 +504,6 @@
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
     </task>
-    <task id="LOCAL-00025" summary="add dependencies for dagger2.">
-      <created>1458618522117</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1458618522117</updated>
-    </task>
     <task id="LOCAL-00026" summary="Implemented dagger2 for injecting.">
       <created>1458628851110</created>
       <option name="number" value="00026" />
@@ -847,7 +840,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628747395604</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="refactoring">
+      <created>1629159907951</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1629159907952</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TodoView">
@@ -900,7 +900,6 @@
     <MESSAGE value="update gradle version." />
     <MESSAGE value="change the primary color." />
     <MESSAGE value="update README.md" />
-    <MESSAGE value="refactoring" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="动态获取statusbar高度" />
     <MESSAGE value="引入youth banner" />
@@ -908,7 +907,8 @@
     <MESSAGE value="change section style" />
     <MESSAGE value="增加hint字段" />
     <MESSAGE value="show the author's name" />
-    <option name="LAST_COMMIT_MESSAGE" value="show the author's name" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
   <component name="masterDetails">
     <states>

@@ -23,13 +23,12 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ActivityMainBinding;
-import com.liuguangqiang.idaily.domain.entity.BaseEntity;
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.adapter.BannerStoryAdapter;
-import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
-import com.liuguangqiang.idaily.ui.adapter.page.TopStoryAdapter;
+import com.liuguangqiang.idaily.api.entity.BaseEntity;
+import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.adapter.BannerStoryAdapter;
+import com.liuguangqiang.idaily.adapter.StoriesAdapter;
+import com.liuguangqiang.idaily.adapter.page.TopStoryAdapter;
 
-import com.liuguangqiang.idaily.ui.viewmodel.MainViewModel;
 import com.liuguangqiang.idaily.utils.DisplayUtils;
 import com.liuguangqiang.idaily.utils.events.TopStoriesEvent;
 import com.liuguangqiang.idaily.utils.navigator.Navigator;

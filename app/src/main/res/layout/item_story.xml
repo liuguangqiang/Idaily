@@ -6,7 +6,7 @@
 
         <variable
             name="story"
-            type="com.liuguangqiang.idaily.domain.entity.Story" />
+            type="com.liuguangqiang.idaily.api.entity.Story" />
     </data>
 
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"

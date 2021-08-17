@@ -1,15 +1,14 @@
-package com.liuguangqiang.idaily.ui.adapter;
+package com.liuguangqiang.idaily.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.liuguangqiang.idaily.databinding.ItemBannerStoryBinding;
-import com.liuguangqiang.idaily.domain.entity.Story;
+import com.liuguangqiang.idaily.api.entity.Story;
 import com.youth.banner.adapter.BannerAdapter;
 
 import java.util.List;

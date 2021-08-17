@@ -1,6 +1,6 @@
-package com.liuguangqiang.idaily.domain.entity;
+package com.liuguangqiang.idaily.api.entity;
 
-import com.liuguangqiang.idaily.ui.adapter.StoriesAdapter;
+import com.liuguangqiang.idaily.adapter.StoriesAdapter;
 
 /**
  * Created by Eric on 15/6/9.

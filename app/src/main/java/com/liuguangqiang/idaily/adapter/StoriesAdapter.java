@@ -1,17 +1,15 @@
-package com.liuguangqiang.idaily.ui.adapter;
+package com.liuguangqiang.idaily.adapter;
 
 import com.chad.library.adapter.base.BaseProviderMultiAdapter;
 import com.chad.library.adapter.base.module.LoadMoreModule;
-import com.liuguangqiang.idaily.domain.entity.BaseEntity;
-import com.liuguangqiang.idaily.domain.entity.StorySection;
-import com.liuguangqiang.idaily.ui.adapter.ItemProvider.SectionItemProvider;
-import com.liuguangqiang.idaily.ui.adapter.ItemProvider.StoryItemProvider;
+import com.liuguangqiang.idaily.api.entity.BaseEntity;
+import com.liuguangqiang.idaily.api.entity.StorySection;
+import com.liuguangqiang.idaily.adapter.ItemProvider.SectionItemProvider;
+import com.liuguangqiang.idaily.adapter.ItemProvider.StoryItemProvider;
 
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-
-import timber.log.Timber;
 
 /**
  * 首页列表adapter

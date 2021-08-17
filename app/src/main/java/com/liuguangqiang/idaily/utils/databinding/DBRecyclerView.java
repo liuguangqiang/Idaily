@@ -3,7 +3,7 @@ package com.liuguangqiang.idaily.utils.databinding;
 import androidx.databinding.BindingAdapter;
 
 import com.liuguangqiang.idaily.R;
-import com.liuguangqiang.idaily.domain.entity.BaseEntity;
+import com.liuguangqiang.idaily.api.entity.BaseEntity;
 import com.liuguangqiang.support.widgets.recyclerview.SuperRecyclerView;
 import com.liuguangqiang.support.widgets.recyclerview.adapter.AbsRVAdapter;
 

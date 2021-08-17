@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.domain.entity;
+package com.liuguangqiang.idaily.api.entity;
 
 import java.util.List;
 

@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.liuguangqiang.idaily.ui.widget.MyWebView;
+import com.liuguangqiang.idaily.widget.MyWebView;
 import com.liuguangqiang.idaily.utils.DailyUtils;
 
 /**

@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.ui.widget;
+package com.liuguangqiang.idaily.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

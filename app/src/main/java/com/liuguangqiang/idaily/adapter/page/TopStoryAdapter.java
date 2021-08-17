@@ -1,10 +1,10 @@
-package com.liuguangqiang.idaily.ui.adapter.page;
+package com.liuguangqiang.idaily.adapter.page;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.liuguangqiang.idaily.domain.entity.Story;
-import com.liuguangqiang.idaily.ui.fragment.TopStoryFragment;
+import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.feature.main.TopStoryFragment;
 
 import java.util.ArrayList;
 import java.util.List;
