@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.api.entity;
+package com.liuguangqiang.idaily.entity;
 
 import com.liuguangqiang.idaily.adapter.StoriesAdapter;
 

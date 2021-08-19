@@ -5,8 +5,8 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.liuguangqiang.idaily.api.entity.BaseEntity;
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.entity.BaseEntity;
+import com.liuguangqiang.idaily.entity.Story;
 
 import java.util.List;
 

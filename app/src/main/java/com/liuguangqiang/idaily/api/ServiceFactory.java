@@ -15,19 +15,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * <p/>
  * Created by Eric on 15/10/18.
  */
-public class RetrofitClient {
+public class ServiceFactory {
 
     private static String HOST_NAME = "http://news-at.zhihu.com/api/4/";
 
-    private static final RetrofitClient instance = new RetrofitClient();
+    private static final ServiceFactory instance = new ServiceFactory();
 
-    public static RetrofitClient getInstance() {
+    public static ServiceFactory getInstance() {
         return instance;
     }
 
     private Retrofit retrofit;
 
-    public RetrofitClient() {
+    public ServiceFactory() {
         createRetrofit();
     }
 

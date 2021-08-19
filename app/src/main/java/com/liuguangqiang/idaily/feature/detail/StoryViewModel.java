@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel;
 
 import android.os.Bundle;
 
-import com.liuguangqiang.idaily.api.RetrofitClient;
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.api.ServiceFactory;
+import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.api.service.StoryService;
 
 import io.reactivex.Observer;
@@ -61,7 +61,7 @@ public class StoryViewModel extends ViewModel {
     }
 
     public void getStory(int id) {
-        StoryService storyService = RetrofitClient.getInstance().create(StoryService.class);
+        StoryService storyService = ServiceFactory.getInstance().create(StoryService.class);
         storyService.getStory(id).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Story>() {
             @Override

@@ -3,7 +3,7 @@ package com.liuguangqiang.idaily.adapter.page;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.feature.main.TopStoryFragment;
 
 import java.util.ArrayList;

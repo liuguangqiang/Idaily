@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.liuguangqiang.idaily.databinding.ItemBannerStoryBinding;
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.entity.Story;
 import com.youth.banner.adapter.BannerAdapter;
 
 import java.util.List;

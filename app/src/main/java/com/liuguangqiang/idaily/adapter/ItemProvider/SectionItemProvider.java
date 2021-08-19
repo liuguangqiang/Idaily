@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.provider.BaseItemProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ItemStoryHeaderBinding;
-import com.liuguangqiang.idaily.api.entity.StorySection;
+import com.liuguangqiang.idaily.entity.StorySection;
 import com.liuguangqiang.idaily.adapter.StoriesAdapter;
 
 import org.jetbrains.annotations.NotNull;

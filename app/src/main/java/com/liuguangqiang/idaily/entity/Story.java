@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.api.entity;
+package com.liuguangqiang.idaily.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -50,7 +50,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring">
+    <list default="true" id="daef5a13-00c6-4a55-b291-a5e03928dd70" name="Default" comment="refactoring and remove unused files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="31a8d6ea-35d0-42e2-8443-41aadd9eebcc" name="other" comment="other" />
@@ -62,7 +62,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Administrator\.android\avd\Pixel_3a_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[2a7765dc]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -152,6 +152,11 @@
     <property name="android-custom-viewC:/Users/Administrator/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.viewpagerindicator/library/2.4.1/6cd33e35ba843514f6b9e8ee0901e9f491efd5f5/library-2.4.1-sources.jar!/com/viewpagerindicator/CirclePageIndicator.java_SELECTED" value="CirclePageIndicator" />
     <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/ui/widget/MyWebView.java_MyWebView_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/ui/widget/MyWebView.java_SELECTED" value="MyWebView" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/ui/widget/RevealBackgroundView.java_RevealBackgroundView_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/ui/widget/RevealBackgroundView.java_SELECTED" value="RevealBackgroundView" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/widget/MyWebView.java_SELECTED" value="MyWebView" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/widget/RevealBackgroundView.java_RevealBackgroundView_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-viewE:/workspaces/Eric/Idaily/app/src/main/java/com/liuguangqiang/idaily/widget/RevealBackgroundView.java_SELECTED" value="RevealBackgroundView" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="device.picker.selection" value="CVH7N15C15001742" />
@@ -184,6 +189,7 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.liuguangqiang.idaily" />
       <recent name="com.liuguangqiang.idaily.ui" />
       <recent name="com.liuguangqiang.idaily.ui.act" />
       <recent name="com.mvitamio" />
@@ -503,13 +509,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1435398705628</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Implemented dagger2 for injecting.">
-      <created>1458628851110</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1458628851110</updated>
     </task>
     <task id="LOCAL-00027" summary="remove unused activities.">
       <created>1458628948765</created>
@@ -847,7 +846,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629159907952</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="refactoring and remove unused files">
+      <created>1629184709750</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1629184709750</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView">
@@ -883,7 +889,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update the rules of @BindingAdapter for fixing the warning messages when build project." />
     <MESSAGE value="update daocloud.yml and Dockerfile" />
     <MESSAGE value="EXPOSE 80" />
     <MESSAGE value="remove expose" />
@@ -908,7 +913,8 @@
     <MESSAGE value="增加hint字段" />
     <MESSAGE value="show the author's name" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="refactoring and remove unused files" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring and remove unused files" />
   </component>
   <component name="masterDetails">
     <states>

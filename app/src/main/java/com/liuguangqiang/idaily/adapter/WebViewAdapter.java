@@ -4,7 +4,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.liuguangqiang.idaily.R;
 import com.liuguangqiang.idaily.databinding.ItemWebviewBinding;
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.entity.Story;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -1,4 +1,4 @@
-package com.liuguangqiang.idaily.api.entity;
+package com.liuguangqiang.idaily.entity;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 

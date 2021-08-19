@@ -2,11 +2,11 @@ package com.liuguangqiang.idaily.feature.main;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.liuguangqiang.idaily.api.RetrofitClient;
-import com.liuguangqiang.idaily.api.entity.BaseEntity;
-import com.liuguangqiang.idaily.api.entity.Daily;
-import com.liuguangqiang.idaily.api.entity.Story;
-import com.liuguangqiang.idaily.api.entity.StorySection;
+import com.liuguangqiang.idaily.api.ServiceFactory;
+import com.liuguangqiang.idaily.entity.BaseEntity;
+import com.liuguangqiang.idaily.entity.Daily;
+import com.liuguangqiang.idaily.entity.Story;
+import com.liuguangqiang.idaily.entity.StorySection;
 import com.liuguangqiang.idaily.api.service.DailyService;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class MainModel {
     private DailyService dailyService;
 
     public MainModel() {
-        dailyService = RetrofitClient.getInstance().create(DailyService.class);
+        dailyService = ServiceFactory.getInstance().create(DailyService.class);
         liveData.setValue(data);
     }
 

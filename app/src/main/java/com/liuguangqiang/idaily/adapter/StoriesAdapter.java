@@ -2,8 +2,8 @@ package com.liuguangqiang.idaily.adapter;
 
 import com.chad.library.adapter.base.BaseProviderMultiAdapter;
 import com.chad.library.adapter.base.module.LoadMoreModule;
-import com.liuguangqiang.idaily.api.entity.BaseEntity;
-import com.liuguangqiang.idaily.api.entity.StorySection;
+import com.liuguangqiang.idaily.entity.BaseEntity;
+import com.liuguangqiang.idaily.entity.StorySection;
 import com.liuguangqiang.idaily.adapter.ItemProvider.SectionItemProvider;
 import com.liuguangqiang.idaily.adapter.ItemProvider.StoryItemProvider;
 

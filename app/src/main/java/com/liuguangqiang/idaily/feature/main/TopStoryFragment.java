@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.liuguangqiang.idaily.databinding.FragmentTopStoryBinding;
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.entity.Story;
 
 public class TopStoryFragment extends Fragment {
 

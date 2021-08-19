@@ -3,7 +3,7 @@ package com.liuguangqiang.idaily.utils.navigator;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.liuguangqiang.idaily.api.entity.Story;
+import com.liuguangqiang.idaily.entity.Story;
 import com.liuguangqiang.idaily.feature.detail.StoryActivity;
 
 /**
